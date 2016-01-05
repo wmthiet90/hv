@@ -1,0 +1,321 @@
+/* ===== Initializr Styles ==================================================   
+   ========================================================================== */
+html {
+}
+
+body {
+    font-family: 'Tahoma', sans-serif;
+    font-weight: 400;
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* ===================
+    ALL: 
+   =================== */
+.owl-carousel {
+    border: none;
+    border-radius: none;
+    box-shadow: none;
+    margin-bottom: 20px;
+    background-color: transparent;
+    text-align: center;
+}
+.owl-theme .owl-controls .owl-page span{
+    background-color: #3F3F3F;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls .owl-page:hover span {
+    background-color: #C22B18;
+}
+.owl-controls .owl-page {
+    margin: 0;
+}
+.owl-carousel .owl-pagination {
+    top: 0;
+}
+
+/* ====================
+    INTERMEDIATE: Menu
+   ==================== */
+#menu-container {
+    border-top: 2px solid #e1e1e1;
+    border-bottom: 2px solid #e1e1e1;
+}
+#menu {
+    background: white;
+    border-color: transparent;
+    min-height: inherit;
+}
+nav#menu {
+    color: #989898;
+    text-shadow: none;
+    padding: 10px 15px 10px 15px;
+    min-height: 15px;
+    background-color: transparent;
+}
+#menu .nav > li > a {
+    color: #989898;
+    text-shadow: nowrap;
+    padding: 10px 15px 10px 15px;
+    min-height: 15px;
+    background-color: transparent;
+    text-transform: uppercase;
+}
+
+/* =======================
+MAIN UI
+=========================*/
+#logo {
+    margin: 15px 0 15px 0;
+}
+#search {
+    margin-bottom: 0;
+}
+/* ===============
+    ALL: IE Fixes
+   =============== */
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (max-width: 768px) {
+    
+}
+
+@media only screen and (max-width: 480px) {
+    /* ==============
+        MOBILE: Menu
+       ============== */
+    
+
+    /* ==============
+        MOBILE: Main
+       ============== */
+    
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* ============
+        WIDE: Menu
+       ============ */
+    
+}
+
+@media only screen and (min-width: 1140px) {
+
+    /* ============
+        WIDE: Menu
+       ============ */
+
+
+    /* ===============
+        Maximal Width
+    =============== */
+    
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+ul.none-style {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.gray-bg {
+    background-color: #DDD;
+}
+.overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #000;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=15)";
+      /* IE 5-7 */
+    filter: alpha(opacity=15);
+    /* Netscape */
+    -moz-opacity: 0.15;
+    /* Safari 1.x */
+    -khtml-opacity: 0.15;
+    /* Good browsers */
+    opacity: 0.15;
+    z-index: -1;
+}
+.vertical-text {
+    display: inline-block;
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.99, M12=-0.08, M21=0.08, M22=0.99, SizingMethod="auto expand");
+}
+.disable-selection {
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer */
+   -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+.center {
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.fl{
+    float: left;
+}
+.fr {
+    float: right;
+}
+.clear {
+    clear: both;
+}
+.responsive-img  {
+    width: 100%;
+    height: auto;    
+}
+.table {
+    display: table;
+}
+.table-row {
+    display: table-row;
+}
+.table-cell {
+    display: table-cell;
+}
+
+.nowrap {
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.link-style-none {
+    text-decoration: none;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

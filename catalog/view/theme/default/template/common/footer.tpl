@@ -1,45 +1,67 @@
 <footer>
   <div class="container">
     <div class="row">
-      <?php if ($informations) { ?>
-      <div class="col-sm-3">
-        <h5><?php echo $text_information; ?></h5>
-        <ul class="list-unstyled">
-          <?php foreach ($informations as $information) { ?>
-          <li><a href="<?php echo $information['href']; ?>"><?php echo $information['title']; ?></a></li>
-          <?php } ?>
-        </ul>
+      <div class="col-sm-4">
+        <div class="company-info">
+          <h2 class="uppercase">Công ty TNHH Hóa Việt</h2>
+          <p class="info">
+            <span>Head Office:</span> 229-231 Lê Cao Lãng, P.Phú Thạnh, Q.Tân Phú, Tp.HCM
+          </p>
+          <div class="info-phones">
+            <p class="info">
+              <span>t:</span> + (84) 8 39 789 666
+            </p>
+            <p class="info">
+              <span>t:</span> + (84) 8 39 789 777
+            </p>
+            <p class="info">
+              <span>t:</span> + (84) 8 39 789 888
+            </p>
+          </div>          
+          <p class="info">
+            <span>f:</span> + (84) 8 39 789 555
+          </p>
+          <p class="info">
+            <span>e:</span> <a href="mailto: hoaviet@hoaviet.vn">hoaviet@hoaviet.vn</a>
+          </p>
+          <div class="info social-links">            
+            <a class="social-icon facebook" href="#"><i class="fa fa-facebook"></i></a>
+            <a class="social-icon twiter" href="#"><i class="fa fa-twitter"></i></a>
+            <a class="social-icon googleplus" href="#"><i class="fa fa-google-plus"></i></a>
+          </div>
+        </div>
       </div>
-      <?php } ?>
-      <div class="col-sm-3">
-        <h5><?php echo $text_service; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>
-          <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
-          <li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
-        </ul>
+      <div class="col-sm-5">
+        <div class="map-info">
+          <h3 class="uppercase">Tìm chúng tôi trên bản đồ</h3>
+          <div class="map-wrapper" style="width: 100%">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3956297232758!2d106.61861731421467!3d10.78098026205904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752c1b1971a633%3A0x84fa273bb88800df!2zMjI5IEzDqiBDYW8gTMOjbmcsIFBow7ogVGjhuqFuaCwgVMOibiBQaMO6LCBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1452008030049" width="100%" height="270" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
       <div class="col-sm-3">
-        <h5><?php echo $text_extra; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
-          <li><a href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
-          <li><a href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
-          <li><a href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5><?php echo $text_account; ?></h5>
-        <ul class="list-unstyled">
-          <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-          <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-          <li><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
-          <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
-        </ul>
+        <div class="map-info">
+            <h3 class="uppercase">Liên Hệ</h3>
+            <form role="form">
+              <div class="form-group">
+                <input placeholder="Tên của quý khách" type="text" class="form-control" id="contactName">
+              </div>
+              <div class="form-group">
+                <input placeholder="Email" type="email" class="form-control" id="contactEmail">
+              </div>
+              <div class="form-group">
+                <input placeholder="Chủ đề" type="text" class="form-control" id="contactTopic">
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Nội dung" id="contactMessage" class="form-control"></textarea>
+              </div>
+              <div class="text-right">
+                <button type="submit" class="btn btn-default">Gửi</button>
+              </div>              
+            </form>
+          </div>
       </div>
     </div>
-    <hr>
-    <p><?php //echo $powered; ?></p> 
   </div>
 </footer>
 </body></html>
