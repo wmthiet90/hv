@@ -608,3 +608,7 @@ input[type="checkbox"]:checked::after, .checkbox input[type="checkbox"]:checked:
 .jqvmap-label {
 	z-index: 999;
 }
+
+.navbar-brand > img {
+	height: 23px !important;
+}

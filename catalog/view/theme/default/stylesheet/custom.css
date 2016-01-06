@@ -1,4 +1,6 @@
 /* ===== Initializr Styles ==================================================   
+    Red: #9d0a0e;
+    Gray: #989898;
    ========================================================================== */
 html {
 }
@@ -9,6 +11,13 @@ body {
     color: #666;
     font-size: 14px;
     line-height: 20px;
+}
+a {
+    color: #989898;
+}
+a:hover {
+    color: #9d0a0e;
+    text-decoration: none;
 }
 
 /* ===================
@@ -45,23 +54,42 @@ body {
 }
 #menu {
     background: white;
-    border-color: transparent;
     min-height: inherit;
 }
 nav#menu {
     color: #989898;
     text-shadow: none;
-    padding: 10px 15px 10px 15px;
-    min-height: 15px;
+    padding: 0;
     background-color: transparent;
+    margin-bottom: 0;
+    border-radius: 0;
+    border: none;
 }
 #menu .nav > li > a {
     color: #989898;
-    text-shadow: nowrap;
-    padding: 10px 15px 10px 15px;
+    text-shadow: none;
+    padding: 7px 10px;
     min-height: 15px;
     background-color: transparent;
     text-transform: uppercase;
+    font-size: 15px;
+    border-top: 2px solid #e1e1e1;
+    border-bottom: 2px solid #e1e1e1;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+#menu .nav > li > a:hover, 
+#menu .nav > li.open > a {
+    background: #f7f7f7;
+    color: #9d0a0e;
+}
+#menu .nav > li > a:hover {
+    border-top: 2px solid #bab7b7;
+    border-bottom: 2px solid #bab7b7;
+}
+#menu .dropdown-menu li > a:hover {
+    background: #f7f7f7;
+    color: #9d0a0e;
 }
 
 /* =======================
@@ -72,6 +100,30 @@ MAIN UI
 }
 #search {
     margin-bottom: 0;
+    margin-top: 4px;
+}
+#search .form-control {
+    height: 27px;
+    box-shadow: none;
+}
+#search button {
+    padding: 5px;
+    background: #FFF;
+    border-left: none;
+    box-shadow: none;
+}
+#search button > i {
+    color: #9d0a0e;
+}
+#language {
+    padding: 7px 0;
+}
+#language a {
+    font-size: 12px;
+    color: #989898;
+}
+#language a:hover {
+    color: #9d0a0e;
 }
 /* ===============
     ALL: IE Fixes
@@ -254,6 +306,10 @@ ul.none-style {
 }
 .link-style-none {
     text-decoration: none;
+}
+.list-unstyled {
+    margin: 0;
+    padding: 0;
 }
 
 /* ==========================================================================

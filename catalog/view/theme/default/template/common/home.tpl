@@ -55,10 +55,11 @@
     </div>
 </div>
 <div class="container">
-  <div class="row">
-    <div id="content" class="col-sm-12">
-        <?php echo $content_top; ?>
-        <?php echo $content_bottom; ?>
+    <div class="row">
+        <div id="content" class="col-sm-12">
+            <?php echo $content_top; ?>
+            <?php echo $content_bottom; ?>
+        </div>
     </div>
 </div>
 <?php echo $footer; ?>
