@@ -1,42 +1,57 @@
-<h3><?php echo $heading_title; ?></h3>
-<div class="row">
-  <?php foreach ($products as $product) { ?>
-  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-    <div class="product-thumb transition">
-      <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
-      <div class="caption">
-        <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
-        <p><?php echo $product['description']; ?></p>
-        <?php if ($product['rating']) { ?>
-        <div class="rating">
-          <?php for ($i = 1; $i <= 5; $i++) { ?>
-          <?php if ($product['rating'] < $i) { ?>
-          <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-          <?php } else { ?>
-          <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-          <?php } ?>
-          <?php } ?>
+<div class="block-box featured-box">
+  <div class="block-heading">
+    <h3 class="block-title"><?php echo $heading_title; ?></h3>
+    <p class="block-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>  
+  </div>  
+  <div class="row product-grid">
+    <?php foreach ($products as $product) { ?>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 product-item">
+      <div class="product-thumb transition">
+        <div class="image">
+          <a href="<?php echo $product['href']; ?>">
+            <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />
+            </a>
+          </div>
+        <div class="caption">
+          <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>   
+          <div class="separator">
+            <i class="fa fa-circle pull-left"></i>
+            <div class="line pull-right"></div>
+          </div>     
+          <p class="desciption"><?php echo $product['description']; ?></p>
         </div>
-        <?php } ?>
-        <?php if ($product['price']) { ?>
-        <p class="price">
-          <?php if (!$product['special']) { ?>
-          <?php echo $product['price']; ?>
-          <?php } else { ?>
-          <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
-          <?php } ?>
-          <?php if ($product['tax']) { ?>
-          <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-          <?php } ?>
-        </p>
-        <?php } ?>
-      </div>
-      <div class="button-group">
-        <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
-        <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
-        <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
       </div>
     </div>
+    <?php } ?>
   </div>
-  <?php } ?>
+  <div class="p-30 center">
+    <a href="#" class="btn btn-main">Xem tất cả</a>
+  </div>
 </div>
+
+<div class="block-box featured-box">
+  <div class="block-heading">
+    <h3 class="block-title">Tin tức & Sự kiện</h3> 
+  </div>  
+  <div class="row news-grid">
+    <?php foreach ($products as $product) { ?>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 news-item">
+      <div class="news-thumb transition">
+        <div class="image">
+          <a href="<?php echo $product['href']; ?>">
+            <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" />
+            </a>
+          </div>
+        <div class="caption">
+          <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4> 
+          <p class="desciption"><?php echo $product['description']; ?></p>
+        </div>
+      </div>
+    </div>
+    <?php } ?>
+  </div>
+  <div class="p-30 center">
+    <a href="#" class="btn btn-main">Xem tất cả</a>
+  </div>
+</div>
+

@@ -43,7 +43,7 @@
 <header>
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-md-9 col-sm-12">
         <div id="logo" class="center">
           <?php if ($logo) { ?>
           <a href="<?php echo $home; ?>">
@@ -54,13 +54,15 @@
           <?php } ?>
         </div>
       </div>
+      <div class="col-md-3 col-sm-12">
+      </div>
     </div>
   </div>
 </header>
 <div id="menu-container">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-sm-12">
+      <div class="col-md-9 col-sm-12">
         <nav id="menu" class="navbar">
           <div class="navbar-header"><span id="category" class="visible-xs">Menu</span>
             <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
@@ -89,7 +91,7 @@
           </div>
         </nav>
       </div>
-      <div class="col-md-4 col-sm-12">
+      <div class="col-md-3 col-sm-12">
         <div class="row">
           <div class="col-xs-7">
             <?php echo $search; ?>
