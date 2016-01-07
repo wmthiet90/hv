@@ -23,6 +23,9 @@ a:hover {
     color: #9d0a0e;
     text-decoration: none;
 }
+hr {
+    border-top: 1px solid #D0D0D0;
+}
 
 /* ===================
     ALL: 
@@ -79,7 +82,7 @@ a:hover {
 }
 .product-grid .product-thumb .caption {
     padding: 20px;
-    min-height: 150px;
+    min-height: 160px;
 }
 .product-grid .product-thumb .image img {
     width: 100%;
@@ -187,7 +190,6 @@ nav#menu {
     text-transform: uppercase;
     font-size: 15px;
     border-top: 2px solid #e1e1e1;
-    border-bottom: 2px solid #e1e1e1;
     margin-top: -2px;
     margin-bottom: -2px;
 }
@@ -210,6 +212,57 @@ MAIN UI
 =========================*/
 header{
     background-color: #FFF;
+}
+footer {
+    padding: 25px 0px 20px 0px;
+    background-color: #9d0a0e;
+    border-top: none;
+    color: #FFF;
+}
+footer h2 {
+    margin: 0px 0px 15px 0px;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 20px;
+}
+footer h3 {
+    margin: 0px 0px 8px 0px;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 300;
+}
+footer .company-info {
+    font-size: 14px;
+}
+footer .info > span {
+    margin-right: 5px;
+}
+footer .info-phones .info > span {
+    visibility: hidden;
+    margin-right: 5px;
+}
+footer .info-phones .info:first-child > span {
+    visibility: visible;
+}
+footer .social-links {
+    overflow: hidden;
+}
+footer .social-links .social-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    float: left;
+    background-color: #323232;
+    margin-right: 10px;
+    border-radius: 12px 0;
+    text-align: center;
+    line-height: 40px;
+}
+footer .social-links .social-icon > i {
+    font-size: 18px;
+}
+footer .social-links .social-icon:hover > i {
+    color: #9d0a0e;
 }
 
 #logo {
@@ -295,8 +348,6 @@ header{
     top: 35%;   
     color: #9d0a0e;
 }
-
-
 
 /* ===============
     ALL: IE Fixes
@@ -477,6 +528,16 @@ ul.none-style {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.no-resize-all {
+    resize: none;
+}
+.no-resize-hon {
+    resize: vertical;
+}
+.no-resize-ver {
+    resize: horizontal;
+}
+
 .link-style-none {
     text-decoration: none;
 }
@@ -495,7 +556,24 @@ ul.none-style {
     background-color: #9d0a0e;
     color: #FFF;
 }
+.btn.btn-default {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-radius: 30px;
+    padding: 5px 40px;
+    border: none;
+    font-size: 14px;
+    background-color: #FFF;
+    color: #676767;
+}
+.btn.btn-smaller {
+    padding: 2px 30px;
+    font-size: 13px;
+}
 .btn.btn-main:hover {
+    color: #000;
+}
+.btn.btn-default:hover {
     color: #000;
 }
 

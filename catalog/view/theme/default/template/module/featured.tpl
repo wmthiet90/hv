@@ -28,7 +28,7 @@
     <a href="#" class="btn btn-main">Xem tất cả</a>
   </div>
 </div>
-
+<hr>
 <div class="block-box featured-box">
   <div class="block-heading">
     <h3 class="block-title">Tin tức & Sự kiện</h3> 
@@ -54,4 +54,3 @@
     <a href="#" class="btn btn-main">Xem tất cả</a>
   </div>
 </div>
-

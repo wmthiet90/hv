@@ -53,10 +53,10 @@
                 <input placeholder="Chủ đề" type="text" class="form-control" id="contactTopic">
               </div>
               <div class="form-group">
-                <textarea placeholder="Nội dung" id="contactMessage" class="form-control"></textarea>
+                <textarea placeholder="Nội dung" id="contactMessage" class="form-control no-resize-hon" style="min-height: 80px;"></textarea>
               </div>
               <div class="text-right">
-                <button type="submit" class="btn btn-default">Gửi</button>
+                <button type="submit" class="btn btn-default btn-smaller">Gửi</button>
               </div>              
             </form>
           </div>
@@ -64,17 +64,5 @@
     </div>
   </div>
 </footer>
-<script lang="javascript">
-  (function() {
-      var _h1= document.getElementsByTagName('title')[0] || false;
-      var product_name = ''; 
-      if(_h1){
-          product_name= _h1.textContent || _h1.innerText;}
-          var ga = document.createElement('script'); 
-          ga.type = 'text/javascript';
-          ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=418767906d86d401c306b51862b93446&data=eyJzc29faWQiOjM0NTYwMzgsImhhc2giOiIxZWY2NjNlNWRjMGUzZTUyZTM1MmFjMGNhMmVhZWRjMCJ9&pname='+product_name;
-      var s = document.getElementsByTagName('script');
-      s[0].parentNode.insertBefore(ga, s[0]);
-  })();
-</script> 
+<script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",34183]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);</script>
 </body></html>

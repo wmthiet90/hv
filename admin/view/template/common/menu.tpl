@@ -13,16 +13,10 @@
       </li>
       <li><a href="<?php echo $option; ?>"><?php echo $text_option; ?></a></li>
       <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
-      <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
       <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
     </ul>
   </li>
-  <li id="extension"><a class="parent"><i class="fa fa-puzzle-piece fa-fw"></i> <span><?php echo $text_extension; ?></span></a>
-    <ul>
-      <li><a href="<?php echo $modification; ?>"><?php echo $text_modification; ?></a></li>
-      <li><a href="<?php echo $module; ?>"><?php echo $text_module; ?></a></li>
-    </ul>
-  </li>
+  <li id="modules"><a href="<?php echo $module; ?>"><?php echo $text_module; ?></a></li>
   <li id="system"><a class="parent"><i class="fa fa-cog fa-fw"></i> <span><?php echo $text_system; ?></span></a>
     <ul>
       <li><a href="<?php echo $setting; ?>"><?php echo $text_setting; ?></a></li>

@@ -1,73 +1,78 @@
 <?php echo $header; ?>
-<div class="container-fluid" id="home-slides-container">
+<div class="container-fluid">
     <div class="row full-block">
         <div class="col-sm-12">
-            <div id="home-slides">
-                <div class="slide-item center">
-                    <a href="#" class="banner-img">
-                        <img src="image/catalog/demo/si01.jpg" alt="">
-                    </a>
-                    <div class="banner-actions">
-                        <a href="#" class="btn btn-main">Chi tiết</a>
+            <?php if(!empty($home_slideshow_banners)) { ?>
+                <div id="home-slides-container">
+                    <div id="home-slides">
+                        <?php foreach ($home_slideshow_banners as $banner) { ?>
+                            <div class="slide-item center">
+                                <?php if ($banner['link']) { ?>
+                                    <a href="<?php echo $banner['link']; ?>">
+                                        <img class="img-responsive banner-img" src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>">
+                                    </a>
+                                    <div class="banner-actions">
+                                        <a href="<?php echo $banner['link']; ?>" class="btn btn-main">Chi tiết</a>
+                                    </div>
+                                    <div class="banner-description">
+                                        <a href="<?php echo $banner['link']; ?>">
+                                            <?php echo $banner['title']; ?>
+                                        </a>
+                                    </div>
+                                <?php } else { ?>
+                                    <img class="img-responsive banner-img" src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>">                                
+                                        <div class="banner-description">
+                                            <?php echo $banner['title']; ?>
+                                        </div>
+                                <?php } ?>
+                            </div>
+                        <?php } ?>         
                     </div>
-                    <div class="banner-description">
-                        1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, venenatis sit amet nulla et, vulputate sollicitudin ipsum.
-                    </div>
+                    <script>
+                        $("#home-slides").owlCarousel({
+                                autoPlay: true,
+                                pagination : true,
+                                singleItem: true,
+                                navigation: false,
+                                stopOnHover: true,
+                                slideSpeed : 800,
+                                rewindSpeed : 1000
+                        });
+                    </script>
                 </div>
-                <div class="slide-item center">
-                    <a href="#" class="banner-img">
-                        <img src="image/catalog/demo/si02.jpg" alt="">
-                    </a>
-                    <div class="banner-actions">
-                        <a href="#" class="btn btn-main">Chi tiết</a>
-                    </div>
-                    <div class="banner-description">
-                        2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nunc diam, venenatis sit amet nulla et, vulputate sollicitudin ipsum.
-                    </div>
-                </div>         
-            </div>
-            <script>
-                $("#home-slides").owlCarousel({
-                        autoPlay: true,
-                        pagination : true,
-                        singleItem: true,
-                        navigation: false,
-                        stopOnHover: true,
-                        slideSpeed : 800,
-                        rewindSpeed : 1000
-                });
-            </script>
+            <?php } ?>   
+            <?php if(!empty($home_brand_banners)) { ?>         
+                <div id="brand-logos-container">
+                   <div class="container">
+                        <div id="brand-logos">
+                            <?php foreach ($home_brand_banners as $banner) { ?>
+                              <div class="item">
+                                <?php if ($banner['link']) { ?>
+                                <a href="<?php echo $banner['link']; ?>">
+                                    <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" />
+                                </a>
+                                <?php } else { ?>
+                                    <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" />
+                                <?php } ?>
+                              </div>
+                              <?php } ?>
+                        </div>
+                    </div> 
+                    <script>
+                        $("#brand-logos").owlCarousel({
+                            items: 4,
+                            pagination : false,
+                            autoPlay: false,
+                            singleItem: false,
+                            navigation: true,
+                            stopOnHover: true,
+                            navigationText: ['<span class="fa fa-angle-left fa-3x"></span>', '<span class="fa fa-angle-right fa-3x"></span>']
+                        });
+                    </script>
+                </div>
+            <?php } ?>
         </div>
     </div> 
-</div>
-<div class="container-fluid" id="brand-logos-container">
-    <div class="row full-block">
-        <div class="col-sm-12">
-            <div class="container">
-                <div id="brand-logos">
-                    <a href="#"><img src="image/catalog/demo/imglist01.jpg" alt=""></a>
-                    <a href="#"><img src="image/catalog/demo/imglist02.jpg" alt=""></a>
-                    <a href="#"><img src="image/catalog/demo/imglist03.jpg" alt=""></a>
-                    <a href="#"><img src="image/catalog/demo/imglist04.jpg" alt=""></a>
-                    <a href="#"><img src="image/catalog/demo/imglist05.jpg" alt=""></a>
-                    <a href="#"><img src="image/catalog/demo/imglist06.jpg" alt=""></a>
-                    <a href="#"><img src="image/catalog/demo/imglist07.jpg" alt=""></a>
-                    <a href="#"><img src="image/catalog/demo/imglist08.jpg" alt=""></a>
-                </div>
-            </div>            
-            <script>
-                $("#brand-logos").owlCarousel({
-                    items: 4,
-                    pagination : false,
-                    autoPlay: false,
-                    singleItem: false,
-                    navigation: true,
-                    stopOnHover: true,
-                    navigationText: ['<span class="fa fa-angle-left fa-3x"></span>', '<span class="fa fa-angle-right fa-3x"></span>']
-                });
-            </script>
-        </div>
-    </div>
 </div>
 <div class="container">
     <div class="row">
