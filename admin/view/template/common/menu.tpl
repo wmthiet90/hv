@@ -5,18 +5,11 @@
       <li><a href="<?php echo $category; ?>"><?php echo $text_category; ?></a></li>
       <li><a href="<?php echo $product; ?>"><?php echo $text_product; ?></a></li>
       <li><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>
-      <li><a class="parent"><?php echo $text_attribute; ?></a>
-        <ul>
-          <li><a href="<?php echo $attribute; ?>"><?php echo $text_attribute; ?></a></li>
-          <li><a href="<?php echo $attribute_group; ?>"><?php echo $text_attribute_group; ?></a></li>
-        </ul>
-      </li>
-      <li><a href="<?php echo $option; ?>"><?php echo $text_option; ?></a></li>
       <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
       <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
     </ul>
   </li>
-  <li id="modules"><a href="<?php echo $module; ?>"><?php echo $text_module; ?></a></li>
+  <li id="modules"><a href="<?php echo $module; ?>"><i class="fa fa-puzzle-piece"></i> <span><?php echo $text_module; ?></span></a></li>
   <li id="system"><a class="parent"><i class="fa fa-cog fa-fw"></i> <span><?php echo $text_system; ?></span></a>
     <ul>
       <li><a href="<?php echo $setting; ?>"><?php echo $text_setting; ?></a></li>

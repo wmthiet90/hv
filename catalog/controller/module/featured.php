@@ -2,8 +2,12 @@
 class ControllerModuleFeatured extends Controller {
 	public function index($setting) {
 		$this->load->language('module/featured');
+		$this->load->language('common/common');
 
 		$data['heading_title'] = $this->language->get('heading_title');
+		$data['text_heading_desc'] = $this->language->get('text_heading_desc');		
+		$data['text_see_all'] = $this->language->get('text_see_all');		
+		$data['text_newsevent'] = $this->language->get('text_newsevent');	
 
 		$this->load->model('catalog/product');
 

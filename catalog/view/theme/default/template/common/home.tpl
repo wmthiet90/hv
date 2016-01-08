@@ -41,14 +41,14 @@
                     </script>
                 </div>
             <?php } ?>   
-            <?php if(!empty($home_brand_banners)) { ?>         
+            <?php if(!empty($home_brand_banners)) { ?> 
                 <div id="brand-logos-container">
                    <div class="container">
                         <div id="brand-logos">
                             <?php foreach ($home_brand_banners as $banner) { ?>
                               <div class="item">
                                 <?php if ($banner['link']) { ?>
-                                <a href="<?php echo $banner['link']; ?>">
+                                <a href="<?php echo $banner['link']; ?>" target="_blank">
                                     <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive" />
                                 </a>
                                 <?php } else { ?>

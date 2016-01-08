@@ -2,46 +2,35 @@
 class ControllerCommonFooter extends Controller {
 	public function index() {
 		$this->load->language('common/footer');
+		$this->load->language('common/header');
 
-		$data['text_information'] = $this->language->get('text_information');
-		$data['text_service'] = $this->language->get('text_service');
-		$data['text_extra'] = $this->language->get('text_extra');
 		$data['text_contact'] = $this->language->get('text_contact');
-		$data['text_return'] = $this->language->get('text_return');
 		$data['text_sitemap'] = $this->language->get('text_sitemap');
-		$data['text_manufacturer'] = $this->language->get('text_manufacturer');
-		$data['text_voucher'] = $this->language->get('text_voucher');
-		$data['text_affiliate'] = $this->language->get('text_affiliate');
-		$data['text_special'] = $this->language->get('text_special');
-		$data['text_account'] = $this->language->get('text_account');
-		$data['text_order'] = $this->language->get('text_order');
-		$data['text_wishlist'] = $this->language->get('text_wishlist');
-		$data['text_newsletter'] = $this->language->get('text_newsletter');
+		$data['text_findonmap'] = $this->language->get('text_findonmap');
+		$data['text_powered'] = $this->language->get('text_powered');
 
-		$this->load->model('catalog/information');
+		$data['text_contact_name'] = $this->language->get('text_contact_name');
+		$data['text_contact_email'] = $this->language->get('text_contact_email');
+		$data['text_contact_topic'] = $this->language->get('text_contact_topic');
+		$data['text_contact_message'] = $this->language->get('text_contact_message');
+		$data['text_send'] = $this->language->get('text_send');
 
-		$data['informations'] = array();
+		$data['text_home']  = $this->language->get('text_home');
+		$data['text_introduction']  = $this->language->get('text_introduction');
+		$data['text_product'] = $this->language->get('text_product');
+		$data['text_newsevent'] = $this->language->get('text_newsevent');
+		$data['text_downloads'] = $this->language->get('text_downloads');
+		$data['text_job'] = $this->language->get('text_job');
+		$data['text_contact'] = $this->language->get('text_contact');
 
-		foreach ($this->model_catalog_information->getInformations() as $result) {
-			if ($result['bottom']) {
-				$data['informations'][] = array(
-					'title' => $result['title'],
-					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
-				);
-			}
-		}
-
-		$data['contact'] = $this->url->link('information/contact');
-		$data['return'] = $this->url->link('account/return/add', '', 'SSL');
-		$data['sitemap'] = $this->url->link('information/sitemap');
-		$data['manufacturer'] = $this->url->link('product/manufacturer');
-		$data['voucher'] = $this->url->link('account/voucher', '', 'SSL');
-		$data['affiliate'] = $this->url->link('affiliate/account', '', 'SSL');
-		$data['special'] = $this->url->link('product/special');
-		$data['account'] = $this->url->link('account/account', '', 'SSL');
-		$data['order'] = $this->url->link('account/order', '', 'SSL');
-		$data['wishlist'] = $this->url->link('account/wishlist', '', 'SSL');
-		$data['newsletter'] = $this->url->link('account/newsletter', '', 'SSL');
+		$data['home_url'] = $this->url->link('common/home');
+		$data['introduction_url'] = $this->url->link('common/home');
+		$data['contact_url'] = $this->url->link('common/home');
+		$data['product_url'] = $this->url->link('common/home');
+		$data['news_url'] = $this->url->link('common/home');
+		$data['download_url'] = $this->url->link('common/home');
+		$data['jobs_url'] = $this->url->link('common/home');
+		$data['sitemap_url'] = $this->url->link('information/sitemap');	
 
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
 

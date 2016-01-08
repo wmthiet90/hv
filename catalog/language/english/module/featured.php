@@ -3,4 +3,4 @@
 $_['heading_title'] = 'Featured';
 
 // Text
-$_['text_tax']      = 'Ex Tax:';
+$_['text_heading_desc']      = 'List of our featured products';

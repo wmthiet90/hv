@@ -69,10 +69,10 @@
           </div>
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-              <li><a href="<?php echo $home; ?>">Trang Chủ</a></li>
-              <li><a href="<?php echo $home; ?>">Giới Thiệu</a></li>
+              <li><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
+              <li><a href="<?php echo $home; ?>"><?php echo $text_introduction; ?></a></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sản Phẩm</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_product; ?></a>
                 <div class="dropdown-menu">
                   <div class="dropdown-inner">              
                     <ul class="list-unstyled">
@@ -83,10 +83,10 @@
                     </ul>
                   </div>
               </li>
-              <li><a href="<?php echo $home; ?>">Tin Tức</a></li>
-              <li><a href="<?php echo $home; ?>">Tải Về</a></li>
-              <li><a href="<?php echo $home; ?>">Tuyển Dụng</a></li>
-              <li><a href="<?php echo $home; ?>">Liên Hệ</a></li>
+              <li><a href="<?php echo $home; ?>"><?php echo $text_newsevent; ?></a></li>
+              <li><a href="<?php echo $home; ?>"><?php echo $text_downloads; ?></a></li>
+              <li><a href="<?php echo $home; ?>"><?php echo $text_job; ?></a></li>
+              <li><a href="<?php echo $home; ?>"><?php echo $text_contact; ?></a></li>
             </ul>
           </div>
         </nav>

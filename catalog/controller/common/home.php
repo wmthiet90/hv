@@ -39,7 +39,7 @@ class ControllerCommonHome extends Controller {
 				$data['home_brand_banners'][] = array(
 					'title' => $result['title'],
 					'link'  => $result['link'],
-					'image' => $this->model_tool_image->resize($result['image'], 120, 80)
+					'image' => $this->model_tool_image->resize($result['image'], 278, 77)
 				);
 			}
 		}

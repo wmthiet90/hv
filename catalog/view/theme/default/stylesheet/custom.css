@@ -264,6 +264,14 @@ footer .social-links .social-icon > i {
 footer .social-links .social-icon:hover > i {
     color: #9d0a0e;
 }
+.footer-links {
+    padding: 10px 0px;
+}
+.footer-links a {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 300;
+}
 
 #logo {
     margin: 15px 0 15px 0;
