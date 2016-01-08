@@ -163,6 +163,17 @@ hr {
     background: white;
     min-height: inherit;
 }
+#menu #category {
+    color: #9D0A0E;
+}
+#menu .btn.btn-navbar {
+    background-image: none;
+    background-color: #9d0a0e;
+}
+#menu .btn.btn-navbar:hover {   
+    background-image: none; 
+    background-color: #9d0a0e;
+}
 nav#menu {
     color: #989898;
     text-shadow: none;
@@ -367,7 +378,21 @@ footer .social-links .social-icon:hover > i {
    ========================================================================== */
 
 @media only screen and (max-width: 768px) {
-    
+    #menu-container {
+        padding-bottom: 10px;
+    }
+    #menu .nav > li {
+        display: block;
+    }
+    #menu .nav > li {
+        border-bottom: 1px solid #DDD;
+    }
+    #menu .nav > li > a {
+        border: none;
+    }
+    #menu .nav > li > a:hover {
+        border: none;
+    }
 }
 
 @media only screen and (max-width: 480px) {

@@ -65,7 +65,7 @@
       <div class="col-md-9 col-sm-12">
         <nav id="menu" class="navbar">
           <div class="navbar-header"><span id="category" class="visible-xs">Menu</span>
-            <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+            <button type="button" class="btn btn-navbar btn-main navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
           </div>
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
