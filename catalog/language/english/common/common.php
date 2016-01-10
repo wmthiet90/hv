@@ -8,3 +8,4 @@ $_['text_job']           = 'Jobs';
 $_['text_contact']           = 'Contact';
 
 $_['text_see_all']           = 'See all';
+$_['text_see_more']           = 'See more';

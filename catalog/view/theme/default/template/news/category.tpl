@@ -1,10 +1,5 @@
 <?php echo $header; ?>
 <div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -13,19 +8,25 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h2><?php echo $heading_title; ?></h2>
+    <div id="content" class="news-page <?php echo $class; ?>"><?php echo $content_top; ?>
+      <h2 class="heading-title"><?php echo $heading_title; ?></h2>
       <?php if ($thumb || $description) { ?>
-      <div class="row">
-        <?php if ($thumb) { ?>
-        <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
-        <?php } ?>
-        <?php if ($description) { ?>
-        <div class="col-sm-10"><?php echo $description; ?></div>
-        <?php } ?>
-      </div>
-      <hr>
+        <div class="row hidden">
+          <?php if ($thumb) { ?>
+          <div class="col-sm-2">
+            <img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" />
+          </div>
+          <?php } ?>
+          <?php if ($description) { ?>
+          <div class="col-sm-10"><?php echo $description; ?></div>
+          <?php } ?>
+        </div>
       <?php } ?>
+      <ul class="breadcrumb">
+        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
+        <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+        <?php } ?>
+      </ul>
       <?php if ($categories) { ?>
       <h3><?php echo $text_refine; ?></h3>
       <?php if (count($categories) <= 5) { ?>
@@ -53,7 +54,7 @@
       <?php } ?>
       <?php } ?>
       <?php if ($articles) { ?>
-      <div class="row">
+      <div class="row hidden">
         <div class="col-md-4">
           <div class="btn-group hidden-xs">
             <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
@@ -88,28 +89,24 @@
             <?php } ?>
           </select>
         </div>
-      </div>
-      <br />
+      </div>      
       <div class="row">
         <?php foreach ($articles as $article) { ?>
         <div class="product-layout product-list col-xs-12">
           <div class="product-thumb">
-            <div class="image"><a href="<?php echo $article['href']; ?>"><img src="<?php echo $article['thumb']; ?>" alt="<?php echo $article['name']; ?>" title="<?php echo $article['name']; ?>" class="img-responsive" /></a></div>
+            <div class="image">
+              <a href="<?php echo $article['href']; ?>">
+                <img src="<?php echo $article['thumb']; ?>" alt="<?php echo $article['name']; ?>" title="<?php echo $article['name']; ?>" class="img-responsive" />
+              </a>
+            </div>
             <div>
               <div class="caption">
+                <p class="created_date"><?php echo $article['date_added']; ?></p>
                 <h4><a href="<?php echo $article['href']; ?>"><?php echo $article['name']; ?></a></h4>
-                <p><?php echo $article['description']; ?></p>
-                <?php if ($article['rating']) { ?>
-                <div class="rating">
-                  <?php for ($i = 1; $i <= 5; $i++) { ?>
-                  <?php if ($article['rating'] < $i) { ?>
-                  <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                  <?php } else { ?>
-                  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                  <?php } ?>
-                  <?php } ?>
-                </div>
-                <?php } ?>
+                <p><?php echo $article['short_description']; ?></p>                
+              </div>
+              <div class="see-more">
+                <a href="<?php echo $article['href']; ?>"><?php echo $text_see_more; ?> <i class="fa fa-angle-double-right"></i></a>
               </div>
             </div>
           </div>
@@ -117,17 +114,16 @@
         <?php } ?>
       </div>
       <div class="row">
-        <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
-        <div class="col-sm-6 text-right"><?php echo $results; ?></div>
+        <div class="col-sm-12 center">
+          <?php echo $pagination; ?>
+        </div>
       </div>
       <?php } ?>
       <?php if (!$categories && !$articles) { ?>
-      <p><?php echo $text_empty; ?></p>
-      <div class="buttons">
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
-      </div>
+        <p><?php echo $text_empty; ?></p>
       <?php } ?>
-      <?php echo $content_bottom; ?></div>
+
+    <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
 <?php echo $footer; ?>

@@ -1,30 +1,28 @@
 <?php
-/*------------------------------------------------------------------------
-# Advanced News System for OpenCart 1.5.x
-# ------------------------------------------------------------------------
-# Copyright (C) 2011 OpenCartSoft.com. All Rights Reserved.
-# @license - Copyrighted Commercial Software
-# Author: www.OpenCartSoft.com
-# Websites:  http://www.opencartsoft.com -  Email: admin@opencartsoft.com
-# This file may not be redistributed in whole or significant part.
--------------------------------------------------------------------------*/
-
 // Heading
-$_['heading_title']     = 'Tìm kiếm';
- 
+$_['heading_title']     = 'Tìm kiếm bài viết';
+
 // Text
-$_['text_search']       = 'Kết quả tìm kiếm';
-$_['text_news']      = 'Tin tức';
+$_['text_search']       = 'Bài viết theo điều kiện tìm kiếm';
 $_['text_keyword']      = 'Từ khóa';
-$_['text_news_category']     = 'Tất cả danh mục';
-$_['text_sub_news_category'] = 'Tìm trong danh mục con';
-$_['text_critea']       = 'Tìm kiếm nâng cao';
-$_['text_empty']        = 'Không tìm thấy tin tức phù hợp.';
+$_['text_category']     = 'Tất cả danh mục';
+$_['text_sub_category'] = 'Tìm trong danh mục con';
+$_['text_critea']       = 'Điều kiện tìm kiếm';
+$_['text_empty']        = 'Không có bài viết nào thỏa điều kiện tìm kiếm';
+$_['text_reviews']      = 'Dựa trên %s đánh giá.'; 
+$_['text_display']      = 'Hiển thị:';
+$_['text_list']         = 'Danh sách';
+$_['text_grid']         = 'Lưới';
+$_['text_sort']         = 'Sắp xếp theo:';
+$_['text_default']      = 'Mặc định';
+$_['text_name_asc']     = 'Name (A - Z)';
+$_['text_name_desc']    = 'Name (Z - A)';
+$_['text_rating_asc']   = 'Rating (Lowest)';
+$_['text_rating_desc']  = 'Rating (Highest)';
 $_['text_limit']        = 'Hiển thị:';
-$_['text_post_on']        = 'Ngày đăng tin:';
-$_['text_viewed']        = 'Số lần xem:';
+$_['text_product_search']        = 'Tìm kiếm sản phẩm';
 
 // Entry
 $_['entry_search']      = 'Tìm kiếm:';
-$_['entry_description'] = 'Tìm trong nội dung chi tiết tin tức';
+$_['entry_description'] = 'Tìm kiếm trong mô tả';
 ?>

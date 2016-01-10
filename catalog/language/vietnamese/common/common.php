@@ -8,3 +8,4 @@ $_['text_job']           = 'Tuyển dụng';
 $_['text_contact']           = 'Liên hệ';
 
 $_['text_see_all']           = 'Xem tất cả';
+$_['text_see_more']           = 'Xem chi tiết';

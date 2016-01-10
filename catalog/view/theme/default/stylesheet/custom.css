@@ -71,6 +71,10 @@ hr {
     font-size: 13px;
 }
 
+.product-thumb {
+    background-color: #FFF;   
+}
+
 .product-grid {
 }
 .product-grid .product-item {    
@@ -151,6 +155,51 @@ hr {
     clear: both;
 }
 
+.breadcrumb {
+   border: none; 
+   background-color: transparent;
+   margin: 25px 0px 5px 0px;
+}
+.breadcrumb li {
+    padding: 0 10px;
+}
+.breadcrumb li:first-child {
+    padding-left: 0;
+}
+.breadcrumb li:after {
+    border-bottom: none;
+    top: 5px;
+    right: -15px;
+    height: 15px;
+    width: 15px;
+    webkit-transform: rotate(-150deg);
+    -moz-transform: rotate(-150deg);
+    -o-transform: rotate(-150deg);
+    transform: rotate(-150deg);
+}
+.breadcrumb li:last-child:after {
+    border: none;
+}
+.breadcrumb li > a {
+    color: #888484;
+}
+.breadcrumb li > a:hover {
+    color: #9d0a0e;
+}
+.breadcrumb li:last-child > a {
+    pointer-events: none;
+}
+.pagination>.active>a, 
+.pagination>.active>span, 
+.pagination>.active>a:hover, 
+.pagination>.active>span:hover, 
+.pagination>.active>a:focus, 
+.pagination>.active>span:focus {
+    background-color: #9D0A0E;
+    border-color: transparent;
+    cursor: default;
+}
+
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
@@ -196,16 +245,16 @@ nav#menu {
     color: #989898;
     text-shadow: none;
     padding: 7px 10px;
-    min-height: 15px;
     background-color: transparent;
     text-transform: uppercase;
     font-size: 15px;
     border-top: 2px solid #e1e1e1;
     margin-top: -2px;
     margin-bottom: -2px;
+    min-height: 39px;
 }
 #menu .nav > li > a:hover, 
-#menu .nav > li.open > a {
+#menu .nav > .open > a {
     background: #f7f7f7;
     color: #9d0a0e;
 }
@@ -217,6 +266,23 @@ nav#menu {
     background: #f7f7f7;
     color: #9d0a0e;
 }
+#menu .dropdown-menu {
+    padding: 0;
+}
+#menu .dropdown-inner li {
+    border-bottom: 1px solid #D0D0D0;
+}
+#menu .dropdown-inner li:last-child {
+    border-bottom: none;
+}
+#menu .dropdown-inner li > a {
+    padding: 7px 20px;
+    color: #333333;
+    font-size: 13px;
+    text-align: left;
+    background-color: #f7f7f7;
+}
+
 
 /* =======================
 MAIN UI
@@ -368,6 +434,89 @@ footer .social-links .social-icon:hover > i {
     color: #9d0a0e;
 }
 
+.news-page {    
+}
+.news-page-details {
+    background-color: #FFF;
+    padding: 25px;
+}
+.news-page .heading-title {    
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: 500;
+    color: #9d0a0e;
+    text-align: center;
+    margin: 50px 0px 5px 0px;
+}
+.news-page .product-list .product-thumb .caption {
+    margin-left: 325px;
+}
+.news-page .product-list .product-thumb {
+    padding: 25px;
+    position: relative;
+}
+.news-page .created_date {
+    text-transform: lowercase;
+    font-size: 15px;
+    font-weight: 300;
+    color: #9d0a0e;
+}
+.news-page .product-thumb h4 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 17px;
+    color: #9d0a0e;
+    margin: 18px 0px 7px 0px;
+}
+.news-page .product-thumb h4 a {
+    color: #9d0a0e;   
+}
+.news-page .product-thumb h4 a:hover {
+    color: #000;   
+}
+.news-page .product-thumb .see-more {
+    position: absolute;    
+    right: 25px;
+    bottom: 15px;
+}
+.news-page .product-thumb .see-more a {
+    color: #9d0a0e;    
+}
+.news-page .product-thumb .see-more a:hover {
+    text-decoration: none;
+    color: #000;
+}
+.news-page .product-thumb .see-more i.fa {
+    font-weight: 600;
+    color: #9d0a0e;
+    margin-left: 5px;
+    font-size: 20px;
+}
+.news-page .news-content {    
+}
+.news-page .news-content .heading-title {
+    margin: 20px 0 5px 0;
+}
+.news-page .news-content .created_date {
+    color: #989898;
+    margin-bottom: 30px;
+}
+.news-page .product-thumb .image img {
+    width: 100%;
+}
+.news-page .sub-heading-title {
+    color: #9d0a0e;
+    position: relative;
+    text-align: center;
+    margin: 50px 0px;
+}
+.sub-heading-title > span {
+    position: absolute;
+    top: -13px;
+    left: 42%;
+    background: #FFF;
+    padding: 0 30px;
+}
 /* ===============
     ALL: IE Fixes
    =============== */
@@ -408,6 +557,11 @@ footer .social-links .social-icon:hover > i {
 }
 
 @media only screen and (min-width: 768px) {
+
+    .product-list .product-thumb .image {
+        padding: 0;
+        margin: 0;
+    }
 
     /* ============
         WIDE: Menu

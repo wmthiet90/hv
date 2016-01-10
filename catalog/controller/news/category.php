@@ -2,12 +2,15 @@
 class ControllerNewsCategory extends Controller {
 	public function index() {
 		$this->load->language('news/category');
+		$this->load->language('common/common');		
 
 		$this->load->model('news/category');
 
 		$this->load->model('news/article');
 
 		$this->load->model('tool/image');
+
+		$data['text_see_more'] = $this->language->get('text_see_more');
 
 		if (isset($this->request->get['filter'])) {
 			$filter = $this->request->get['filter'];
@@ -90,9 +93,9 @@ class ControllerNewsCategory extends Controller {
 		$category_info = $this->model_news_category->getCategory($category_id);
 
 		if ($category_info) {
-			//$this->document->setTitle($category_info['meta_title']);
-			//$this->document->setDescription($category_info['meta_description']);
-			//$this->document->setKeywords($category_info['meta_keyword']);
+			$this->document->setTitle($category_info['name']);
+			$this->document->setDescription($category_info['meta_description']);
+			$this->document->setKeywords($category_info['meta_keyword']);
 			$this->document->addLink($this->url->link('news/category', 'news_path=' . $this->request->get['news_path']), 'canonical');
 
 			$data['heading_title'] = $category_info['name'];
@@ -185,9 +188,11 @@ class ControllerNewsCategory extends Controller {
 
 				$data['articles'][] = array(
 					'article_id'  => $result['article_id'],
+					'date_added'  => date("l, d F Y", strtotime($result['date_added'])),
 					'thumb'       => $image,
 					'name'        => $result['name'],
-					'description' => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
+					'description' => html_entity_decode($result['description']), //utf8_substr(strip_tags(, ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
+					'short_description' => $result['short_description'],
 					'rating'      => $result['rating'],
 					'href'        => $this->url->link('news/article', 'news_path=' . $this->request->get['news_path'] . '&article_id=' . $result['article_id'] . $url)
 				);
