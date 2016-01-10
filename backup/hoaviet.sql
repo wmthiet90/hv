@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 08, 2016 at 08:26 PM
+-- Generation Time: Jan 10, 2016 at 10:53 AM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -1208,7 +1208,7 @@ CREATE TABLE IF NOT EXISTS `wm_extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=428 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=435 ;
 
 --
 -- Dumping data for table `wm_extension`
@@ -1232,7 +1232,10 @@ INSERT INTO `wm_extension` (`extension_id`, `type`, `code`) VALUES
 (398, 'total', 'voucher'),
 (407, 'payment', 'free_checkout'),
 (427, 'module', 'featured'),
-(419, 'module', 'slideshow');
+(419, 'module', 'slideshow'),
+(434, 'module', 'news_category'),
+(433, 'module', 'news_carousel'),
+(432, 'module', 'news_by_category');
 
 -- --------------------------------------------------------
 
@@ -1684,6 +1687,263 @@ INSERT INTO `wm_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (29, 'Home Page', 'carousel', 'a:5:{s:4:"name";s:20:"Carousel - Home Page";s:9:"banner_id";s:1:"8";s:5:"width";s:3:"130";s:6:"height";s:3:"100";s:6:"status";s:1:"1";}'),
 (28, 'Featured - Home Page', 'featured', 'a:6:{s:4:"name";s:20:"Featured - Home Page";s:7:"product";a:1:{i:0;s:2:"50";}s:5:"limit";s:1:"9";s:5:"width";s:3:"200";s:6:"height";s:3:"200";s:6:"status";s:1:"1";}'),
 (27, 'Home Page', 'slideshow', 'a:5:{s:4:"name";s:21:"Slideshow - Home Page";s:9:"banner_id";s:1:"7";s:5:"width";s:4:"1140";s:6:"height";s:3:"380";s:6:"status";s:1:"1";}');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_articles`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_articles` (
+  `article_id` int(11) NOT NULL AUTO_INCREMENT,
+  `author_id` int(11) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `image` varchar(225) NOT NULL,
+  `sort_order` int(3) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL DEFAULT '1',
+  `viewed` int(11) NOT NULL DEFAULT '0',
+  `login_to_view` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`article_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `wm_news_articles`
+--
+
+INSERT INTO `wm_news_articles` (`article_id`, `author_id`, `date_added`, `date_modified`, `image`, `sort_order`, `status`, `viewed`, `login_to_view`) VALUES
+(1, 1, '2016-01-10 16:50:30', '2016-01-10 16:50:30', '', 1, 1, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_articles_description`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_articles_description` (
+  `article_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `description` text NOT NULL,
+  `short_description` text NOT NULL,
+  `meta_description` varchar(255) NOT NULL,
+  `meta_keyword` varchar(255) NOT NULL,
+  `tag` varchar(255) NOT NULL,
+  PRIMARY KEY (`article_id`,`language_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `wm_news_articles_description`
+--
+
+INSERT INTO `wm_news_articles_description` (`article_id`, `language_id`, `name`, `description`, `short_description`, `meta_description`, `meta_keyword`, `tag`) VALUES
+(1, 2, 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/Giay-chung-nhan.jpg&quot; alt=&quot;&quot; style=&quot;margin: 0px; padding: 0px; max-width: 530px;&quot;&gt;&lt;/p&gt;', 'Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.', 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab)', 'hóa việt, vinalab', ''),
+(1, 1, 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/Giay-chung-nhan.jpg&quot; alt=&quot;&quot; style=&quot;margin: 0px; padding: 0px; max-width: 530px;&quot;&gt;&lt;/p&gt;', 'Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.', 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab)', 'hóa việt, vinalab', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_articles_to_category`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_articles_to_category` (
+  `article_id` int(11) NOT NULL DEFAULT '0',
+  `category_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`article_id`,`category_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `wm_news_articles_to_category`
+--
+
+INSERT INTO `wm_news_articles_to_category` (`article_id`, `category_id`) VALUES
+(1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_articles_to_layout`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_articles_to_layout` (
+  `article_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  PRIMARY KEY (`article_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `wm_news_articles_to_layout`
+--
+
+INSERT INTO `wm_news_articles_to_layout` (`article_id`, `store_id`, `layout_id`) VALUES
+(1, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_articles_to_related`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_articles_to_related` (
+  `article_id` int(11) NOT NULL,
+  `related_id` int(11) NOT NULL,
+  PRIMARY KEY (`article_id`,`related_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_articles_to_store`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_articles_to_store` (
+  `article_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  PRIMARY KEY (`article_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `wm_news_articles_to_store`
+--
+
+INSERT INTO `wm_news_articles_to_store` (`article_id`, `store_id`) VALUES
+(1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_category`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_category` (
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) DEFAULT NULL,
+  `parent_id` int(11) NOT NULL DEFAULT '0',
+  `top` tinyint(1) NOT NULL,
+  `column` int(3) NOT NULL,
+  `sort_order` int(3) NOT NULL DEFAULT '0',
+  `status` tinyint(1) NOT NULL,
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`category_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `wm_news_category`
+--
+
+INSERT INTO `wm_news_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
+(1, '', 0, 1, 1, 0, 1, '2016-01-10 16:34:51', '2016-01-10 16:44:08'),
+(2, '', 0, 1, 1, 1, 1, '2016-01-10 16:36:07', '2016-01-10 16:43:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_category_description`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_category_description` (
+  `category_id` int(11) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `meta_description` varchar(255) NOT NULL,
+  `meta_keyword` varchar(255) NOT NULL,
+  PRIMARY KEY (`category_id`,`language_id`),
+  KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `wm_news_category_description`
+--
+
+INSERT INTO `wm_news_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_description`, `meta_keyword`) VALUES
+(1, 2, 'Tin nội bộ', '&lt;p&gt;Tin tức nội bộ&lt;br&gt;&lt;/p&gt;', '', ''),
+(1, 1, 'Internal News', '&lt;p&gt;Internal News&lt;br&gt;&lt;/p&gt;', '', ''),
+(2, 2, 'Tin sản phẩm', '&lt;p&gt;Tin sản phẩm&lt;br&gt;&lt;/p&gt;', '', ''),
+(2, 1, 'Product news', '&lt;p&gt;Product news&lt;br&gt;&lt;/p&gt;', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_category_path`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_category_path` (
+  `category_id` int(11) NOT NULL,
+  `path_id` int(11) NOT NULL,
+  `level` int(11) NOT NULL,
+  PRIMARY KEY (`category_id`,`path_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `wm_news_category_path`
+--
+
+INSERT INTO `wm_news_category_path` (`category_id`, `path_id`, `level`) VALUES
+(1, 1, 0),
+(2, 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_category_to_layout`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_category_to_layout` (
+  `category_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `layout_id` int(11) NOT NULL,
+  PRIMARY KEY (`category_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `wm_news_category_to_layout`
+--
+
+INSERT INTO `wm_news_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
+(1, 0, 0),
+(2, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_category_to_store`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_category_to_store` (
+  `category_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  PRIMARY KEY (`category_id`,`store_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `wm_news_category_to_store`
+--
+
+INSERT INTO `wm_news_category_to_store` (`category_id`, `store_id`) VALUES
+(1, 0),
+(2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wm_news_review`
+--
+
+CREATE TABLE IF NOT EXISTS `wm_news_review` (
+  `review_id` int(11) NOT NULL AUTO_INCREMENT,
+  `article_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `author` varchar(64) NOT NULL,
+  `text` text NOT NULL,
+  `rating` int(1) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`review_id`),
+  KEY `articles_id` (`article_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -2663,7 +2923,7 @@ CREATE TABLE IF NOT EXISTS `wm_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=834 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1117 ;
 
 --
 -- Dumping data for table `wm_setting`
@@ -2812,7 +3072,21 @@ INSERT INTO `wm_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (727, 0, 'config', 'config_geocode', '', 0),
 (725, 0, 'config', 'config_owner', 'Hoa Viet', 0),
 (724, 0, 'config', 'config_name', 'Hóa Việt', 0),
-(833, 0, 'config', 'config_google_analytics', '', 0);
+(833, 0, 'config', 'config_google_analytics', '', 0),
+(1103, 0, 'news', 'news_catalog_limit', '15', 0),
+(1104, 0, 'news', 'news_show_author', '1', 0),
+(1105, 0, 'news', 'news_show_viewed', '1', 0),
+(1106, 0, 'news', 'news_show_date_added', '1', 0),
+(1107, 0, 'news', 'news_show_date_modified', '1', 0),
+(1108, 0, 'news', 'news_review_status', '1', 0),
+(1109, 0, 'news', 'news_image_category_width', '150', 0),
+(1110, 0, 'news', 'news_image_category_height', '150', 0),
+(1111, 0, 'news', 'news_image_thumb_width', '150', 0),
+(1112, 0, 'news', 'news_image_thumb_height', '150', 0),
+(1113, 0, 'news', 'news_image_article_width', '150', 0),
+(1114, 0, 'news', 'news_image_article_height', '150', 0),
+(1115, 0, 'news', 'news_image_related_width', '150', 0),
+(1116, 0, 'news', 'news_image_related_height', '150', 0);
 
 -- --------------------------------------------------------
 
@@ -2976,7 +3250,7 @@ CREATE TABLE IF NOT EXISTS `wm_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=848 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=856 ;
 
 --
 -- Dumping data for table `wm_url_alias`
@@ -2987,6 +3261,9 @@ INSERT INTO `wm_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (772, 'information_id=4', 'about_us'),
 (846, 'category_id=59', 'channuoi-thuysan'),
 (847, 'product_id=50', ''),
+(854, 'news_category_id=1', 'tin-noi-bo.html'),
+(853, 'news_category_id=2', 'tin-san-pham.html'),
+(855, 'article_id=1', 'cong-ty-hoa-viet-gia-nhap-hoi-cac-phong-thi-nghiem-viet-nam-vinalab'),
 (828, 'manufacturer_id=9', 'canon'),
 (829, 'manufacturer_id=5', 'htc'),
 (830, 'manufacturer_id=7', 'hewlett-packard'),
@@ -3044,8 +3321,7 @@ CREATE TABLE IF NOT EXISTS `wm_user_group` (
 --
 
 INSERT INTO `wm_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', 'a:2:{s:6:"access";a:181:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:14:"module/account";i:57;s:16:"module/affiliate";i:58;s:20:"module/amazon_button";i:59;s:13:"module/banner";i:60;s:17:"module/bestseller";i:61;s:15:"module/carousel";i:62;s:15:"module/category";i:63;s:11:"module/ebay";i:64;s:15:"module/featured";i:65;s:13:"module/filter";i:66;s:22:"module/google_hangouts";i:67;s:11:"module/html";i:68;s:18:"module/information";i:69;s:13:"module/latest";i:70;s:16:"module/pp_button";i:71;s:15:"module/pp_login";i:72;s:16:"module/slideshow";i:73;s:14:"module/special";i:74;s:12:"module/store";i:75;s:14:"openbay/amazon";i:76;s:22:"openbay/amazon_listing";i:77;s:22:"openbay/amazon_product";i:78;s:16:"openbay/amazonus";i:79;s:24:"openbay/amazonus_listing";i:80;s:24:"openbay/amazonus_product";i:81;s:12:"openbay/ebay";i:82;s:20:"openbay/ebay_profile";i:83;s:21:"openbay/ebay_template";i:84;s:12:"openbay/etsy";i:85;s:20:"openbay/etsy_product";i:86;s:21:"openbay/etsy_shipping";i:87;s:17:"openbay/etsy_shop";i:88;s:23:"payment/amazon_checkout";i:89;s:24:"payment/authorizenet_aim";i:90;s:24:"payment/authorizenet_sim";i:91;s:21:"payment/bank_transfer";i:92;s:22:"payment/bluepay_hosted";i:93;s:24:"payment/bluepay_redirect";i:94;s:14:"payment/cheque";i:95;s:11:"payment/cod";i:96;s:17:"payment/firstdata";i:97;s:24:"payment/firstdata_remote";i:98;s:21:"payment/free_checkout";i:99;s:22:"payment/klarna_account";i:100;s:22:"payment/klarna_invoice";i:101;s:14:"payment/liqpay";i:102;s:14:"payment/nochex";i:103;s:15:"payment/paymate";i:104;s:16:"payment/paypoint";i:105;s:13:"payment/payza";i:106;s:26:"payment/perpetual_payments";i:107;s:18:"payment/pp_express";i:108;s:18:"payment/pp_payflow";i:109;s:25:"payment/pp_payflow_iframe";i:110;s:14:"payment/pp_pro";i:111;s:21:"payment/pp_pro_iframe";i:112;s:19:"payment/pp_standard";i:113;s:14:"payment/realex";i:114;s:21:"payment/realex_remote";i:115;s:22:"payment/sagepay_direct";i:116;s:22:"payment/sagepay_server";i:117;s:18:"payment/sagepay_us";i:118;s:24:"payment/securetrading_pp";i:119;s:24:"payment/securetrading_ws";i:120;s:14:"payment/skrill";i:121;s:19:"payment/twocheckout";i:122;s:28:"payment/web_payment_software";i:123;s:16:"payment/worldpay";i:124;s:16:"report/affiliate";i:125;s:25:"report/affiliate_activity";i:126;s:22:"report/affiliate_login";i:127;s:24:"report/customer_activity";i:128;s:22:"report/customer_credit";i:129;s:21:"report/customer_login";i:130;s:22:"report/customer_online";i:131;s:21:"report/customer_order";i:132;s:22:"report/customer_reward";i:133;s:16:"report/marketing";i:134;s:24:"report/product_purchased";i:135;s:21:"report/product_viewed";i:136;s:18:"report/sale_coupon";i:137;s:17:"report/sale_order";i:138;s:18:"report/sale_return";i:139;s:20:"report/sale_shipping";i:140;s:15:"report/sale_tax";i:141;s:17:"sale/custom_field";i:142;s:13:"sale/customer";i:143;s:20:"sale/customer_ban_ip";i:144;s:19:"sale/customer_group";i:145;s:10:"sale/order";i:146;s:14:"sale/recurring";i:147;s:11:"sale/return";i:148;s:12:"sale/voucher";i:149;s:18:"sale/voucher_theme";i:150;s:15:"setting/setting";i:151;s:13:"setting/store";i:152;s:16:"shipping/auspost";i:153;s:17:"shipping/citylink";i:154;s:14:"shipping/fedex";i:155;s:13:"shipping/flat";i:156;s:13:"shipping/free";i:157;s:13:"shipping/item";i:158;s:23:"shipping/parcelforce_48";i:159;s:15:"shipping/pickup";i:160;s:19:"shipping/royal_mail";i:161;s:12:"shipping/ups";i:162;s:13:"shipping/usps";i:163;s:15:"shipping/weight";i:164;s:11:"tool/backup";i:165;s:14:"tool/error_log";i:166;s:11:"tool/upload";i:167;s:12:"total/coupon";i:168;s:12:"total/credit";i:169;s:14:"total/handling";i:170;s:16:"total/klarna_fee";i:171;s:19:"total/low_order_fee";i:172;s:12:"total/reward";i:173;s:14:"total/shipping";i:174;s:15:"total/sub_total";i:175;s:9:"total/tax";i:176;s:11:"total/total";i:177;s:13:"total/voucher";i:178;s:8:"user/api";i:179;s:9:"user/user";i:180;s:20:"user/user_permission";}s:6:"modify";a:181:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:14:"module/account";i:57;s:16:"module/affiliate";i:58;s:20:"module/amazon_button";i:59;s:13:"module/banner";i:60;s:17:"module/bestseller";i:61;s:15:"module/carousel";i:62;s:15:"module/category";i:63;s:11:"module/ebay";i:64;s:15:"module/featured";i:65;s:13:"module/filter";i:66;s:22:"module/google_hangouts";i:67;s:11:"module/html";i:68;s:18:"module/information";i:69;s:13:"module/latest";i:70;s:16:"module/pp_button";i:71;s:15:"module/pp_login";i:72;s:16:"module/slideshow";i:73;s:14:"module/special";i:74;s:12:"module/store";i:75;s:14:"openbay/amazon";i:76;s:22:"openbay/amazon_listing";i:77;s:22:"openbay/amazon_product";i:78;s:16:"openbay/amazonus";i:79;s:24:"openbay/amazonus_listing";i:80;s:24:"openbay/amazonus_product";i:81;s:12:"openbay/ebay";i:82;s:20:"openbay/ebay_profile";i:83;s:21:"openbay/ebay_template";i:84;s:12:"openbay/etsy";i:85;s:20:"openbay/etsy_product";i:86;s:21:"openbay/etsy_shipping";i:87;s:17:"openbay/etsy_shop";i:88;s:23:"payment/amazon_checkout";i:89;s:24:"payment/authorizenet_aim";i:90;s:24:"payment/authorizenet_sim";i:91;s:21:"payment/bank_transfer";i:92;s:22:"payment/bluepay_hosted";i:93;s:24:"payment/bluepay_redirect";i:94;s:14:"payment/cheque";i:95;s:11:"payment/cod";i:96;s:17:"payment/firstdata";i:97;s:24:"payment/firstdata_remote";i:98;s:21:"payment/free_checkout";i:99;s:22:"payment/klarna_account";i:100;s:22:"payment/klarna_invoice";i:101;s:14:"payment/liqpay";i:102;s:14:"payment/nochex";i:103;s:15:"payment/paymate";i:104;s:16:"payment/paypoint";i:105;s:13:"payment/payza";i:106;s:26:"payment/perpetual_payments";i:107;s:18:"payment/pp_express";i:108;s:18:"payment/pp_payflow";i:109;s:25:"payment/pp_payflow_iframe";i:110;s:14:"payment/pp_pro";i:111;s:21:"payment/pp_pro_iframe";i:112;s:19:"payment/pp_standard";i:113;s:14:"payment/realex";i:114;s:21:"payment/realex_remote";i:115;s:22:"payment/sagepay_direct";i:116;s:22:"payment/sagepay_server";i:117;s:18:"payment/sagepay_us";i:118;s:24:"payment/securetrading_pp";i:119;s:24:"payment/securetrading_ws";i:120;s:14:"payment/skrill";i:121;s:19:"payment/twocheckout";i:122;s:28:"payment/web_payment_software";i:123;s:16:"payment/worldpay";i:124;s:16:"report/affiliate";i:125;s:25:"report/affiliate_activity";i:126;s:22:"report/affiliate_login";i:127;s:24:"report/customer_activity";i:128;s:22:"report/customer_credit";i:129;s:21:"report/customer_login";i:130;s:22:"report/customer_online";i:131;s:21:"report/customer_order";i:132;s:22:"report/customer_reward";i:133;s:16:"report/marketing";i:134;s:24:"report/product_purchased";i:135;s:21:"report/product_viewed";i:136;s:18:"report/sale_coupon";i:137;s:17:"report/sale_order";i:138;s:18:"report/sale_return";i:139;s:20:"report/sale_shipping";i:140;s:15:"report/sale_tax";i:141;s:17:"sale/custom_field";i:142;s:13:"sale/customer";i:143;s:20:"sale/customer_ban_ip";i:144;s:19:"sale/customer_group";i:145;s:10:"sale/order";i:146;s:14:"sale/recurring";i:147;s:11:"sale/return";i:148;s:12:"sale/voucher";i:149;s:18:"sale/voucher_theme";i:150;s:15:"setting/setting";i:151;s:13:"setting/store";i:152;s:16:"shipping/auspost";i:153;s:17:"shipping/citylink";i:154;s:14:"shipping/fedex";i:155;s:13:"shipping/flat";i:156;s:13:"shipping/free";i:157;s:13:"shipping/item";i:158;s:23:"shipping/parcelforce_48";i:159;s:15:"shipping/pickup";i:160;s:19:"shipping/royal_mail";i:161;s:12:"shipping/ups";i:162;s:13:"shipping/usps";i:163;s:15:"shipping/weight";i:164;s:11:"tool/backup";i:165;s:14:"tool/error_log";i:166;s:11:"tool/upload";i:167;s:12:"total/coupon";i:168;s:12:"total/credit";i:169;s:14:"total/handling";i:170;s:16:"total/klarna_fee";i:171;s:19:"total/low_order_fee";i:172;s:12:"total/reward";i:173;s:14:"total/shipping";i:174;s:15:"total/sub_total";i:175;s:9:"total/tax";i:176;s:11:"total/total";i:177;s:13:"total/voucher";i:178;s:8:"user/api";i:179;s:9:"user/user";i:180;s:20:"user/user_permission";}}'),
-(10, 'Demonstration', '');
+(1, 'Administrator', 'a:2:{s:6:"access";a:118:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:13:"module/banner";i:57;s:17:"module/bestseller";i:58;s:15:"module/carousel";i:59;s:15:"module/category";i:60;s:15:"module/featured";i:61;s:13:"module/filter";i:62;s:11:"module/html";i:63;s:18:"module/information";i:64;s:13:"module/latest";i:65;s:23:"module/news_by_category";i:66;s:20:"module/news_carousel";i:67;s:20:"module/news_category";i:68;s:16:"module/slideshow";i:69;s:14:"module/special";i:70;s:12:"module/store";i:71;s:12:"news/article";i:72;s:13:"news/category";i:73;s:8:"news/pro";i:74;s:11:"news/review";i:75;s:12:"news/setting";i:76;s:16:"report/affiliate";i:77;s:25:"report/affiliate_activity";i:78;s:22:"report/affiliate_login";i:79;s:24:"report/customer_activity";i:80;s:22:"report/customer_credit";i:81;s:21:"report/customer_login";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:16:"report/marketing";i:86;s:24:"report/product_purchased";i:87;s:21:"report/product_viewed";i:88;s:18:"report/sale_coupon";i:89;s:17:"report/sale_order";i:90;s:18:"report/sale_return";i:91;s:20:"report/sale_shipping";i:92;s:15:"report/sale_tax";i:93;s:15:"setting/setting";i:94;s:13:"setting/store";i:95;s:11:"tool/backup";i:96;s:14:"tool/error_log";i:97;s:11:"tool/upload";i:98;s:12:"total/coupon";i:99;s:12:"total/credit";i:100;s:14:"total/handling";i:101;s:16:"total/klarna_fee";i:102;s:19:"total/low_order_fee";i:103;s:12:"total/reward";i:104;s:14:"total/shipping";i:105;s:15:"total/sub_total";i:106;s:9:"total/tax";i:107;s:11:"total/total";i:108;s:13:"total/voucher";i:109;s:8:"user/api";i:110;s:9:"user/user";i:111;s:20:"user/user_permission";i:112;s:20:"module/news_category";i:113;s:20:"module/news_carousel";i:114;s:23:"module/news_by_category";i:115;s:23:"module/news_by_category";i:116;s:20:"module/news_carousel";i:117;s:20:"module/news_category";}s:6:"modify";a:118:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:13:"module/banner";i:57;s:17:"module/bestseller";i:58;s:15:"module/carousel";i:59;s:15:"module/category";i:60;s:15:"module/featured";i:61;s:13:"module/filter";i:62;s:11:"module/html";i:63;s:18:"module/information";i:64;s:13:"module/latest";i:65;s:23:"module/news_by_category";i:66;s:20:"module/news_carousel";i:67;s:20:"module/news_category";i:68;s:16:"module/slideshow";i:69;s:14:"module/special";i:70;s:12:"module/store";i:71;s:12:"news/article";i:72;s:13:"news/category";i:73;s:8:"news/pro";i:74;s:11:"news/review";i:75;s:12:"news/setting";i:76;s:16:"report/affiliate";i:77;s:25:"report/affiliate_activity";i:78;s:22:"report/affiliate_login";i:79;s:24:"report/customer_activity";i:80;s:22:"report/customer_credit";i:81;s:21:"report/customer_login";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:16:"report/marketing";i:86;s:24:"report/product_purchased";i:87;s:21:"report/product_viewed";i:88;s:18:"report/sale_coupon";i:89;s:17:"report/sale_order";i:90;s:18:"report/sale_return";i:91;s:20:"report/sale_shipping";i:92;s:15:"report/sale_tax";i:93;s:15:"setting/setting";i:94;s:13:"setting/store";i:95;s:11:"tool/backup";i:96;s:14:"tool/error_log";i:97;s:11:"tool/upload";i:98;s:12:"total/coupon";i:99;s:12:"total/credit";i:100;s:14:"total/handling";i:101;s:16:"total/klarna_fee";i:102;s:19:"total/low_order_fee";i:103;s:12:"total/reward";i:104;s:14:"total/shipping";i:105;s:15:"total/sub_total";i:106;s:9:"total/tax";i:107;s:11:"total/total";i:108;s:13:"total/voucher";i:109;s:8:"user/api";i:110;s:9:"user/user";i:111;s:20:"user/user_permission";i:112;s:20:"module/news_category";i:113;s:20:"module/news_carousel";i:114;s:23:"module/news_by_category";i:115;s:23:"module/news_by_category";i:116;s:20:"module/news_carousel";i:117;s:20:"module/news_category";}}');
 
 -- --------------------------------------------------------
 

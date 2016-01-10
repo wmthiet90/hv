@@ -86,6 +86,43 @@ class ControllerCommonHeader extends Controller {
 			}
 		}
 
+		// Menu News
+        $this->load->model('news/category');
+        $this->load->model('news/article');
+
+        $data['news_categories'] = array();
+
+        $categories = $this->model_news_category->getCategories(0);
+
+        foreach ($categories as $category) {
+            if ($category['top']) {
+                // Level 2
+                $children_data = array();
+
+                $children = $this->model_news_category->getCategories($category['category_id']);
+
+                foreach ($children as $child) {
+                    $data = array(
+                        'filter_category_id'  => $child['category_id'],
+                        'filter_sub_category' => true
+                    );
+
+                    $article_total = $this->model_news_article->getTotalArticles($data);
+                    $children_data[] = array(
+                        'name'  => $child['name'] . ($this->config->get('news_article_count') ? ' (' . $article_total . ')' : ''),
+                        'href'  => $this->url->link('news/category', 'news_path=' . $category['category_id'] . '_' . $child['category_id'])
+                    );
+                }
+                // Level 1
+                $data['news_categories'][] = array(
+                    'name'     => $category['name'],
+                    'children' => $children_data,
+                    'column'   => $category['column'] ? $category['column'] : 1,
+                    'href'     => $this->url->link('news/category', 'news_path=' . $category['category_id'])
+                );
+            }
+        }
+
 		// Menu
 		$this->load->model('catalog/category');
 

@@ -30,13 +30,14 @@
                     </div>
                     <script>
                         $("#home-slides").owlCarousel({
-                                autoPlay: true,
+                                autoPlay: 10000,
                                 pagination : true,
                                 singleItem: true,
                                 navigation: false,
                                 stopOnHover: true,
-                                slideSpeed : 800,
-                                rewindSpeed : 1000
+                                slideSpeed : 1000,
+                                rewindSpeed : 1000,
+                                scrollPerPage: true
                         });
                     </script>
                 </div>
@@ -62,7 +63,7 @@
                         $("#brand-logos").owlCarousel({
                             items: 4,
                             pagination : false,
-                            autoPlay: false,
+                            autoPlay: 4000,
                             singleItem: false,
                             navigation: true,
                             stopOnHover: true,

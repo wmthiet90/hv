@@ -89,4 +89,6 @@ $_['text_weight_class']     = 'Trọng Lượng';
 $_['text_length_class']     = 'Chiều dài';
 $_['text_zone']             = 'Vùng';
 $_['text_recurring_profile']           = 'Recurring Profiles';
+
+$_['text_news']             = 'Tin tức';
 ?>

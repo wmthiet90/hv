@@ -9,21 +9,31 @@
       <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
     </ul>
   </li>
-  <li id="modules"><a href="<?php echo $module; ?>"><i class="fa fa-puzzle-piece"></i> <span><?php echo $text_module; ?></span></a></li>
+  <li id="news"><a class="parent"><i class="fa fa-pencil fa-fw"></i> <span><?php echo $text_news; ?></span></a>
+    <ul>
+      <li><a href="<?php echo $news_category; ?>"><?php echo $category_heading_title; ?></a></li>
+      <li><a href="<?php echo $article; ?>"><?php echo $article_heading_title; ?></a></li>
+      <li><a href="<?php echo $news_review; ?>"><?php echo $review_heading_title; ?></a></li>
+      <li><a class="parent">Module</a>
+        <ul>
+          <li><a href="<?php echo $news_by_category; ?>">Article by category</a></li>
+          <li><a href="<?php echo $news_article_category; ?>">Category</a></li>
+          <li><a href="<?php echo $news_carousel; ?>">News Carousel By Category</a></li>
+        </ul>
+      </li>
+      <li><a href="<?php echo $news_setting; ?>"><?php echo $setting_heading_title; ?></a></li>
+    </ul>
+  </li>
   <li id="system"><a class="parent"><i class="fa fa-cog fa-fw"></i> <span><?php echo $text_system; ?></span></a>
     <ul>
       <li><a href="<?php echo $setting; ?>"><?php echo $text_setting; ?></a></li>
-      <li><a class="parent"><?php echo $text_design; ?></a>
-        <ul>
-          <li><a href="<?php echo $layout; ?>"><?php echo $text_layout; ?></a></li>
-          <li><a href="<?php echo $banner; ?>"><?php echo $text_banner; ?></a></li>
-        </ul>
-      </li>
+      <li><a href="<?php echo $module; ?>"><?php echo $text_module; ?></a></li>
+      <li class="hidden"><a href="<?php echo $layout; ?>"><?php echo $text_layout; ?></a></li>
+      <li><a href="<?php echo $banner; ?>"><?php echo $text_banner; ?></a></li>
       <li><a class="parent"><?php echo $text_users; ?></a>
         <ul>
           <li><a href="<?php echo $user; ?>"><?php echo $text_user; ?></a></li>
           <li><a href="<?php echo $user_group; ?>"><?php echo $text_user_group; ?></a></li>
-          <li><a href="<?php echo $api; ?>"><?php echo $text_api; ?></a></li>
         </ul>
       </li>
       <li><a href="<?php echo $language; ?>"><?php echo $text_language; ?></a></li>

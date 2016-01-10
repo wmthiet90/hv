@@ -33,6 +33,18 @@ class ControllerCommonSeoUrl extends Controller {
 						}
 					}
 
+					if ($url[0] == 'article_id') {
+						$this->request->get['article_id'] = $url[1];
+					}
+
+					if ($url[0] == 'news_category_id') {
+						if (!isset($this->request->get['news_path'])) {
+							$this->request->get['news_path'] = $url[1];
+						} else {
+							$this->request->get['news_path'] .= '_' . $url[1];
+						}
+					}
+
 					if ($url[0] == 'manufacturer_id') {
 						$this->request->get['manufacturer_id'] = $url[1];
 					}
@@ -40,8 +52,8 @@ class ControllerCommonSeoUrl extends Controller {
 					if ($url[0] == 'information_id') {
 						$this->request->get['information_id'] = $url[1];
 					}
-					
-					if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+
+					if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id' && $url[0] != 'news_category_id' && $url[0] != 'article_id') {
 						$this->request->get['route'] = $query->row['query'];
 					}
 				} else {
@@ -56,6 +68,10 @@ class ControllerCommonSeoUrl extends Controller {
 					$this->request->get['route'] = 'product/product';
 				} elseif (isset($this->request->get['path'])) {
 					$this->request->get['route'] = 'product/category';
+				} elseif (isset($this->request->get['article_id'])) {
+					$this->request->get['route'] = 'news/article';
+				} elseif (isset($this->request->get['news_path'])) {
+	              	$this->request->get['route'] = 'news/category';
 				} elseif (isset($this->request->get['manufacturer_id'])) {
 					$this->request->get['route'] = 'product/manufacturer/info';
 				} elseif (isset($this->request->get['information_id'])) {
@@ -80,7 +96,7 @@ class ControllerCommonSeoUrl extends Controller {
 
 		foreach ($data as $key => $value) {
 			if (isset($data['route'])) {
-				if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+				if (($data['route'] == 'news/article' && $key == 'article_id') || ($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
 					$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = '" . $this->db->escape($key . '=' . (int)$value) . "'");
 
 					if ($query->num_rows && $query->row['keyword']) {
@@ -88,6 +104,20 @@ class ControllerCommonSeoUrl extends Controller {
 
 						unset($data[$key]);
 					}
+				} elseif ($key == 'news_path') {
+					$categories = explode('_', $value);
+					
+					foreach ($categories as $category) {
+						$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'news_category_id=" . (int)$category . "'");
+				
+						if ($query->num_rows && $query->row['keyword']) {
+							$url .= '/' . $query->row['keyword'];
+						} else {
+							$url = '';
+							break;
+						}
+					}
+					unset($data[$key]);
 				} elseif ($key == 'path') {
 					$categories = explode('_', $value);
 
