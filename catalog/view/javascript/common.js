@@ -119,11 +119,12 @@ $(document).ready(function() {
 		 localStorage.setItem('display', 'grid');
 	});
 
-	if (localStorage.getItem('display') == 'list') {
+	/*if (localStorage.getItem('display') == 'list') {
 		$('#list-view').trigger('click');
 	} else {
 		$('#grid-view').trigger('click');
-	}
+	}*/
+	$('#list-view').trigger('click');
 
 	// tooltips on hover
 	$('[data-toggle=\'tooltip\']').tooltip({container: 'body'});
