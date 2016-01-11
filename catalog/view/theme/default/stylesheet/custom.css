@@ -204,6 +204,10 @@ hr {
     cursor: default;
 }
 
+.social-share-buttons {
+    padding-top: 35px;
+}
+
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
@@ -382,7 +386,7 @@ footer .social-links .social-icon:hover > i {
     border-color: #b4b4b4;
 }
 #search button {
-    padding: 5px;
+    padding: 5.5px;
     background: #FFF;
     border-left: none;
     box-shadow: none;

@@ -23,6 +23,9 @@
           <div class="news-description">
             <?php echo $description; ?>  
           </div>
+          <div class="social-share-buttons center">
+            <div class="addthis_sharing_toolbox"></div>
+          </div>
         </div>
       </div>
       <?php if ($articles) { ?>
@@ -80,7 +83,7 @@
         <?php } ?>
         <?php } ?>
       </p>
-      <?php } ?>
+      <?php } ?>      
       <?php echo $content_bottom; ?>
     </div>
     <?php //echo $column_right; ?></div>
@@ -96,4 +99,6 @@
     });
   });
 //--></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5693f5f5b2d34123" async="async"></script>
 <?php echo $footer; ?>
