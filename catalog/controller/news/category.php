@@ -41,7 +41,6 @@ class ControllerNewsCategory extends Controller {
 		} else {
 			$limit = $this->config->get('news_catalog_limit');
 		}
-
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
@@ -91,7 +90,6 @@ class ControllerNewsCategory extends Controller {
 		}
 
 		$category_info = $this->model_news_category->getCategory($category_id);
-
 		if ($category_info) {
 			$this->document->setTitle($category_info['name']);
 			$this->document->setDescription($category_info['meta_description']);
@@ -169,7 +167,7 @@ class ControllerNewsCategory extends Controller {
 				'limit'              => $limit
 			);
 
-			$article_total = $this->model_news_article->getTotalArticles($filter_data);
+			$article_total = $this->model_news_article->getTotalArticlesByCategory($category_id);
 
 			$results = $this->model_news_article->getArticles($filter_data);
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2016 at 07:33 PM
+-- Generation Time: Jan 11, 2016 at 07:04 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -313,24 +313,24 @@ CREATE TABLE IF NOT EXISTS `wm_banner_image` (
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=130 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=135 ;
 
 --
 -- Dumping data for table `wm_banner_image`
 --
 
 INSERT INTO `wm_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`, `sort_order`) VALUES
-(118, 7, '#', 'catalog/banners/banner1.jpg', 5),
-(117, 7, '#', 'catalog/banners/banner4.jpg', 4),
+(134, 7, '#', 'catalog/banners/banner1.jpg', 5),
+(133, 7, '#', 'catalog/banners/banner4.jpg', 4),
+(131, 7, '#', 'catalog/banners/banner3.jpg', 2),
 (124, 8, 'http://www.escoglobal.com/', 'catalog/partners/esco.png', 0),
 (123, 8, 'http://www.kimble-chase.com/', 'catalog/partners/kimble.png', 0),
 (122, 8, 'http://www.thermconcept.com/', 'catalog/partners/thermconcept.png', 0),
 (121, 8, 'http://www.hirayama-hmc.co.jp/', 'catalog/partners/hirayama.png', 0),
 (120, 8, 'http://www.binder-world.com/de', 'catalog/partners/binder.png', 0),
-(115, 7, '#', 'catalog/banners/banner3.jpg', 2),
 (119, 8, 'http://www.atago.net/', 'catalog/partners/atago.png', 0),
-(116, 7, '#', 'catalog/banners/banner5.jpg', 3),
-(114, 7, '#', 'catalog/banners/banner2.jpg', 1),
+(132, 7, '#', 'catalog/banners/banner5.jpg', 3),
+(130, 7, '#', 'catalog/banners/banner2.jpg', 1),
 (125, 8, 'http://www.aptaca.com/', 'catalog/partners/aptaca.png', 0),
 (126, 8, 'http://www.allafrance.com/', 'catalog/partners/france.png', 0),
 (127, 8, 'http://www.hirschmann-inc.com/', 'catalog/partners/hirschmann.png', 0),
@@ -347,7 +347,7 @@ CREATE TABLE IF NOT EXISTS `wm_banner_image_description` (
   `banner_image_id` int(11) NOT NULL,
   `language_id` int(11) NOT NULL,
   `banner_id` int(11) NOT NULL,
-  `title` varchar(64) NOT NULL,
+  `title` varchar(255) NOT NULL,
   PRIMARY KEY (`banner_image_id`,`language_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -356,38 +356,38 @@ CREATE TABLE IF NOT EXISTS `wm_banner_image_description` (
 --
 
 INSERT INTO `wm_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-(118, 2, 7, 'Banner 5'),
+(131, 2, 7, 'Chuyên gia về dụng cụ, hóa chất và thiết bị trong phòng thí nghiệm'),
 (127, 1, 8, 'HIRSCHMANN'),
 (126, 2, 8, 'FRANCE'),
 (126, 1, 8, 'FRANCE'),
 (125, 2, 8, 'APTACA'),
 (125, 1, 8, 'APTACA'),
-(118, 1, 7, 'Banner 5'),
 (124, 2, 8, 'ESCO'),
 (124, 1, 8, 'ESCO'),
 (123, 2, 8, 'KIMBLE'),
 (123, 1, 8, 'KIMBLE'),
-(117, 2, 7, 'Banner 4'),
 (122, 2, 8, 'THERM CONCEPT'),
 (122, 1, 8, 'THERM CONCEPT'),
 (121, 2, 8, 'HIRAYAMA'),
-(117, 1, 7, 'Banner 4'),
+(130, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
 (121, 1, 8, 'HIRAYAMA'),
 (120, 2, 8, 'BINDER'),
 (120, 1, 8, 'BINDER'),
 (119, 2, 8, 'ATAGO'),
 (119, 1, 8, 'ATAGO'),
-(116, 2, 7, 'Banner 3'),
-(116, 1, 7, 'Banner 3'),
-(115, 2, 7, 'Banner 2'),
-(115, 1, 7, 'Banner 2'),
-(114, 2, 7, 'Banner 1'),
-(114, 1, 7, 'Banner 1'),
+(130, 2, 7, 'Hóa Việt cung cấp các sản phẩm chính hãng từ các nhà sản xuất hàng đầu'),
 (127, 2, 8, 'HIRSCHMANN'),
 (128, 1, 8, 'INTERSCIENCE'),
 (128, 2, 8, 'INTERSCIENCE'),
 (129, 1, 8, 'YSI'),
-(129, 2, 8, 'YSI');
+(129, 2, 8, 'YSI'),
+(131, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
+(132, 2, 7, 'Hóa Việt cung cấp các sản phẩm chính hãng từ các nhà sản xuất hàng đầu'),
+(132, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
+(133, 2, 7, 'Chuyên gia về dụng cụ, hóa chất và thiết bị trong phòng thí nghiệm'),
+(133, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
+(134, 2, 7, 'Hóa Việt cung cấp các sản phẩm chính hãng từ các nhà sản xuất hàng đầu'),
+(134, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers');
 
 -- --------------------------------------------------------
 
@@ -1686,7 +1686,7 @@ INSERT INTO `wm_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (30, 'Category', 'banner', 'a:5:{s:4:"name";s:17:"Banner - Category";s:9:"banner_id";s:1:"6";s:5:"width";s:3:"300";s:6:"height";s:3:"300";s:6:"status";s:1:"1";}'),
 (29, 'Home Page', 'carousel', 'a:5:{s:4:"name";s:20:"Carousel - Home Page";s:9:"banner_id";s:1:"8";s:5:"width";s:3:"130";s:6:"height";s:3:"100";s:6:"status";s:1:"1";}'),
 (28, 'Featured - Home Page', 'featured', 'a:6:{s:4:"name";s:20:"Featured - Home Page";s:7:"product";a:1:{i:0;s:2:"50";}s:5:"limit";s:1:"9";s:5:"width";s:3:"200";s:6:"height";s:3:"200";s:6:"status";s:1:"1";}'),
-(27, 'Home Page', 'slideshow', 'a:5:{s:4:"name";s:21:"Slideshow - Home Page";s:9:"banner_id";s:1:"7";s:5:"width";s:4:"1140";s:6:"height";s:3:"380";s:6:"status";s:1:"1";}');
+(27, 'Slideshow - Home Page', 'slideshow', 'a:5:{s:4:"name";s:21:"Slideshow - Home Page";s:9:"banner_id";s:1:"7";s:5:"width";s:4:"1366";s:6:"height";s:3:"480";s:6:"status";s:1:"1";}');
 
 -- --------------------------------------------------------
 
@@ -1705,15 +1705,18 @@ CREATE TABLE IF NOT EXISTS `wm_news_articles` (
   `viewed` int(11) NOT NULL DEFAULT '0',
   `login_to_view` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`article_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `wm_news_articles`
 --
 
 INSERT INTO `wm_news_articles` (`article_id`, `author_id`, `date_added`, `date_modified`, `image`, `sort_order`, `status`, `viewed`, `login_to_view`) VALUES
-(1, 1, '2016-01-10 16:50:30', '2016-01-10 23:31:57', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 21, 0),
-(2, 1, '2016-01-10 23:48:43', '2016-01-10 23:48:43', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 18, 0);
+(1, 1, '2016-01-10 16:50:30', '2016-01-12 00:05:22', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 28, 0),
+(2, 1, '2016-01-10 23:48:43', '2016-01-10 23:48:43', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 31, 0),
+(3, 1, '2016-01-12 00:13:15', '2016-01-12 00:23:53', 'catalog/demo/tintuc/IMG_3432.png', 0, 1, 3, 0),
+(4, 1, '2016-01-12 00:30:04', '2016-01-12 00:35:50', 'catalog/demo/tintuc/DSC_1025.jpg', 1, 1, 8, 0),
+(5, 1, '2016-01-12 00:41:40', '2016-01-12 00:43:07', 'catalog/demo/tintuc/EXPO2.jpg', 0, 1, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -1738,10 +1741,16 @@ CREATE TABLE IF NOT EXISTS `wm_news_articles_description` (
 --
 
 INSERT INTO `wm_news_articles_description` (`article_id`, `language_id`, `name`, `description`, `short_description`, `meta_description`, `meta_keyword`, `tag`) VALUES
-(1, 2, 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/Giay-chung-nhan.jpg&quot; alt=&quot;&quot; style=&quot;margin: 0px; padding: 0px; max-width: 530px;&quot;&gt;&lt;/p&gt;', 'Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.', 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab)', 'hóa việt, vinalab', ''),
-(1, 1, 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/Giay-chung-nhan.jpg&quot; alt=&quot;&quot; style=&quot;margin: 0px; padding: 0px; max-width: 530px;&quot;&gt;&lt;/p&gt;', 'Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.', 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab)', 'hóa việt, vinalab', ''),
+(1, 2, 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial; text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/Giay-chung-nhan.jpg&quot; alt=&quot;&quot; style=&quot;margin: 0px; padding: 0px;&quot; class=&quot;img-resposive&quot;&gt;&lt;/p&gt;', 'Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.', 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab)', 'hóa việt, vinalab', ''),
+(1, 1, 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial; text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/Giay-chung-nhan.jpg&quot; alt=&quot;&quot; class=&quot;img-resposive&quot; style=&quot;margin: 0px; padding: 0px;&quot;&gt;&lt;/p&gt;', 'Công Ty TNHH Hóa Việt chính thức là thành viên của Hội Các Phòng Thí Nghiệm Việt Nam (Vinalab) vào 10/01/2013.', 'Công ty Hóa Việt gia nhập các phòng thí nghiệm Việt Nam (VinaLab)', 'hóa việt, vinalab', ''),
 (2, 2, 'Thông báo thay đổi địa chỉ kinh doanh', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp;CÔNG TY TNHH &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;HÓA VIỆT&lt;/strong&gt;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Độc lập – Tự do – Hạnh phúc &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;------------------------------------ &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp; Số: 01/TB/HV-14 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; font-size: medium;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;THÔNG BÁO&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ( V/v: Thay đổi địa chỉ Công ty)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Kính gửi : Quý Khách Hàng&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Căn cứ Giấy chứng nhận đăng ký kinh doanh thay đổi lần thứ 03, ngày 03 tháng 11 năm 2014 của Sở Kế Hoạch Và Đầu Tư Thành Phố Hồ Chí Minh.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Căn cứ tờ khai điều chỉnh, bổ sung thông tin đăng ký thuế số 178522, &amp;nbsp;ngày 13 &amp;nbsp;tháng 11 &amp;nbsp;năm 2014 của Chi Cục Thuế Quận Tân Phú.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Công Ty TNHH Hóa Việt trân trọng thông báo đến Quý Đơn Vị. Kể từ &amp;nbsp;ngày 13 tháng 11 năm 2014 Công Ty TNHH Hóa Việt chuyển văn phòng sang địa chỉ kinh doanh mới theo thông tin như sau :&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Địa chỉ : 231 LÊ CAO LÃNG - &amp;nbsp;PHƯỜNG PHÚ THẠNH - QUẬN TÂN PHÚ&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Điện thoại : (08) 39 789 666 - 39 789 777 – 39 789 888.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Fax : (08) 39 789 555.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- MST : 0304453322.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Sau ngày 13 tháng 11 &amp;nbsp;năm 2014 Quý Khách Hàng vui lòng xuất hóa đơn bán hàng cho Công Ty TNHH Hóa Việt theo địa chỉ mới như trên.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Kể từ ngày 14 tháng 11 năm 2014 Chúng tôi đã gửi thông báo này đến Quý Công Ty. Nếu hóa đơn không thể hiện đúng thông tin về tên công ty, địa chỉ, mã số thuế như trên, thì Công Ty TNHH Hóa Việt sẽ gửi trả lại hóa đơn cho Quý Công Ty.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Công ty TNHH Hóa Việt xin trân trọng thông báo tới Quý Đơn Vị được biết. Chúng tôi xin chân thành cảm ơn sự hợp tác của Quý Đơn vị trong suốt thời gian qua và rất mong được sự hợp tác lâu dài của Quý Đơn Vị trong thời gian tới.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Trân trọng.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;text-align: right; pading-right: 30px;&quot;&gt;Tp.HCM, ngày 13 tháng 11 năm 2014 &lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;text-align: right; pading-right: 30px;&quot;&gt;Giám đốc&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;text-align: right; pading-right: 30px;&quot;&gt;Mang Thanh Bình&lt;/p&gt;', 'Công Ty TNHH Hóa Việt trân trọng thông báo đến Quý Đơn Vị. Kể từ  ngày 13 tháng 11 năm 2014 Công Ty TNHH Hóa Việt chuyển văn phòng sang địa chỉ kinh doanh mới.', 'Thông báo thay đổi địa chỉ kinh doanh hoaviet.vn', 'địa chỉ kinh doanh hóa việt', ''),
-(2, 1, 'Thông báo thay đổi địa chỉ kinh doanh', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp;CÔNG TY TNHH &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;HÓA VIỆT&lt;/strong&gt;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Độc lập – Tự do – Hạnh phúc &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;------------------------------------ &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp; Số: 01/TB/HV-14 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; font-size: medium;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;THÔNG BÁO&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ( V/v: Thay đổi địa chỉ Công ty)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Kính gửi : Quý Khách Hàng&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Căn cứ Giấy chứng nhận đăng ký kinh doanh thay đổi lần thứ 03, ngày 03 tháng 11 năm 2014 của Sở Kế Hoạch Và Đầu Tư Thành Phố Hồ Chí Minh.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Căn cứ tờ khai điều chỉnh, bổ sung thông tin đăng ký thuế số 178522, &amp;nbsp;ngày 13 &amp;nbsp;tháng 11 &amp;nbsp;năm 2014 của Chi Cục Thuế Quận Tân Phú.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Công Ty TNHH Hóa Việt trân trọng thông báo đến Quý Đơn Vị. Kể từ &amp;nbsp;ngày 13 tháng 11 năm 2014 Công Ty TNHH Hóa Việt chuyển văn phòng sang địa chỉ kinh doanh mới theo thông tin như sau :&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Địa chỉ : 231 LÊ CAO LÃNG - &amp;nbsp;PHƯỜNG PHÚ THẠNH - QUẬN TÂN PHÚ&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Điện thoại : (08) 39 789 666 - 39 789 777 – 39 789 888.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Fax : (08) 39 789 555.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- MST : 0304453322.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Sau ngày 13 tháng 11 &amp;nbsp;năm 2014 Quý Khách Hàng vui lòng xuất hóa đơn bán hàng cho Công Ty TNHH Hóa Việt theo địa chỉ mới như trên.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Kể từ ngày 14 tháng 11 năm 2014 Chúng tôi đã gửi thông báo này đến Quý Công Ty. Nếu hóa đơn không thể hiện đúng thông tin về tên công ty, địa chỉ, mã số thuế như trên, thì Công Ty TNHH Hóa Việt sẽ gửi trả lại hóa đơn cho Quý Công Ty.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Công ty TNHH Hóa Việt xin trân trọng thông báo tới Quý Đơn Vị được biết. Chúng tôi xin chân thành cảm ơn sự hợp tác của Quý Đơn vị trong suốt thời gian qua và rất mong được sự hợp tác lâu dài của Quý Đơn Vị trong thời gian tới.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Trân trọng.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial; text-align: right;&quot;&gt;Tp.HCM, ngày 13 tháng 11 năm 2014&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial; text-align: right;&quot;&gt;Giám đốc&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial; text-align: right;&quot;&gt;Mang Thanh Bình&lt;/p&gt;', 'Công Ty TNHH Hóa Việt trân trọng thông báo đến Quý Đơn Vị. Kể từ  ngày 13 tháng 11 năm 2014 Công Ty TNHH Hóa Việt chuyển văn phòng sang địa chỉ kinh doanh mới.', 'Thông báo thay đổi địa chỉ kinh doanh hoaviet.vn', 'địa chỉ kinh doanh hóa việt', '');
+(2, 1, 'Thông báo thay đổi địa chỉ kinh doanh', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp;CÔNG TY TNHH &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;HÓA VIỆT&lt;/strong&gt;&amp;nbsp;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Độc lập – Tự do – Hạnh phúc &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;------------------------------------ &amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp; Số: 01/TB/HV-14 &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px; font-size: medium;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;THÔNG BÁO&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ( V/v: Thay đổi địa chỉ Công ty)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Kính gửi : Quý Khách Hàng&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Căn cứ Giấy chứng nhận đăng ký kinh doanh thay đổi lần thứ 03, ngày 03 tháng 11 năm 2014 của Sở Kế Hoạch Và Đầu Tư Thành Phố Hồ Chí Minh.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Căn cứ tờ khai điều chỉnh, bổ sung thông tin đăng ký thuế số 178522, &amp;nbsp;ngày 13 &amp;nbsp;tháng 11 &amp;nbsp;năm 2014 của Chi Cục Thuế Quận Tân Phú.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Công Ty TNHH Hóa Việt trân trọng thông báo đến Quý Đơn Vị. Kể từ &amp;nbsp;ngày 13 tháng 11 năm 2014 Công Ty TNHH Hóa Việt chuyển văn phòng sang địa chỉ kinh doanh mới theo thông tin như sau :&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Địa chỉ : 231 LÊ CAO LÃNG - &amp;nbsp;PHƯỜNG PHÚ THẠNH - QUẬN TÂN PHÚ&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Điện thoại : (08) 39 789 666 - 39 789 777 – 39 789 888.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- Fax : (08) 39 789 555.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;- MST : 0304453322.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Sau ngày 13 tháng 11 &amp;nbsp;năm 2014 Quý Khách Hàng vui lòng xuất hóa đơn bán hàng cho Công Ty TNHH Hóa Việt theo địa chỉ mới như trên.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Kể từ ngày 14 tháng 11 năm 2014 Chúng tôi đã gửi thông báo này đến Quý Công Ty. Nếu hóa đơn không thể hiện đúng thông tin về tên công ty, địa chỉ, mã số thuế như trên, thì Công Ty TNHH Hóa Việt sẽ gửi trả lại hóa đơn cho Quý Công Ty.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Công ty TNHH Hóa Việt xin trân trọng thông báo tới Quý Đơn Vị được biết. Chúng tôi xin chân thành cảm ơn sự hợp tác của Quý Đơn vị trong suốt thời gian qua và rất mong được sự hợp tác lâu dài của Quý Đơn Vị trong thời gian tới.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;Trân trọng.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial; text-align: right;&quot;&gt;Tp.HCM, ngày 13 tháng 11 năm 2014&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial; text-align: right;&quot;&gt;Giám đốc&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial; text-align: right;&quot;&gt;Mang Thanh Bình&lt;/p&gt;', 'Công Ty TNHH Hóa Việt trân trọng thông báo đến Quý Đơn Vị. Kể từ  ngày 13 tháng 11 năm 2014 Công Ty TNHH Hóa Việt chuyển văn phòng sang địa chỉ kinh doanh mới.', 'Thông báo thay đổi địa chỉ kinh doanh hoaviet.vn', 'địa chỉ kinh doanh hóa việt', ''),
+(3, 2, 'Vui hè 2013', '&lt;p&gt;Kỷ niệm 6 năm ngày thành lập Công Ty TNHH Hóa Việt, toàn thể CNV toàn công ty đã có những ngày hè vui chơi xả láng tại Thành Phố Biển Nha Trang.&lt;/p&gt;&lt;br&gt;&lt;p class=&quot;center&quot;&gt;&lt;img class=&quot;img-resposive&quot; style=&quot;max-width: 100%;&quot; src=&quot;http://hoaviet.vn/data/image/IMG_3412.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;Cùng với Công Ty TNHH Phong Sơn, tất cả đã có những ngày nghỉ thật vui tươi và thoải mái.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;center&quot;&gt;&lt;img class=&quot;img-resposive&quot; style=&quot;max-width: 100%;&quot; src=&quot;http://hoaviet.vn/data/image/IMG_3432.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;Những trò chơi tập thể rộn rã tiếng cười của cả người lớn và trẻ em.&lt;/p&gt;', 'Kỷ niệm 6 năm ngày thành lập Công Ty TNHH Hóa Việt, toàn thể CNV toàn công ty đã có những ngày hè vui chơi xả láng tại Thành Phố Biển Nha Trang.', 'Hoaviet, Vui hè 2013', 'Hoaviet, Vui hè 2013', ''),
+(3, 1, 'Vui hè 2013', '&lt;p&gt;Kỷ niệm 6 năm ngày thành lập Công Ty TNHH Hóa Việt, toàn thể CNV toàn công ty đã có những ngày hè vui chơi xả láng tại Thành Phố Biển Nha Trang.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;center&quot;&gt;&lt;img class=&quot;img-resposive&quot; src=&quot;http://hoaviet.vn/data/image/IMG_3412.jpg&quot; alt=&quot;&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/p&gt;&lt;p&gt;Cùng với Công Ty TNHH Phong Sơn, tất cả đã có những ngày nghỉ thật vui tươi và thoải mái.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;center&quot;&gt;&lt;img class=&quot;img-resposive&quot; src=&quot;http://hoaviet.vn/data/image/IMG_3432.jpg&quot; alt=&quot;&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/p&gt;&lt;p&gt;Những trò chơi tập thể rộn rã tiếng cười của cả người lớn và trẻ em.&lt;/p&gt;', 'Kỷ niệm 6 năm ngày thành lập Công Ty TNHH Hóa Việt, toàn thể CNV toàn công ty đã có những ngày hè vui chơi xả láng tại Thành Phố Biển Nha Trang.', 'Hoaviet, Vui hè 2013', 'Hoaviet, Vui hè 2013', ''),
+(4, 2, 'Triễn lãm ANALYTICA  Việt Nam 2015', '&lt;div class=&quot;accontent&quot;&gt;&lt;p&gt;Triển lãm Analytica Vietnam 2015 đánh dấu bước chuyển mình trong định hướng phát triển thị trường của Công Ty Hóa Việt một cách rõ nét.&lt;/p&gt;&lt;p style=&quot;text-align: center; &quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/DSC_1010.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Tại Triển lãm lần này, gian hàng Hóa Việt trưng bày 6 thương hiệu uy tín đã có chỗ đứng nhất định trên thị trường:&lt;/p&gt;&lt;p&gt;- Atago&lt;/p&gt;&lt;p&gt;- Alla France&lt;/p&gt;&lt;p&gt;-&amp;nbsp;Kimble Chase&lt;/p&gt;&lt;p&gt;- Hirayama&lt;/p&gt;&lt;p&gt;- Munktell Ahlstrom&lt;/p&gt;&lt;p&gt;- Vitlab&lt;/p&gt;&lt;p&gt;- Worldwide Glass&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Đặc biệt với vị thế là Đại lý cấp I của Atago - Nhật Bản là sự thay đổi mới nhất và rõ nhất của Hóa Việt tại Triển Lãm năm nay.&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;text-align: center; &quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/DSC_1025.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;/div&gt;', 'Triển lãm Analytica Vietnam 2015 đánh dấu bước chuyển mình trong định hướng phát triển thị trường của Công Ty Hóa Việt một cách rõ nét.', 'Triễn lãm ANALYTICA  Việt Nam 2015', 'Triễn lãm ANALYTICA  Việt Nam 2015', ''),
+(4, 1, 'Triễn lãm ANALYTICA  Việt Nam 2015', '&lt;p style=&quot;text-align: left;&quot;&gt;Triển lãm Analytica Vietnam 2015 đánh dấu bước chuyển mình trong định hướng phát triển thị trường của Công Ty Hóa Việt một cách rõ nét.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/DSC_1010.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Tại Triển lãm lần này, gian hàng Hóa Việt trưng bày 6 thương hiệu uy tín đã có chỗ đứng nhất định trên thị trường:&lt;/p&gt;&lt;p&gt;- Atago&lt;/p&gt;&lt;p&gt;- Alla France&lt;/p&gt;&lt;p&gt;-&amp;nbsp;Kimble Chase&lt;/p&gt;&lt;p&gt;- Hirayama&lt;/p&gt;&lt;p&gt;- Munktell Ahlstrom&lt;/p&gt;&lt;p&gt;- Vitlab&lt;/p&gt;&lt;p&gt;- Worldwide Glass&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Đặc biệt với vị thế là Đại lý cấp I của Atago - Nhật Bản là sự thay đổi mới nhất và rõ nhất của Hóa Việt tại Triển Lãm năm nay.&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;text-align: center; &quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/DSC_1025.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;', 'Triển lãm Analytica Vietnam 2015 đánh dấu bước chuyển mình trong định hướng phát triển thị trường của Công Ty Hóa Việt một cách rõ nét.', 'Triễn lãm ANALYTICA  Việt Nam 2015', 'Triễn lãm ANALYTICA  Việt Nam 2015', ''),
+(5, 2, 'VIETNAM MEDI - PHARM EXPO 2011', '&lt;p&gt;Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.&lt;/p&gt;&lt;p&gt;Triển lãm lần thứ 11 với 3 nội dung chính:&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Trang Thiết Bị Y Tế Và Thí Nghiệm.&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Dược Phẩm Và Máy Móc Chế Biến Dược Phẩm&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Bệnh Viện Và Trang Thiết Bị Bệnh Viện.&lt;/p&gt;&lt;p&gt;Triển lãm thu hút được gần 200 công ty đến từ 25 nước và vùng lãnh thổ trên thế giới như: Úc, Bangladesh, Bỉ, Trung Quốc, Czech, Đức, Hồng Kông, Ấn Độ, Israel, Iran, Nigieria, Ý, Nhật Bản, Hàn Quốc, Malaysia, Pakistan, Nga, Singapore, Đài Loan, Thái Lan, Triều Tiên, Ucraina, Mỹ và Việt Nam.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;http://hoaviet.vn/data/image/EXPO1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Trong khuôn khổ triển lãm, &lt;strong&gt;Công Ty TNHH Hóa Việt&lt;/strong&gt; có cơ hội giao lưu, trao đổi kinh nghiệm, tìm kiếm đối tác, liên doanh liên kết các dự án đầu tư, mua bán sản phẩm.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;http://hoaviet.vn/data/image/EXPO2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medipharm Expo 2011&lt;/strong&gt; là triển lãm chuyên ngành có uy tín được đông đảo các nhà chuyên môn trong nước và quốc tế quan tâm. Triển lãm là dịp tốt cho các hoạt động kinh doanh của&lt;strong&gt; Công ty Hóa Việt&lt;/strong&gt; trong việc gặp gỡ, trao đổi kinh nghiệm, mở rộng quan hệ hợp tác, thương thảo và ký kết hợp đồng.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;http://hoaviet.vn/data/image/EXPO3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medi-Pharm&lt;/strong&gt; được tổ chức thường niên tại TP HCM do Bộ Y tế và Bộ Công thương Việt Nam chủ trì, Công ty Vinexad phối hợp với Công ty CP Y dược phẩm Vimedimex tổ chức.&lt;/p&gt;', 'Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.', 'VIETNAM MEDI - PHARM EXPO 2011', 'VIETNAM MEDI - PHARM EXPO 2011', ''),
+(5, 1, 'VIETNAM MEDI - PHARM EXPO 2011', '&lt;p&gt;Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.&lt;/p&gt;&lt;p&gt;Triển lãm lần thứ 11 với 3 nội dung chính:&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Trang Thiết Bị Y Tế Và Thí Nghiệm.&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Dược Phẩm Và Máy Móc Chế Biến Dược Phẩm&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Bệnh Viện Và Trang Thiết Bị Bệnh Viện.&lt;/p&gt;&lt;p&gt;Triển lãm thu hút được gần 200 công ty đến từ 25 nước và vùng lãnh thổ trên thế giới như: Úc, Bangladesh, Bỉ, Trung Quốc, Czech, Đức, Hồng Kông, Ấn Độ, Israel, Iran, Nigieria, Ý, Nhật Bản, Hàn Quốc, Malaysia, Pakistan, Nga, Singapore, Đài Loan, Thái Lan, Triều Tiên, Ucraina, Mỹ và Việt Nam.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/EXPO1.jpg&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Trong khuôn khổ triển lãm,&amp;nbsp;&lt;strong&gt;Công Ty TNHH Hóa Việt&lt;/strong&gt;&amp;nbsp;có cơ hội giao lưu, trao đổi kinh nghiệm, tìm kiếm đối tác, liên doanh liên kết các dự án đầu tư, mua bán sản phẩm.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/EXPO2.jpg&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medipharm Expo 2011&lt;/strong&gt;&amp;nbsp;là triển lãm chuyên ngành có uy tín được đông đảo các nhà chuyên môn trong nước và quốc tế quan tâm. Triển lãm là dịp tốt cho các hoạt động kinh doanh của&lt;strong&gt;&amp;nbsp;Công ty Hóa Việt&lt;/strong&gt;&amp;nbsp;trong việc gặp gỡ, trao đổi kinh nghiệm, mở rộng quan hệ hợp tác, thương thảo và ký kết hợp đồng.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/EXPO3.jpg&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medi-Pharm&lt;/strong&gt;&amp;nbsp;được tổ chức thường niên tại TP HCM do Bộ Y tế và Bộ Công thương Việt Nam chủ trì, Công ty Vinexad phối hợp với Công ty CP Y dược phẩm Vimedimex tổ chức.&lt;/p&gt;', 'Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.', 'VIETNAM MEDI - PHARM EXPO 2011', 'VIETNAM MEDI - PHARM EXPO 2011', '');
 
 -- --------------------------------------------------------
 
@@ -1761,7 +1770,10 @@ CREATE TABLE IF NOT EXISTS `wm_news_articles_to_category` (
 
 INSERT INTO `wm_news_articles_to_category` (`article_id`, `category_id`) VALUES
 (1, 1),
-(2, 1);
+(2, 1),
+(3, 1),
+(4, 2),
+(5, 2);
 
 -- --------------------------------------------------------
 
@@ -1782,7 +1794,10 @@ CREATE TABLE IF NOT EXISTS `wm_news_articles_to_layout` (
 
 INSERT INTO `wm_news_articles_to_layout` (`article_id`, `store_id`, `layout_id`) VALUES
 (1, 0, 0),
-(2, 0, 0);
+(2, 0, 0),
+(3, 0, 0),
+(4, 0, 0),
+(5, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1801,7 +1816,18 @@ CREATE TABLE IF NOT EXISTS `wm_news_articles_to_related` (
 --
 
 INSERT INTO `wm_news_articles_to_related` (`article_id`, `related_id`) VALUES
-(2, 1);
+(1, 3),
+(1, 4),
+(1, 5),
+(2, 3),
+(2, 5),
+(3, 1),
+(3, 2),
+(4, 1),
+(4, 5),
+(5, 1),
+(5, 2),
+(5, 4);
 
 -- --------------------------------------------------------
 
@@ -1821,7 +1847,10 @@ CREATE TABLE IF NOT EXISTS `wm_news_articles_to_store` (
 
 INSERT INTO `wm_news_articles_to_store` (`article_id`, `store_id`) VALUES
 (1, 0),
-(2, 0);
+(2, 0),
+(3, 0),
+(4, 0),
+(5, 0);
 
 -- --------------------------------------------------------
 
@@ -1847,8 +1876,8 @@ CREATE TABLE IF NOT EXISTS `wm_news_category` (
 --
 
 INSERT INTO `wm_news_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-(1, '', 0, 1, 1, 0, 1, '2016-01-10 16:34:51', '2016-01-10 16:44:08'),
-(2, '', 0, 1, 1, 1, 1, '2016-01-10 16:36:07', '2016-01-10 16:43:55');
+(1, '', 0, 1, 1, 0, 1, '2016-01-10 16:34:51', '2016-01-12 00:44:46'),
+(2, '', 0, 1, 1, 1, 1, '2016-01-10 16:36:07', '2016-01-12 00:44:59');
 
 -- --------------------------------------------------------
 
@@ -2936,7 +2965,7 @@ CREATE TABLE IF NOT EXISTS `wm_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1187 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1201 ;
 
 --
 -- Dumping data for table `wm_setting`
@@ -3086,20 +3115,20 @@ INSERT INTO `wm_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (725, 0, 'config', 'config_owner', 'Hoa Viet', 0),
 (724, 0, 'config', 'config_name', 'Hóa Việt', 0),
 (833, 0, 'config', 'config_google_analytics', '', 0),
-(1186, 0, 'news', 'news_image_related_height', '240', 0),
-(1185, 0, 'news', 'news_image_related_width', '320', 0),
-(1184, 0, 'news', 'news_image_article_height', '240', 0),
-(1183, 0, 'news', 'news_image_article_width', '320', 0),
-(1182, 0, 'news', 'news_image_thumb_height', '240', 0),
-(1181, 0, 'news', 'news_image_thumb_width', '320', 0),
-(1180, 0, 'news', 'news_image_category_height', '240', 0),
-(1179, 0, 'news', 'news_image_category_width', '320', 0),
-(1178, 0, 'news', 'news_review_status', '0', 0),
-(1177, 0, 'news', 'news_show_date_modified', '1', 0),
-(1176, 0, 'news', 'news_show_date_added', '0', 0),
-(1175, 0, 'news', 'news_show_viewed', '0', 0),
-(1174, 0, 'news', 'news_show_author', '1', 0),
-(1173, 0, 'news', 'news_catalog_limit', '1', 0);
+(1200, 0, 'news', 'news_image_related_height', '240', 0),
+(1199, 0, 'news', 'news_image_related_width', '320', 0),
+(1198, 0, 'news', 'news_image_article_height', '240', 0),
+(1197, 0, 'news', 'news_image_article_width', '320', 0),
+(1196, 0, 'news', 'news_image_thumb_height', '240', 0),
+(1194, 0, 'news', 'news_image_category_height', '240', 0),
+(1195, 0, 'news', 'news_image_thumb_width', '320', 0),
+(1193, 0, 'news', 'news_image_category_width', '320', 0),
+(1192, 0, 'news', 'news_review_status', '0', 0),
+(1191, 0, 'news', 'news_show_date_modified', '1', 0),
+(1190, 0, 'news', 'news_show_date_added', '0', 0),
+(1189, 0, 'news', 'news_show_viewed', '0', 0),
+(1188, 0, 'news', 'news_show_author', '1', 0),
+(1187, 0, 'news', 'news_catalog_limit', '2', 0);
 
 -- --------------------------------------------------------
 
@@ -3263,7 +3292,7 @@ CREATE TABLE IF NOT EXISTS `wm_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=859 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=873 ;
 
 --
 -- Dumping data for table `wm_url_alias`
@@ -3272,12 +3301,15 @@ CREATE TABLE IF NOT EXISTS `wm_url_alias` (
 INSERT INTO `wm_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (730, 'manufacturer_id=8', 'apple'),
 (772, 'information_id=4', 'about_us'),
-(857, 'article_id=1', 'cong-ty-hoa-viet-gia-nhap-hoi-cac-phong-thi-nghiem-viet-nam-vinalab'),
+(859, 'article_id=1', 'cong-ty-hoa-viet-gia-nhap-hoi-cac-phong-thi-nghiem-viet-nam-vinalab'),
 (858, 'article_id=2', 'thong-bao-thay-doi-dia-chi-kinh-doanh'),
+(864, 'article_id=3', 'hoaviet-vui-he-2013'),
+(868, 'article_id=4', 'trien-lam-analytica-viet-nam-2015'),
+(870, 'article_id=5', 'vietnam-medi-pharm-expo-2011'),
 (846, 'category_id=59', 'channuoi-thuysan'),
 (847, 'product_id=50', ''),
-(854, 'news_category_id=1', 'tin-noi-bo.html'),
-(853, 'news_category_id=2', 'tin-san-pham.html'),
+(871, 'news_category_id=1', 'tin-noi-bo'),
+(872, 'news_category_id=2', 'tin-san-pham'),
 (828, 'manufacturer_id=9', 'canon'),
 (829, 'manufacturer_id=5', 'htc'),
 (830, 'manufacturer_id=7', 'hewlett-packard'),

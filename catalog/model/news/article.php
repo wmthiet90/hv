@@ -192,8 +192,8 @@ class ModelNewsArticle extends Model {
 		return $article_layout_data;
 	}
 
-	public function getTotalArticles() {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "news_articles");
+	public function getTotalArticlesByCategory($category_id) {
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "news_articles_to_category WHERE category_id = '" . (int)$category_id . "'");
 
 		return $query->row['total'];
 	}	

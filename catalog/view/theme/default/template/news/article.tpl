@@ -27,7 +27,6 @@
       </div>
       <?php if ($articles) { ?>
       <h3 class="sub-heading-title">
-        <hr>
         <span><?php echo $text_related; ?></span>
       </h3>
       <div class="row">
@@ -87,56 +86,14 @@
     <?php //echo $column_right; ?></div>
 </div>
 <script type="text/javascript"><!--
-$('#review').delegate('.pagination a', 'click', function(e) {
-  e.preventDefault();
-
-    $('#review').fadeOut('slow');
-
-    $('#review').load(this.href);
-
-    $('#review').fadeIn('slow');
-});
-
-$('#review').load('index.php?route=news/article/review&article_id=<?php echo $article_id; ?>');
-
-$('#button-review').on('click', function() {
-  $.ajax({
-    url: 'index.php?route=news/article/write&article_id=<?php echo $article_id; ?>',
-    type: 'post',
-    dataType: 'json',
-    data: $("#form-review").serialize(),
-    beforeSend: function() {
-      $('#button-review').button('loading');
-    },
-    complete: function() {
-      $('#button-review').button('reset');
-    },
-    success: function(json) {
-      $('.alert-success, .alert-danger').remove();
-
-      if (json['error']) {
-        $('#review').after('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
+  $(document).ready(function() {
+    $('.thumbnails').magnificPopup({
+      type:'image',
+      delegate: 'a',
+      gallery: {
+        enabled:true
       }
-
-      if (json['success']) {
-        $('#review').after('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
-
-        $('input[name=\'name\']').val('');
-        $('textarea[name=\'text\']').val('');
-        $('input[name=\'rating\']:checked').prop('checked', false);
-      }
-    }
+    });
   });
-});
-
-$(document).ready(function() {
-  $('.thumbnails').magnificPopup({
-    type:'image',
-    delegate: 'a',
-    gallery: {
-      enabled:true
-    }
-  });
-});
 //--></script>
 <?php echo $footer; ?>

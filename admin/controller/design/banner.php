@@ -408,7 +408,7 @@ class ControllerDesignBanner extends Controller {
 		if (isset($this->request->post['banner_image'])) {
 			foreach ($this->request->post['banner_image'] as $banner_image_id => $banner_image) {
 				foreach ($banner_image['banner_image_description'] as $language_id => $banner_image_description) {
-					if ((utf8_strlen($banner_image_description['title']) < 2) || (utf8_strlen($banner_image_description['title']) > 64)) {
+					if ((utf8_strlen($banner_image_description['title']) < 2) || (utf8_strlen($banner_image_description['title']) > 200)) {
 						$this->error['banner_image'][$banner_image_id][$language_id] = $this->language->get('error_title');
 					}
 				}

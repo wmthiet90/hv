@@ -44,7 +44,7 @@
 <header>
   <div class="container">
     <div class="row">
-      <div class="col-md-9 col-sm-12">
+      <div class="col-sm-12">
         <div id="logo" class="center">
           <?php if ($logo) { ?>
           <a href="<?php echo $home; ?>">
@@ -55,17 +55,16 @@
           <?php } ?>
         </div>
       </div>
-      <div class="col-md-3 col-sm-12">
-      </div>
     </div>
   </div>
 </header>
 <div id="menu-container">
   <div class="container">
     <div class="row">
-      <div class="col-md-9 col-sm-12">
+      <div class="col-md-12 col-sm-12">
         <nav id="menu" class="navbar">
-          <div class="navbar-header"><span id="category" class="visible-xs">Menu</span>
+          <div class="navbar-header">
+            <span id="category" class="visible-xs">Menu</span>
             <button type="button" class="btn btn-navbar btn-main navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
           </div>
           <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -119,17 +118,13 @@
               <li><a href="<?php echo $home; ?>"><?php echo $text_job; ?></a></li>
               <li><a href="<?php echo $home; ?>"><?php echo $text_contact; ?></a></li>
             </ul>
-          </div>
+          </div>          
         </nav>
-      </div>
-      <div class="col-md-3 col-sm-12">
-        <div class="row">
-          <div class="col-xs-7">
+        <div class="nav-controls">
+          <div class="nav-controls-wrapper">
             <?php echo $search; ?>
-          </div>
-          <div class="col-xs-5">
-            <?php echo $language; ?>
-          </div>
+            <?php echo $language; ?>    
+          </div>            
         </div>
       </div>
     </div>  

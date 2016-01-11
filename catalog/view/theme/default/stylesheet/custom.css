@@ -1,6 +1,6 @@
 /* ===== Initializr Styles ==================================================   
     Red: #9d0a0e;
-    Gray: #989898;
+    Gray: #989898; #616161
    ========================================================================== */
 html {    
 }
@@ -55,24 +55,28 @@ hr {
 .block-box {
 }
 .block-box .block-heading {
-    padding: 40px 0px 30px 0px;
+    padding: 40px 0px 40px 0px;
 }
 .block-box .block-title {
     text-transform: uppercase;
-    font-size: 20px;
-    color: #a8292d;
+    font-size: 28px;
+    font-weight: 500;
+    color: #9d0a0e;
     text-align: center;
     margin: 0px;
 }
 .block-box .block-desc {
     text-align: center;
     margin-top: 15px;
-    color: #a1a1a1;
-    font-size: 13px;
+    color: #6A6A6A;
+}
+.block-box + hr {
+    margin-bottom: 0;
 }
 
 .product-thumb {
     background-color: #FFF;   
+    border: none;
 }
 
 .product-grid {
@@ -207,6 +211,7 @@ hr {
     border-top: 2px solid #e1e1e1;
     border-bottom: 2px solid #e1e1e1;
     background-color: #FFF;
+    position: relative;
 }
 #menu {
     background: white;
@@ -232,6 +237,7 @@ nav#menu {
     border-radius: 0;
     border: none;
     text-align: center;
+    position: relative;
 }
 #menu .navbar-nav {
     float: none;
@@ -242,7 +248,7 @@ nav#menu {
     margin-left: -4px;
 }
 #menu .nav > li > a {
-    color: #989898;
+    color: #616161;
     text-shadow: none;
     padding: 7px 10px;
     background-color: transparent;
@@ -252,6 +258,7 @@ nav#menu {
     margin-top: -2px;
     margin-bottom: -2px;
     min-height: 39px;
+    text-shadow: 0px 1px 0px #CCC;
 }
 #menu .nav > li > a:hover, 
 #menu .nav > .open > a {
@@ -276,13 +283,21 @@ nav#menu {
     border-bottom: none;
 }
 #menu .dropdown-inner li > a {
-    padding: 7px 20px;
+    padding: 5px 20px;
     color: #333333;
     font-size: 13px;
     text-align: left;
     background-color: #f7f7f7;
 }
 
+#menu-container .nav-controls {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 220px;
+}
+#menu-container .nav-controls-wrapper {    
+}
 
 /* =======================
 MAIN UI
@@ -323,6 +338,7 @@ footer .info-phones .info:first-child > span {
 }
 footer .social-links {
     overflow: hidden;
+    padding-top: 15px;
 }
 footer .social-links .social-icon {
     display: block;
@@ -347,7 +363,8 @@ footer .social-links .social-icon:hover > i {
 .footer-links a {
     text-transform: uppercase;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
+    color: #616161;
 }
 
 #logo {
@@ -356,22 +373,27 @@ footer .social-links .social-icon:hover > i {
 #search {
     margin-bottom: 0;
     margin-top: 4px;
+    width: 160px;
+    float: left;
 }
 #search .form-control {
     height: 27px;
     box-shadow: none;
+    border-color: #b4b4b4;
 }
 #search button {
     padding: 5px;
     background: #FFF;
     border-left: none;
     box-shadow: none;
+    border-color: #b4b4b4;
 }
 #search button > i {
     color: #9d0a0e;
 }
 #language {
     padding: 7px 0;
+    margin-left: 10px;    
 }
 #language a {
     font-size: 12px;
@@ -426,11 +448,11 @@ footer .social-links .social-icon:hover > i {
     margin: 0;
 }
 #brand-logos .owl-controls .owl-buttons .owl-prev {
-    top: 35%;
+    top: 16%;
     color: #9d0a0e;
 }
 #brand-logos .owl-controls .owl-buttons .owl-next {
-    top: 35%;   
+    top: 16%;   
     color: #9d0a0e;
 }
 
@@ -440,9 +462,9 @@ footer .social-links .social-icon:hover > i {
     background-color: #FFF;
     padding: 25px;
 }
-.news-page .heading-title {    
+.news-page .heading-title {
     text-transform: uppercase;
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 500;
     color: #9d0a0e;
     text-align: center;
@@ -458,8 +480,7 @@ footer .social-links .social-icon:hover > i {
 .news-page .created_date {
     text-transform: lowercase;
     font-size: 15px;
-    font-weight: 300;
-    color: #9d0a0e;
+    color: #616161;
 }
 .news-page .product-thumb h4 {
     text-transform: uppercase;
@@ -500,6 +521,7 @@ footer .social-links .social-icon:hover > i {
 .news-page .news-content .created_date {
     color: #989898;
     margin-bottom: 30px;
+    font-size: 16px;
 }
 .news-page .product-thumb .image img {
     width: 100%;
@@ -509,14 +531,14 @@ footer .social-links .social-icon:hover > i {
     position: relative;
     text-align: center;
     margin: 50px 0px;
+    background: transparent url(../image/line.png) repeat-x 0 50%;    
 }
-.sub-heading-title > span {
-    position: absolute;
-    top: -13px;
-    left: 42%;
+.sub-heading-title > span {    
     background: #FFF;
     padding: 0 30px;
+    font-size: 24px;
 }
+    
 /* ===============
     ALL: IE Fixes
    =============== */
@@ -525,8 +547,33 @@ footer .social-links .social-icon:hover > i {
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+@media only screen and (max-width: 1140px) {
+    /* ==============
+        MOBILE: Menu
+       ============== */
+    #menu-container .nav-controls {
+        position: relative;
+        margin: 0 auto;
+        width: 460px;
+    }
+    #search {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    /* ==============
+        MOBILE: Menu
+       ============== */
+    #menu .nav > li > a {
+        font-size: 13px;
+    }
+}
 
 @media only screen and (max-width: 768px) {
+    /* ==============
+        MOBILE: Menu
+       ============== */
     #menu-container {
         padding-bottom: 10px;
     }
@@ -579,7 +626,24 @@ footer .social-links .social-icon:hover > i {
     /* ===============
         Maximal Width
     =============== */
-    
+    .container {
+        width: 1170px;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+
+    /* ============
+        WIDE: Menu
+       ============ */
+
+
+    /* ===============
+        Maximal Width
+    =============== */
+    .container {
+        width: 1280px;
+    }
 }
 
 /* ==========================================================================
@@ -770,6 +834,15 @@ ul.none-style {
 
 .p-30 {
     padding: 30px 10px;
+}
+.padding-left-0 {
+    padding-left: 0;
+}
+.padding-left-5 {
+    padding-left: 5px;
+}
+.padding-left-10 {
+    padding-left: 10px;
 }
 
 /* ==========================================================================
