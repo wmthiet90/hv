@@ -5,7 +5,7 @@
         <div class="company-info">
           <h2 class="uppercase">Công ty TNHH Hóa Việt</h2>
           <p class="info">
-            <span>Head Office:</span> 229-231 Lê Cao Lãng, P.Phú Thạnh, Q.Tân Phú, Tp.HCM
+            <span>Head Office:</span> 229 - 231 Lê Cao Lãng, P. Phú Thạnh, Q. Tân Phú, TP.HCM
           </p>
           <div class="info-phones">
             <p class="info">
@@ -35,7 +35,7 @@
         <div class="map-info">
           <h3 class="uppercase"><?php echo $text_findonmap; ?></h3>
           <div class="map-wrapper" style="width: 100%">
-             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3956297232758!2d106.61861731421467!3d10.78098026205904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752c1b1971a633%3A0x84fa273bb88800df!2zMjI5IEzDqiBDYW8gTMOjbmcsIFBow7ogVGjhuqFuaCwgVMOibiBQaMO6LCBI4buTIENow60gTWluaCwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1452008030049" width="100%" height="270" frameborder="0" style="border:0" allowfullscreen></iframe>
+             <iframe src="map.html" width="100%" height="270" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>
       </div>

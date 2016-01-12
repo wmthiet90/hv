@@ -26,7 +26,7 @@ class ControllerCommonHome extends Controller {
 				$data['home_slideshow_banners'][] = array(
 					'title' => $result['title'],
 					'link'  => $result['link'],
-					'image' => $this->model_tool_image->resize($result['image'], 1366, 480)
+					'image' => $this->model_tool_image->resize($result['image'], 1920, 675)
 				);
 			}
 		}

@@ -381,12 +381,13 @@ footer .social-links .social-icon:hover > i {
     float: left;
 }
 #search .form-control {
-    height: 27px;
+    height: 26px;
     box-shadow: none;
     border-color: #b4b4b4;
 }
 #search button {
-    padding: 5.5px;
+    padding: 5px;
+    height: 26px;
     background: #FFF;
     border-left: none;
     box-shadow: none;
