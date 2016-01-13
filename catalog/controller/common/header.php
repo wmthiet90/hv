@@ -1,5 +1,7 @@
 <?php
 class ControllerCommonHeader extends Controller {
+	private $defaultRecruitmentCategoryId = 3;
+
 	public function index() {
 		$data['title'] = $this->document->getTitle();
 
@@ -19,6 +21,14 @@ class ControllerCommonHeader extends Controller {
 		$data['direction'] = $this->language->get('direction');
 		$data['google_analytics'] = html_entity_decode($this->config->get('config_google_analytics'), ENT_QUOTES, 'UTF-8');
 		$data['name'] = $this->config->get('config_name');
+		
+		$currentRoute = isset($this->request->get['route']) ? $this->request->get['route'] : '';
+		$data['m_active'] = '';
+		if($currentRoute == '' || $currentRoute == 'common/home') {
+			$data['m_active'] = 'home';
+		} else if($currentRoute == 'news/category' || $currentRoute == 'news/article') {
+			$data['m_active'] = 'news';
+		}
 
 		if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
 			$data['icon'] = $server . 'image/' . $this->config->get('config_icon');
@@ -70,6 +80,7 @@ class ControllerCommonHeader extends Controller {
 		$data['shopping_cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 		$data['contact'] = $this->url->link('information/contact');
+		$data['recruitment'] = $this->url->link('news/category', 'news_path=' . $this->defaultRecruitmentCategoryId);
 		$data['telephone'] = $this->config->get('config_telephone');
 
 		$status = true;
@@ -80,7 +91,6 @@ class ControllerCommonHeader extends Controller {
 			foreach ($robots as $robot) {
 				if ($robot && strpos($this->request->server['HTTP_USER_AGENT'], trim($robot)) !== false) {
 					$status = false;
-
 					break;
 				}
 			}
@@ -98,7 +108,6 @@ class ControllerCommonHeader extends Controller {
             if ($category['top']) {
                 // Level 2
                 $children_data = array();
-
                 $children = $this->model_news_category->getCategories($category['category_id']);
 
                 foreach ($children as $child) {
@@ -106,7 +115,6 @@ class ControllerCommonHeader extends Controller {
                         'filter_category_id'  => $child['category_id'],
                         'filter_sub_category' => true
                     );
-
                     $article_total = $this->model_news_article->getTotalArticles($data);
                     $children_data[] = array(
                         'name'  => $child['name'] . ($this->config->get('news_article_count') ? ' (' . $article_total . ')' : ''),

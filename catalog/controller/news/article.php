@@ -3,6 +3,7 @@ class ControllerNewsArticle extends Controller {
 	private $error = array();
 
 	public function index() {
+
 		$this->load->language('news/article');
 
 		$data['breadcrumbs'] = array();

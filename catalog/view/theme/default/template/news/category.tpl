@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="container">
+<div class="container custom-container">
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
@@ -8,7 +8,8 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="news-page <?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" class="news-page <?php echo $class; ?>">
+      <?php echo $content_top; ?>
       <h2 class="heading-title"><?php echo $heading_title; ?></h2>
       <?php if ($thumb || $description) { ?>
         <div class="row hidden">
@@ -122,8 +123,8 @@
       <?php if (!$categories && !$articles) { ?>
         <p><?php echo $text_empty; ?></p>
       <?php } ?>
-
-    <?php echo $content_bottom; ?></div>
+      <?php echo $content_bottom; ?>
+    </div>
     <?php echo $column_right; ?></div>
 </div>
 <?php echo $footer; ?>

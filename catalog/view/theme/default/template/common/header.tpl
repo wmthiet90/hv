@@ -69,12 +69,14 @@
           </div>
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-              <li><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a></li>
-              <li><a href="<?php echo $home; ?>"><?php echo $text_introduction; ?></a></li>
-              <li class="dropdown">
+              <li class="<?php echo ($m_active == 'home' ? 'active': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a>
+              </li>
+              <li><a href="<?php echo $home; ?>"><?php echo $text_introduction; ?></a>
+              </li>
+              <li class="dropdown <?php echo ($m_active == 'product' ? 'active': '') ?>">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_product; ?></a>
                 <div class="dropdown-menu">
-                  <div class="dropdown-inner">              
+                  <div class="dropdown-inner">
                     <ul class="list-unstyled">
                       <li><a href="#">Sub 1</a></li>
                       <li><a href="#">Sub 2</a></li>
@@ -83,7 +85,7 @@
                     </ul>
                   </div>
               </li>
-              <li class="dropdown">
+              <li class="dropdown <?php echo ($m_active == 'news' ? 'active': '') ?>">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_newsevent; ?></a>
                 <div class="dropdown-menu">
                   <div class="dropdown-inner">
@@ -114,9 +116,11 @@
                   </div>
                 </div>
               </li>              
-              <li><a href="<?php echo $home; ?>"><?php echo $text_downloads; ?></a></li>
-              <li><a href="<?php echo $home; ?>"><?php echo $text_job; ?></a></li>
-              <li><a href="<?php echo $home; ?>"><?php echo $text_contact; ?></a></li>
+              <li class="<?php echo ($m_active == 'home' ? 'download': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_downloads; ?></a></li>
+              <li class="<?php echo ($m_active == 'job' ? 'active': '') ?>"><a href="<?php echo $recruitment; ?>"><?php echo $text_job; ?></a>
+              </li>
+              <li class="<?php echo ($m_active == 'contact' ? 'active': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_contact; ?></a>
+              </li>
             </ul>
           </div>          
         </nav>

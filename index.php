@@ -206,7 +206,7 @@ if (isset($request->get['tracking'])) {
 }
 
 // Affiliate
-$registry->set('affiliate', new Affiliate($registry));
+//$registry->set('affiliate', new Affiliate($registry));
 
 // Currency
 $registry->set('currency', new Currency($registry));
@@ -215,19 +215,19 @@ $registry->set('currency', new Currency($registry));
 $registry->set('tax', new Tax($registry));
 
 // Weight
-$registry->set('weight', new Weight($registry));
+//$registry->set('weight', new Weight($registry));
 
 // Length
-$registry->set('length', new Length($registry));
+//$registry->set('length', new Length($registry));
 
 // Cart
-$registry->set('cart', new Cart($registry));
+//$registry->set('cart', new Cart($registry));
 
 // Encryption
 $registry->set('encryption', new Encryption($config->get('config_encryption')));
 
 //OpenBay Pro
-$registry->set('openbay', new Openbay($registry));
+//$registry->set('openbay', new Openbay($registry));
 
 // Event
 $event = new Event($registry);

@@ -1,37 +1,37 @@
 <?php
 // Heading
-$_['heading_title']          = 'Category';
+$_['heading_title']          = 'Danh mục tin';
 
 // Text
-$_['text_success']           = 'Success: You have modified categories!';
-$_['text_default']           = 'Default';
-$_['text_edit']     = 'Edit Category';
-$_['text_list']            = 'List Category';
-$_['text_add']            = 'Add Category';
+$_['text_success']           = 'Thành công: Bạn đã cập nhật danh mục tin!';
+$_['text_default']           = 'Mặc định';
+$_['text_edit']     = 'Sửa danh mục';
+$_['text_list']            = 'Liệt kê danh mục';
+$_['text_add']            = 'Thêm danh mục';
 
 // Column
-$_['column_name']            = 'Category Name';
-$_['column_article']        = 'Article Count';
-$_['column_sort_order']      = 'Sort Order';
-$_['column_action']          = 'Action';
+$_['column_name']            = 'Tên danh mục';
+$_['column_article']        = 'Số bài viết';
+$_['column_sort_order']      = 'Vị trí sắp xếp';
+$_['column_action']          = 'Hành động';
 
 // Entry
-$_['entry_name']             = 'Category Name:';
-$_['entry_meta_keyword'] 	 = 'Meta Tag Keywords:';
-$_['entry_meta_description'] = 'Meta Tag Description:';
-$_['entry_description']      = 'Description:';
-$_['entry_parent']           = 'Parent:';
-$_['entry_store']            = 'Stores:';
-$_['entry_keyword']          = 'SEO Keyword:';
-$_['entry_image']            = 'Image:';
-$_['entry_top']              = 'Top:';
-$_['entry_column']           = 'Columns:';
-$_['entry_sort_order']       = 'Sort Order:';
-$_['entry_status']           = 'Status:';
-$_['entry_layout']           = 'Layout Override:';
+$_['entry_name']             = 'Tên danh mục';
+$_['entry_meta_keyword'] 	 = 'Từ khóa SEO - Meta tag';
+$_['entry_meta_description'] = 'Mô tả SEO - Meta tag';
+$_['entry_description']      = 'Mô tả';
+$_['entry_parent']           = 'Danh mục cha';
+$_['entry_store']            = 'Websites';
+$_['entry_keyword']          = 'Từ khóa SEO';
+$_['entry_image']            = 'Hình ảnh';
+$_['entry_top']              = 'Hiện trên menu tin';
+$_['entry_column']           = 'Số cột';
+$_['entry_sort_order']       = 'Vị trí';
+$_['entry_status']           = 'Trạng thái';
+$_['entry_layout']           = 'Chọn layout khác';
 
 // Error 
-$_['error_warning']          = 'Warning: Please check the form carefully for errors!';
-$_['error_permission']       = 'Warning: You do not have permission to modify categories!';
-$_['error_name']             = 'Category Name must be between 2 and 32 characters!';
+$_['error_warning']          = 'Cảnh báo: Kiểm tra lại lỗi nhập dữ liệu!';
+$_['error_permission']       = 'Cảnh báo: Bạn không có quyền chỉnh sửa danh mục tin!';
+$_['error_name']             = 'Danh mục tin phải từ 2 đến 32 kí tự!';
 ?>

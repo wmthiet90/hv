@@ -4,7 +4,7 @@
     <ul>
       <li><a href="<?php echo $category; ?>"><?php echo $text_category; ?></a></li>
       <li><a href="<?php echo $product; ?>"><?php echo $text_product; ?></a></li>
-      <li><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>
+      <li class="hidden"><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>
       <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
       <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
     </ul>
@@ -13,15 +13,15 @@
     <ul>
       <li><a href="<?php echo $news_category; ?>"><?php echo $category_heading_title; ?></a></li>
       <li><a href="<?php echo $article; ?>"><?php echo $article_heading_title; ?></a></li>
-      <li><a href="<?php echo $news_review; ?>"><?php echo $review_heading_title; ?></a></li>
-      <li><a class="parent">Module</a>
+      <li class="hidden"><a href="<?php echo $news_review; ?>"><?php echo $review_heading_title; ?></a></li>
+      <li class="hidden"><a class="parent">Module</a>
         <ul>
           <li><a href="<?php echo $news_by_category; ?>">Article by category</a></li>
           <li><a href="<?php echo $news_article_category; ?>">Category</a></li>
           <li><a href="<?php echo $news_carousel; ?>">News Carousel By Category</a></li>
         </ul>
       </li>
-      <li><a href="<?php echo $news_setting; ?>"><?php echo $setting_heading_title; ?></a></li>
+      <li class="hidden"><a href="<?php echo $news_setting; ?>"><?php echo $setting_heading_title; ?></a></li>
     </ul>
   </li>
   <li id="system"><a class="parent"><i class="fa fa-cog fa-fw"></i> <span><?php echo $text_system; ?></span></a>
@@ -41,7 +41,7 @@
   </li>
   <li id="tools"><a class="parent"><i class="fa fa-wrench fa-fw"></i> <span><?php echo $text_tools; ?></span></a>
     <ul>
-      <li><a href="<?php echo $upload; ?>"><?php echo $text_upload; ?></a></li>
+      <li class="hidden"><a href="<?php echo $upload; ?>"><?php echo $text_upload; ?></a></li>
       <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>
       <li><a href="<?php echo $error_log; ?>"><?php echo $text_error_log; ?></a></li>
     </ul>
