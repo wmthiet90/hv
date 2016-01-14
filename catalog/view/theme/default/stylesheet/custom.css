@@ -650,23 +650,8 @@ footer .social-links .social-icon:hover > i {
     .container {
         width: 1170px;
     }
-    .custom-container {
-        width: 860px;
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-
-    /* ============
-        WIDE: Menu
-       ============ */
-
-
-    /* ===============
-        Maximal Width
-    =============== */
-    .container {
-        width: 1280px;
+    .container.custom-container {
+        width: 960px;
     }
 }
 
