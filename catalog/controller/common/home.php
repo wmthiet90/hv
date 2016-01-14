@@ -19,6 +19,9 @@ class ControllerCommonHome extends Controller {
 		$this->load->model('design/banner');
 		$this->load->model('tool/image');
 
+		$this->load->language('common/common');
+		$data['text_partners'] = $this->language->get('text_partners');
+
 		//Load home slideshow
 		$data['home_slideshow_banners'] = array();
 		$results = $this->model_design_banner->getBanner($this->SlideShow_Home_Banner);

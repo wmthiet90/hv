@@ -33,8 +33,7 @@
       </div>
       <div class="col-sm-5">
         <div class="map-info">
-          <h3 class="uppercase"><?php echo $text_findonmap; ?></h3>
-          <div class="map-wrapper" style="width: 100%">
+          <div class="map-wrapper" style="width: 100%; margin-top: 23px;">
              <iframe src="map.html" width="100%" height="270" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>

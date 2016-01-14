@@ -32,44 +32,36 @@
       <h3 class="sub-heading-title">
         <span><?php echo $text_related; ?></span>
       </h3>
-      <div class="row">
+      <div class="row related-news">
         <?php $i = 0; ?>
         <?php foreach ($articles as $article) { ?>
-        <?php if ($column_left && $column_right) { ?>
-        <?php $class = 'col-lg-6 col-md-6 col-sm-12 col-xs-12'; ?>
-        <?php } elseif ($column_left || $column_right) { ?>
-        <?php $class = 'col-lg-4 col-md-4 col-sm-6 col-xs-12'; ?>
-        <?php } else { ?>
-        <?php $class = 'col-lg-4 col-md-4 col-sm-6 col-xs-12'; ?>
-        <?php } ?>
-        <div class="<?php echo $class; ?>">
-          <div class="product-thumb transition">
-            <div class="image"><a href="<?php echo $article['href']; ?>"><img src="<?php echo $article['thumb']; ?>" alt="<?php echo $article['name']; ?>" title="<?php echo $article['name']; ?>" class="img-responsive" /></a></div>
-            <div class="caption">
-              <h4><a href="<?php echo $article['href']; ?>"><?php echo $article['name']; ?></a></h4>
-              <p><?php echo $article['short_description']; ?></p>
-              <?php if ($article['rating']) { ?>
-              <div class="rating">
-                <?php for ($i = 1; $i <= 5; $i++) { ?>
-                <?php if ($article['rating'] < $i) { ?>
-                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-                <?php } else { ?>
-                <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-                <?php } ?>
-                <?php } ?>
+          <?php if ($column_left && $column_right) { ?>
+            <?php $class = 'col-lg-6 col-md-6 col-sm-12 col-xs-12'; ?>
+            <?php } elseif ($column_left || $column_right) { ?>
+            <?php $class = 'col-lg-4 col-md-4 col-sm-6 col-xs-12'; ?>
+            <?php } else { ?>
+            <?php $class = 'col-lg-4 col-md-4 col-sm-6 col-xs-12'; ?>
+          <?php } ?>
+          <div class="<?php echo $class; ?>">
+            <div class="product-thumb transition">
+              <div class="image">
+                <a href="<?php echo $article['href']; ?>"><img src="<?php echo $article['thumb']; ?>" alt="<?php echo $article['name']; ?>" title="<?php echo $article['name']; ?>" class="img-responsive" />
+                </a>
               </div>
-              <?php } ?>
+              <div class="caption">
+                <h4><a href="<?php echo $article['href']; ?>"><?php echo $article['name']; ?></a></h4>
+                <p><?php echo $article['short_description']; ?></p>              
+              </div>
             </div>
           </div>
-        </div>
-        <?php if (($column_left && $column_right) && ($i % 2 == 0)) { ?>
-        <div class="clearfix visible-md visible-sm"></div>
-        <?php } elseif (($column_left || $column_right) && ($i % 3 == 0)) { ?>
-        <div class="clearfix visible-md"></div>
-        <?php } elseif ($i % 4 == 0) { ?>
-        <div class="clearfix visible-md"></div>
-        <?php } ?>
-        <?php $i++; ?>
+          <?php if (($column_left && $column_right) && ($i % 2 == 0)) { ?>
+          <div class="clearfix visible-md visible-sm"></div>
+          <?php } elseif (($column_left || $column_right) && ($i % 3 == 0)) { ?>
+          <div class="clearfix visible-md"></div>
+          <?php } elseif ($i % 4 == 0) { ?>
+          <div class="clearfix visible-md"></div>
+          <?php } ?>
+          <?php $i++; ?>
         <?php } ?>
       </div>
       <?php } ?>

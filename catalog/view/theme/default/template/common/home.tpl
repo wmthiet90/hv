@@ -11,19 +11,16 @@
                                     <a href="<?php echo $banner['link']; ?>">
                                         <img class="img-responsive banner-img" src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>">
                                     </a>
-                                    <div class="banner-actions">
-                                        <a href="<?php echo $banner['link']; ?>" class="btn btn-main">Chi tiết</a>
-                                    </div>
-                                    <div class="banner-description">
+                                    <div class="banner-description hidden">
                                         <a href="<?php echo $banner['link']; ?>">
                                             <?php echo $banner['title']; ?>
                                         </a>
                                     </div>
                                 <?php } else { ?>
                                     <img class="img-responsive banner-img" src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>">                                
-                                        <div class="banner-description">
-                                            <?php echo $banner['title']; ?>
-                                        </div>
+                                    <div class="banner-description hidden">
+                                        <?php echo $banner['title']; ?>
+                                    </div>
                                 <?php } ?>
                             </div>
                         <?php } ?>         
@@ -43,7 +40,8 @@
                 </div>
             <?php } ?>   
             <?php if(!empty($home_brand_banners)) { ?> 
-                <div id="brand-logos-container">
+                <h1 class="heading-title"><?php echo $text_partners; ?></h1>
+                <div id="brand-logos-container">                    
                    <div class="container">
                         <div id="brand-logos">
                             <?php foreach ($home_brand_banners as $banner) { ?>

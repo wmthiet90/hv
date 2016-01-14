@@ -2,7 +2,7 @@
 // Text
 $_['text_search']       = 'Search';
 
-$_['text_related'] = 'Related';
+$_['text_related'] = 'Related articles';
 $_['text_or']           = '- OR -';
 $_['text_reviews']      = '%s reviews'; 
 $_['text_write']        = 'Write a review';

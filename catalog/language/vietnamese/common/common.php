@@ -9,4 +9,5 @@ $_['text_contact']           = 'Liên hệ';
 
 $_['text_see_all']           = 'Xem tất cả';
 $_['text_see_more']           = 'Xem chi tiết';
+$_['text_partners']           = 'Đối tác';
 

@@ -2,7 +2,7 @@
 // Text
 $_['text_search']       = 'Tìm kiếm';
 
-$_['text_related'] = 'Các tin khác';
+$_['text_related'] = 'Tin liên quan';
 $_['text_or']           = '- Hoặc -';
 $_['text_reviews']      = '%s đánh giá'; 
 $_['text_write']        = 'Viết đánh giá';

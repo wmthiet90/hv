@@ -9,3 +9,4 @@ $_['text_contact']           = 'Contact';
 
 $_['text_see_all']           = 'See all';
 $_['text_see_more']           = 'See more';
+$_['text_partners']           = 'Partners';
