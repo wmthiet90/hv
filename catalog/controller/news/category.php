@@ -183,17 +183,18 @@ class ControllerNewsCategory extends Controller {
 				} else {
 					$rating = false;
 				}
-
-				$data['articles'][] = array(
-					'article_id'  => $result['article_id'],
-					'date_added'  => date("l, d F Y", strtotime($result['date_added'])),
-					'thumb'       => $image,
-					'name'        => $result['name'],
-					'description' => html_entity_decode($result['description']), //utf8_substr(strip_tags(, ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
-					'short_description' => $result['short_description'],
-					'rating'      => $result['rating'],
-					'href'        => $this->url->link('news/article', 'news_path=' . $this->request->get['news_path'] . '&article_id=' . $result['article_id'] . $url)
-				);
+				for ($i=0; $i < 9; $i++) { 
+					$data['articles'][] = array(
+						'article_id'  => $result['article_id'],					
+						'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+						'thumb'       => $image,
+						'name'        => $result['name'],
+						'description' => html_entity_decode($result['description']), //utf8_substr(strip_tags(, ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
+						'short_description' => $result['short_description'],
+						'rating'      => $result['rating'],
+						'href'        => $this->url->link('news/article', 'news_path=' . $this->request->get['news_path'] . '&article_id=' . $result['article_id'] . $url)
+					);
+				}				
 			}
 
 			$url = '';
@@ -309,10 +310,18 @@ class ControllerNewsCategory extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
-			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/category.tpl')) {
-				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/news/category.tpl', $data));
+			if($category_id == DEFAULT_RECRUITMENTCATEGORY_ID) {
+				if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/recruitment.tpl')) {
+					$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/news/recruitment.tpl', $data));
+				} else {
+					$this->response->setOutput($this->load->view('default/template/news/recruitment.tpl', $data));
+				}
 			} else {
-				$this->response->setOutput($this->load->view('default/template/news/category.tpl', $data));
+				if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/category.tpl')) {
+					$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/news/category.tpl', $data));
+				} else {
+					$this->response->setOutput($this->load->view('default/template/news/category.tpl', $data));
+				}
 			}
 		} else {
 			$url = '';
@@ -370,6 +379,6 @@ class ControllerNewsCategory extends Controller {
 			} else {
 				$this->response->setOutput($this->load->view('default/template/error/not_found.tpl', $data));
 			}
-		}
+		}		
 	}
 }

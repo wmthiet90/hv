@@ -1,6 +1,5 @@
 <?php
 class ControllerCommonHeader extends Controller {
-	private $defaultRecruitmentCategoryId = 3;
 
 	public function index() {
 		$data['title'] = $this->document->getTitle();
@@ -80,7 +79,7 @@ class ControllerCommonHeader extends Controller {
 		$data['shopping_cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 		$data['contact'] = $this->url->link('information/contact');
-		$data['recruitment'] = $this->url->link('news/category', 'news_path=' . $this->defaultRecruitmentCategoryId);
+		$data['recruitment'] = $this->url->link('news/category', 'news_path=' . DEFAULT_RECRUITMENTCATEGORY_ID);
 		$data['telephone'] = $this->config->get('config_telephone');
 
 		$status = true;

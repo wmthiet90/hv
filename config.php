@@ -25,3 +25,6 @@ define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_DATABASE', 'hoaviet');
 define('DB_PREFIX', 'wm_');
+
+//Config Data
+define("DEFAULT_RECRUITMENTCATEGORY_ID", 3);

@@ -9,10 +9,8 @@ body {
     font-family: 'Arial', sans-serif;
     font-weight: 400;
     color: #222224;
-    font-size: 14px;
-    line-height: 20px;
     background-color: #F3F3F3;
-    font-size: 14px;
+    font-size: 15px;
 }
 a {
     color: #989898;
@@ -554,6 +552,57 @@ footer .social-links .social-icon:hover > i {
     min-height: inherit;
 }
 
+.recruitment-page {    
+}
+.recruitment-page .job-box:first-child {
+    margin-top: 50px;
+}
+.recruitment-page .job-box {
+    background-color: #FFF;
+    margin-bottom: 35px;
+    width: 100%;
+}
+.recruitment-page .box-img {
+    vertical-align: middle;
+    padding: 30px;
+    width: 35%;
+    text-align: center;
+}
+.recruitment-page .job-box h3 {
+    font-size: 20px;
+    color: #9d0a0e;
+    margin-bottom: 0;
+}
+.recruitment-page .box-img img {
+    moz-box-shadow: -1px 0px 5px 1px #AAA;
+    webkit-box-shadow: -1px 0px 5px 1px #AAA;
+    box-shadow: -1px 0px 5px 1px #AAA;
+    moz-border-radius: 50%;
+    webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.recruitment-page .box-content {
+    font-size: 15px;
+    line-height: 24px;
+    padding: 30px;
+    width: 65%;
+}
+.recruitment-page .job-list {
+    margin-bottom: 20px;
+}
+.recruitment-page .job-list li {
+    margin-bottom: 5px;
+}
+.recruitment-page .job-list a {
+    padding: 7px 15px;
+    text-transform: uppercase;
+    display: block;   
+}
+.recruitment-page .job-list a:hover {
+    background-color: #a52e30;
+    color: #FFF;
+}
+
 .sub-heading-title > span {    
     background: #FFF;
     padding: 0 30px;
@@ -610,13 +659,29 @@ footer .social-links .social-icon:hover > i {
     #menu .nav > li > a:hover {
         border: none;
     }
+
+    .recruitment-page .job-box {
+        width: 100%;
+        display: block;
+    }
+    .recruitment-page .box-img {
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+    .recruitment-page .box-content {
+        padding: 20px;
+        width: 100%;
+        display: block;
+    }
 }
 
 @media only screen and (max-width: 480px) {
     /* ==============
         MOBILE: Menu
        ============== */
-    
+
 
     /* ==============
         MOBILE: Main
@@ -806,15 +871,19 @@ ul.none-style {
     padding: 0;
 }
 
-.btn.btn-main {
+.btn.btn-main,
+.btn-primary {
     box-shadow: none !important;
     text-shadow: none !important;
     border-radius: 30px;
     padding: 5px 40px;
     border: none;
     font-size: 14px;
-    background-color: #9d0a0e;
+    background: #9d0a0e;
     color: #FFF;
+}
+.btn-primary:hover {
+    background: #000;
 }
 .btn.btn-default {
     box-shadow: none !important;
@@ -835,6 +904,24 @@ ul.none-style {
 }
 .btn.btn-default:hover {
     color: #000;
+}
+
+.btn-link {
+    cursor: pointer;
+    color: #989898;
+}
+.btn-link:hover {
+    color: #9d0a0e;
+    text-decoration: none;
+}
+.btn-link > i.fa {
+    color: #9d0a0e;
+}
+.btn-link-icon-r {
+    margin-right: 5px;
+}
+.btn-link-icon-l {
+    margin-left: 5px;
 }
 
 .fa.fa-3x{
