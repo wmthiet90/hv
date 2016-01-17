@@ -375,7 +375,9 @@ footer .social-links .social-icon:hover > i {
     font-weight: 400;
     color: #616161;
 }
-
+#content {
+    min-height: inherit;
+}
 #logo {
     margin: 15px 0 15px 0;
 }
@@ -601,6 +603,19 @@ footer .social-links .social-icon:hover > i {
 .recruitment-page .job-list a:hover {
     background-color: #a52e30;
     color: #FFF;
+}
+.recruitment-page .news-content h1.heading-title {
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.recruitment-page .job-contact-box {
+    margin: 35px 0px 20px 0px;
+    padding: 25px;
+    text-align: center;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
 }
 
 .sub-heading-title > span {    

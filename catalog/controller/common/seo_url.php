@@ -17,7 +17,7 @@ class ControllerCommonSeoUrl extends Controller {
 
 			foreach ($parts as $part) {
 				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE keyword = '" . $this->db->escape($part) . "'");
-
+				
 				if ($query->num_rows) {
 					$url = explode('=', $query->row['query']);
 

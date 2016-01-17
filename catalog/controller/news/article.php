@@ -4,7 +4,7 @@ class ControllerNewsArticle extends Controller {
 
 	public function index() {
 
-		$this->load->language('news/article');
+		$this->load->language('news/article');		
 
 		$data['breadcrumbs'] = array();
 
@@ -15,8 +15,10 @@ class ControllerNewsArticle extends Controller {
 		);
 
 		$this->load->model('news/category');
+		$category_id = 0;
 
 		if (isset($this->request->get['news_path'])) {
+
 			$path = '';
 
 			$parts = explode('_', (string)$this->request->get['news_path']);
@@ -188,8 +190,8 @@ class ControllerNewsArticle extends Controller {
 			$this->document->setDescription($article_info['meta_description']);
 			$this->document->setKeywords($article_info['meta_keyword']);
 			$this->document->addLink($this->url->link('news/article', 'article_id=' . $this->request->get['article_id']), 'canonical');
-			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
-			$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
+			//$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
+			//$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
 
 			$data['heading_title'] = $article_info['name'];
 
@@ -265,15 +267,12 @@ class ControllerNewsArticle extends Controller {
 			$data['news_show_date_added'] = $this->config->get('news_show_date_added');
 			$data['news_show_date_modified'] = $this->config->get('news_show_date_modified');
 			$data['news_show_author'] = $this->config->get('news_show_author');
-
 			
 			if($article_info['author_id']){
 				$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "user` WHERE user_id = '" . (int)$article_info['author_id'] . "'");
 			
 				$data['author'] = $query->row['username'];
-			}
-
-			
+			}			
 
 			$data['articles'] = array();
 
@@ -319,10 +318,21 @@ class ControllerNewsArticle extends Controller {
 			$data['footer'] = $this->load->controller('common/footer');
 			$data['header'] = $this->load->controller('common/header');
 
-			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/article.tpl')) {
-				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/news/article.tpl', $data));
+			if($category_id == DEFAULT_RECRUITMENTCATEGORY_ID) {
+				$this->load->language('common/common');
+				$data['text_jobcontact'] = $this->language->get('text_jobcontact');
+
+				if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/recruitment_detail.tpl')) {
+					$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/news/recruitment_detail.tpl', $data));
+				} else {
+					$this->response->setOutput($this->load->view('default/template/news/recruitment_detail.tpl', $data));
+				}
 			} else {
-				$this->response->setOutput($this->load->view('default/template/news/article.tpl', $data));
+				if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/article.tpl')) {
+					$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/news/article.tpl', $data));
+				} else {
+					$this->response->setOutput($this->load->view('default/template/news/article.tpl', $data));
+				}
 			}
 		} else {
 			$url = '';

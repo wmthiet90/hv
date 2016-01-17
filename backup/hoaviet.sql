@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2016 at 07:04 PM
+-- Generation Time: Jan 17, 2016 at 05:50 AM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -1439,7 +1439,7 @@ CREATE TABLE IF NOT EXISTS `wm_layout` (
   `layout_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   PRIMARY KEY (`layout_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `wm_layout`
@@ -1454,6 +1454,7 @@ INSERT INTO `wm_layout` (`layout_id`, `name`) VALUES
 (8, 'Contact'),
 (9, 'Sitemap'),
 (11, 'Information'),
+(14, 'Recruitment'),
 (13, 'Search');
 
 -- --------------------------------------------------------
@@ -1495,7 +1496,7 @@ CREATE TABLE IF NOT EXISTS `wm_layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=55 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=58 ;
 
 --
 -- Dumping data for table `wm_layout_route`
@@ -1510,6 +1511,7 @@ INSERT INTO `wm_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `rout
 (32, 9, 0, 'information/sitemap'),
 (34, 4, 0, ''),
 (45, 5, 0, 'product/manufacturer'),
+(57, 14, 0, 'news/recruitment'),
 (53, 13, 0, 'product/search');
 
 -- --------------------------------------------------------
@@ -1705,18 +1707,19 @@ CREATE TABLE IF NOT EXISTS `wm_news_articles` (
   `viewed` int(11) NOT NULL DEFAULT '0',
   `login_to_view` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`article_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `wm_news_articles`
 --
 
 INSERT INTO `wm_news_articles` (`article_id`, `author_id`, `date_added`, `date_modified`, `image`, `sort_order`, `status`, `viewed`, `login_to_view`) VALUES
-(1, 1, '2016-01-10 16:50:30', '2016-01-12 00:05:22', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 28, 0),
-(2, 1, '2016-01-10 23:48:43', '2016-01-10 23:48:43', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 31, 0),
-(3, 1, '2016-01-12 00:13:15', '2016-01-12 00:23:53', 'catalog/demo/tintuc/IMG_3432.png', 0, 1, 3, 0),
-(4, 1, '2016-01-12 00:30:04', '2016-01-12 00:35:50', 'catalog/demo/tintuc/DSC_1025.jpg', 1, 1, 8, 0),
-(5, 1, '2016-01-12 00:41:40', '2016-01-12 00:43:07', 'catalog/demo/tintuc/EXPO2.jpg', 0, 1, 2, 0);
+(1, 1, '2016-01-10 16:50:30', '2016-01-12 00:05:22', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 34, 0),
+(2, 1, '2016-01-10 23:48:43', '2016-01-10 23:48:43', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 33, 0),
+(3, 1, '2016-01-12 00:13:15', '2016-01-12 00:23:53', 'catalog/demo/tintuc/IMG_3432.png', 0, 1, 27, 0),
+(4, 1, '2016-01-12 00:30:04', '2016-01-12 00:35:50', 'catalog/demo/tintuc/DSC_1025.jpg', 1, 1, 9, 0),
+(5, 1, '2016-01-12 00:41:40', '2016-01-12 00:43:07', 'catalog/demo/tintuc/EXPO2.jpg', 0, 1, 4, 0),
+(6, 1, '2016-01-16 01:13:17', '2016-01-16 01:13:17', '', 1, 1, 22, 0);
 
 -- --------------------------------------------------------
 
@@ -1750,7 +1753,9 @@ INSERT INTO `wm_news_articles_description` (`article_id`, `language_id`, `name`,
 (4, 2, 'Triễn lãm ANALYTICA  Việt Nam 2015', '&lt;div class=&quot;accontent&quot;&gt;&lt;p&gt;Triển lãm Analytica Vietnam 2015 đánh dấu bước chuyển mình trong định hướng phát triển thị trường của Công Ty Hóa Việt một cách rõ nét.&lt;/p&gt;&lt;p style=&quot;text-align: center; &quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/DSC_1010.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Tại Triển lãm lần này, gian hàng Hóa Việt trưng bày 6 thương hiệu uy tín đã có chỗ đứng nhất định trên thị trường:&lt;/p&gt;&lt;p&gt;- Atago&lt;/p&gt;&lt;p&gt;- Alla France&lt;/p&gt;&lt;p&gt;-&amp;nbsp;Kimble Chase&lt;/p&gt;&lt;p&gt;- Hirayama&lt;/p&gt;&lt;p&gt;- Munktell Ahlstrom&lt;/p&gt;&lt;p&gt;- Vitlab&lt;/p&gt;&lt;p&gt;- Worldwide Glass&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Đặc biệt với vị thế là Đại lý cấp I của Atago - Nhật Bản là sự thay đổi mới nhất và rõ nhất của Hóa Việt tại Triển Lãm năm nay.&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;text-align: center; &quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/DSC_1025.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;/div&gt;', 'Triển lãm Analytica Vietnam 2015 đánh dấu bước chuyển mình trong định hướng phát triển thị trường của Công Ty Hóa Việt một cách rõ nét.', 'Triễn lãm ANALYTICA  Việt Nam 2015', 'Triễn lãm ANALYTICA  Việt Nam 2015', ''),
 (4, 1, 'Triễn lãm ANALYTICA  Việt Nam 2015', '&lt;p style=&quot;text-align: left;&quot;&gt;Triển lãm Analytica Vietnam 2015 đánh dấu bước chuyển mình trong định hướng phát triển thị trường của Công Ty Hóa Việt một cách rõ nét.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/DSC_1010.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Tại Triển lãm lần này, gian hàng Hóa Việt trưng bày 6 thương hiệu uy tín đã có chỗ đứng nhất định trên thị trường:&lt;/p&gt;&lt;p&gt;- Atago&lt;/p&gt;&lt;p&gt;- Alla France&lt;/p&gt;&lt;p&gt;-&amp;nbsp;Kimble Chase&lt;/p&gt;&lt;p&gt;- Hirayama&lt;/p&gt;&lt;p&gt;- Munktell Ahlstrom&lt;/p&gt;&lt;p&gt;- Vitlab&lt;/p&gt;&lt;p&gt;- Worldwide Glass&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Đặc biệt với vị thế là Đại lý cấp I của Atago - Nhật Bản là sự thay đổi mới nhất và rõ nhất của Hóa Việt tại Triển Lãm năm nay.&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;text-align: center; &quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/DSC_1025.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;', 'Triển lãm Analytica Vietnam 2015 đánh dấu bước chuyển mình trong định hướng phát triển thị trường của Công Ty Hóa Việt một cách rõ nét.', 'Triễn lãm ANALYTICA  Việt Nam 2015', 'Triễn lãm ANALYTICA  Việt Nam 2015', ''),
 (5, 2, 'VIETNAM MEDI - PHARM EXPO 2011', '&lt;p&gt;Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.&lt;/p&gt;&lt;p&gt;Triển lãm lần thứ 11 với 3 nội dung chính:&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Trang Thiết Bị Y Tế Và Thí Nghiệm.&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Dược Phẩm Và Máy Móc Chế Biến Dược Phẩm&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Bệnh Viện Và Trang Thiết Bị Bệnh Viện.&lt;/p&gt;&lt;p&gt;Triển lãm thu hút được gần 200 công ty đến từ 25 nước và vùng lãnh thổ trên thế giới như: Úc, Bangladesh, Bỉ, Trung Quốc, Czech, Đức, Hồng Kông, Ấn Độ, Israel, Iran, Nigieria, Ý, Nhật Bản, Hàn Quốc, Malaysia, Pakistan, Nga, Singapore, Đài Loan, Thái Lan, Triều Tiên, Ucraina, Mỹ và Việt Nam.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;http://hoaviet.vn/data/image/EXPO1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Trong khuôn khổ triển lãm, &lt;strong&gt;Công Ty TNHH Hóa Việt&lt;/strong&gt; có cơ hội giao lưu, trao đổi kinh nghiệm, tìm kiếm đối tác, liên doanh liên kết các dự án đầu tư, mua bán sản phẩm.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;http://hoaviet.vn/data/image/EXPO2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medipharm Expo 2011&lt;/strong&gt; là triển lãm chuyên ngành có uy tín được đông đảo các nhà chuyên môn trong nước và quốc tế quan tâm. Triển lãm là dịp tốt cho các hoạt động kinh doanh của&lt;strong&gt; Công ty Hóa Việt&lt;/strong&gt; trong việc gặp gỡ, trao đổi kinh nghiệm, mở rộng quan hệ hợp tác, thương thảo và ký kết hợp đồng.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img style=&quot;display: block; margin-left: auto; margin-right: auto;&quot; src=&quot;http://hoaviet.vn/data/image/EXPO3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medi-Pharm&lt;/strong&gt; được tổ chức thường niên tại TP HCM do Bộ Y tế và Bộ Công thương Việt Nam chủ trì, Công ty Vinexad phối hợp với Công ty CP Y dược phẩm Vimedimex tổ chức.&lt;/p&gt;', 'Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.', 'VIETNAM MEDI - PHARM EXPO 2011', 'VIETNAM MEDI - PHARM EXPO 2011', ''),
-(5, 1, 'VIETNAM MEDI - PHARM EXPO 2011', '&lt;p&gt;Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.&lt;/p&gt;&lt;p&gt;Triển lãm lần thứ 11 với 3 nội dung chính:&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Trang Thiết Bị Y Tế Và Thí Nghiệm.&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Dược Phẩm Và Máy Móc Chế Biến Dược Phẩm&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Bệnh Viện Và Trang Thiết Bị Bệnh Viện.&lt;/p&gt;&lt;p&gt;Triển lãm thu hút được gần 200 công ty đến từ 25 nước và vùng lãnh thổ trên thế giới như: Úc, Bangladesh, Bỉ, Trung Quốc, Czech, Đức, Hồng Kông, Ấn Độ, Israel, Iran, Nigieria, Ý, Nhật Bản, Hàn Quốc, Malaysia, Pakistan, Nga, Singapore, Đài Loan, Thái Lan, Triều Tiên, Ucraina, Mỹ và Việt Nam.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/EXPO1.jpg&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Trong khuôn khổ triển lãm,&amp;nbsp;&lt;strong&gt;Công Ty TNHH Hóa Việt&lt;/strong&gt;&amp;nbsp;có cơ hội giao lưu, trao đổi kinh nghiệm, tìm kiếm đối tác, liên doanh liên kết các dự án đầu tư, mua bán sản phẩm.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/EXPO2.jpg&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medipharm Expo 2011&lt;/strong&gt;&amp;nbsp;là triển lãm chuyên ngành có uy tín được đông đảo các nhà chuyên môn trong nước và quốc tế quan tâm. Triển lãm là dịp tốt cho các hoạt động kinh doanh của&lt;strong&gt;&amp;nbsp;Công ty Hóa Việt&lt;/strong&gt;&amp;nbsp;trong việc gặp gỡ, trao đổi kinh nghiệm, mở rộng quan hệ hợp tác, thương thảo và ký kết hợp đồng.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/EXPO3.jpg&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medi-Pharm&lt;/strong&gt;&amp;nbsp;được tổ chức thường niên tại TP HCM do Bộ Y tế và Bộ Công thương Việt Nam chủ trì, Công ty Vinexad phối hợp với Công ty CP Y dược phẩm Vimedimex tổ chức.&lt;/p&gt;', 'Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.', 'VIETNAM MEDI - PHARM EXPO 2011', 'VIETNAM MEDI - PHARM EXPO 2011', '');
+(5, 1, 'VIETNAM MEDI - PHARM EXPO 2011', '&lt;p&gt;Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.&lt;/p&gt;&lt;p&gt;Triển lãm lần thứ 11 với 3 nội dung chính:&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Trang Thiết Bị Y Tế Và Thí Nghiệm.&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Dược Phẩm Và Máy Móc Chế Biến Dược Phẩm&lt;/p&gt;&lt;p&gt;- Triển Lãm Quốc Tế Bệnh Viện Và Trang Thiết Bị Bệnh Viện.&lt;/p&gt;&lt;p&gt;Triển lãm thu hút được gần 200 công ty đến từ 25 nước và vùng lãnh thổ trên thế giới như: Úc, Bangladesh, Bỉ, Trung Quốc, Czech, Đức, Hồng Kông, Ấn Độ, Israel, Iran, Nigieria, Ý, Nhật Bản, Hàn Quốc, Malaysia, Pakistan, Nga, Singapore, Đài Loan, Thái Lan, Triều Tiên, Ucraina, Mỹ và Việt Nam.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/EXPO1.jpg&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Trong khuôn khổ triển lãm,&amp;nbsp;&lt;strong&gt;Công Ty TNHH Hóa Việt&lt;/strong&gt;&amp;nbsp;có cơ hội giao lưu, trao đổi kinh nghiệm, tìm kiếm đối tác, liên doanh liên kết các dự án đầu tư, mua bán sản phẩm.&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/EXPO2.jpg&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medipharm Expo 2011&lt;/strong&gt;&amp;nbsp;là triển lãm chuyên ngành có uy tín được đông đảo các nhà chuyên môn trong nước và quốc tế quan tâm. Triển lãm là dịp tốt cho các hoạt động kinh doanh của&lt;strong&gt;&amp;nbsp;Công ty Hóa Việt&lt;/strong&gt;&amp;nbsp;trong việc gặp gỡ, trao đổi kinh nghiệm, mở rộng quan hệ hợp tác, thương thảo và ký kết hợp đồng.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;http://hoaviet.vn/data/image/EXPO3.jpg&quot; alt=&quot;&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Vietnam Medi-Pharm&lt;/strong&gt;&amp;nbsp;được tổ chức thường niên tại TP HCM do Bộ Y tế và Bộ Công thương Việt Nam chủ trì, Công ty Vinexad phối hợp với Công ty CP Y dược phẩm Vimedimex tổ chức.&lt;/p&gt;', 'Tại Trung Tâm Hội Chợ Triển Lãm Tân Bình (TBECC) - 446 Hoàng Văn Thụ, Quận Tân Bình, TP. HCM đã diễn ra lễ khai mạc Triển Lãm Quốc Tế Chuyên Ngành Y Dược thường niên lần thứ 11.', 'VIETNAM MEDI - PHARM EXPO 2011', 'VIETNAM MEDI - PHARM EXPO 2011', ''),
+(6, 2, 'Tuyển dụng nhân viên kinh doanh T1/2015', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;Mô tả công việc:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;Đánh giá nhu cầu của khách hàng, giới thiệu và giải thích cách sử dụng sản phẩm cho khách hàng.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;Phát triển và duy trì mối quan hệ kinh doanh tốt đẹp với khách hàng hiện tại và khách hàng mới.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;Đề ra các kế hoạch bán hàng và các hoạt động dịch vụ nhằm đạt được kế hoạch và doanh số bán hàng.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;Yêu cầu chung:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Tốt nghiệp Đại học chuyên ngành Hóa Học, Sinh Học, Công Nghệ Sinh Học.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Sử dụng thành thạo vi tính văn phòng (Word, Excel).&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Tiếng Anh&amp;nbsp;trình độ B.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Năng động, chịu áp lực cao.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Ưu tiên người có kinh nghiệm.&lt;/p&gt;', 'Công ty TNHH Hóa Việt chuyên kinh doanh Thiết Bị - Hóa Chất – Dụng Cụ phòng thí nghiệm trong các lĩnh vực như: Chăn Nuôi – Thủy Sản, Công Nghệ Sinh Học, Thiết Bị - Vật Tư Phòng Thí Nghiệm, Thực Phẩm – Rượu, Bia, Nước Giải Khát, Môi Trường, Dược Phẩm – Y Tế. Do nhu cầu mở rộng kinh doanh, Công Ty chúng tôi thông báo tuyển dụng vị trí.', 'Tuyển dụng nhân viên kinh doanh, hóa việt', 'Tuyển dụng, nhân viên kinh doanh, hóa việt', ''),
+(6, 1, 'Tuyển dụng nhân viên kinh doanh T1/2015', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;Mô tả công việc:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;Đánh giá nhu cầu của khách hàng, giới thiệu và giải thích cách sử dụng sản phẩm cho khách hàng.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;Phát triển và duy trì mối quan hệ kinh doanh tốt đẹp với khách hàng hiện tại và khách hàng mới.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;Đề ra các kế hoạch bán hàng và các hoạt động dịch vụ nhằm đạt được kế hoạch và doanh số bán hàng.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;strong style=&quot;margin: 0px; padding: 0px;&quot;&gt;Yêu cầu chung:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Tốt nghiệp Đại học chuyên ngành Hóa Học, Sinh Học, Công Nghệ Sinh Học.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Sử dụng thành thạo vi tính văn phòng (Word, Excel).&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Tiếng Anh&amp;nbsp;trình độ B.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Năng động, chịu áp lực cao.&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;- &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Ưu tiên người có kinh nghiệm.&lt;/p&gt;', 'Công ty TNHH Hóa Việt chuyên kinh doanh Thiết Bị - Hóa Chất – Dụng Cụ phòng thí nghiệm trong các lĩnh vực như: Chăn Nuôi – Thủy Sản, Công Nghệ Sinh Học, Thiết Bị - Vật Tư Phòng Thí Nghiệm, Thực Phẩm – Rượu, Bia, Nước Giải Khát, Môi Trường, Dược Phẩm – Y Tế. Do nhu cầu mở rộng kinh doanh, Công Ty chúng tôi thông báo tuyển dụng vị trí.', 'Tuyển dụng nhân viên kinh doanh, hóa việt', 'Tuyển dụng, nhân viên kinh doanh, hóa việt', '');
 
 -- --------------------------------------------------------
 
@@ -1773,7 +1778,8 @@ INSERT INTO `wm_news_articles_to_category` (`article_id`, `category_id`) VALUES
 (2, 1),
 (3, 1),
 (4, 2),
-(5, 2);
+(5, 2),
+(6, 3);
 
 -- --------------------------------------------------------
 
@@ -1797,7 +1803,8 @@ INSERT INTO `wm_news_articles_to_layout` (`article_id`, `store_id`, `layout_id`)
 (2, 0, 0),
 (3, 0, 0),
 (4, 0, 0),
-(5, 0, 0);
+(5, 0, 0),
+(6, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1850,7 +1857,8 @@ INSERT INTO `wm_news_articles_to_store` (`article_id`, `store_id`) VALUES
 (2, 0),
 (3, 0),
 (4, 0),
-(5, 0);
+(5, 0),
+(6, 0);
 
 -- --------------------------------------------------------
 
@@ -1869,7 +1877,7 @@ CREATE TABLE IF NOT EXISTS `wm_news_category` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `wm_news_category`
@@ -1877,7 +1885,8 @@ CREATE TABLE IF NOT EXISTS `wm_news_category` (
 
 INSERT INTO `wm_news_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
 (1, '', 0, 1, 1, 0, 1, '2016-01-10 16:34:51', '2016-01-12 00:44:46'),
-(2, '', 0, 1, 1, 1, 1, '2016-01-10 16:36:07', '2016-01-12 00:44:59');
+(2, '', 0, 1, 1, 1, 1, '2016-01-10 16:36:07', '2016-01-12 00:44:59'),
+(3, '', 0, 0, 1, 2, 1, '2016-01-13 23:30:29', '2016-01-17 10:38:32');
 
 -- --------------------------------------------------------
 
@@ -1904,7 +1913,9 @@ INSERT INTO `wm_news_category_description` (`category_id`, `language_id`, `name`
 (1, 2, 'Tin nội bộ', '&lt;p&gt;Tin tức nội bộ&lt;br&gt;&lt;/p&gt;', '', ''),
 (1, 1, 'Internal News', '&lt;p&gt;Internal News&lt;br&gt;&lt;/p&gt;', '', ''),
 (2, 2, 'Tin sản phẩm', '&lt;p&gt;Tin sản phẩm&lt;br&gt;&lt;/p&gt;', '', ''),
-(2, 1, 'Product news', '&lt;p&gt;Product news&lt;br&gt;&lt;/p&gt;', '', '');
+(2, 1, 'Product news', '&lt;p&gt;Product news&lt;br&gt;&lt;/p&gt;', '', ''),
+(3, 2, 'Tuyển dụng', '&lt;p&gt;Công ty TNHH Hóa Việt được thành lập năm 2006. Những năm vừa qua, chúng tôi luôn luôn nỗ lực không ngừng để phát triển và khẳng định uy tín. Hiện nay, công ty chúng tôi cung cấp sản phẩm của hơn 25 nhà cung cấp nổi tiếng trên thế giới như: Mỹ, Đức, Pháp, Ý, Nhật, Thụy Sỹ,… với những thiết bị khoa học, dụng cụ, hóa chất đầy đủ để đáp ứng được nhu cầu ngày càng cao của toàn xã hội trong việc kiểm tra chất lượng sản phẩm, vệ sinh an toàn thực phẩm, vệ sinh y tế, môi trường, nghiên cứu,… &lt;/p&gt;&lt;p&gt;Công Ty TNHH Hóa Việt chuyên kinh doanh Thiết Bị - Hóa Chất – Dụng Cụ phòng thí nghiệm trong các lĩnh vực như: Chăn Nuôi – Thủy Sản, Công Nghệ Sinh Học, Thiết Bị - Vật Tư Phòng Thí Nghiệm, Thực Phẩm – Rượu, Bia, Nước Giải Khát, Môi Trường, Dược Phẩm – Y Tế.&lt;/p&gt;', '', ''),
+(3, 1, 'Recruitment ', '&lt;p&gt;HoaViet Co., Ltd. was established in 2006. In recent years, we always ongoing effort to develop and prestige. Currently, our company provides the product of more than 25 well-known suppliers in the world such as America, Germany, France, Italy, Japan, Switzerland, ... with scientific equipment, tools, chemicals sufficient to meet the increasing demands of society in checking product quality, food safety, hygiene and health, the environment, research, ...&lt;/p&gt;&lt;p&gt;HoaViet Co. specializes in trading Equipment - Chemical - Laboratory Equipment in areas such as: Livestock - Fisheries, Biotechnology, Equipment - Laboratory Supplies, Food - Wine, beer, Beverage, Environmental, Pharmaceutical -&amp;nbsp;&lt;/p&gt;', '', '');
 
 -- --------------------------------------------------------
 
@@ -1925,7 +1936,8 @@ CREATE TABLE IF NOT EXISTS `wm_news_category_path` (
 
 INSERT INTO `wm_news_category_path` (`category_id`, `path_id`, `level`) VALUES
 (1, 1, 0),
-(2, 2, 0);
+(2, 2, 0),
+(3, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -1946,7 +1958,8 @@ CREATE TABLE IF NOT EXISTS `wm_news_category_to_layout` (
 
 INSERT INTO `wm_news_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
 (1, 0, 0),
-(2, 0, 0);
+(2, 0, 0),
+(3, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1966,7 +1979,8 @@ CREATE TABLE IF NOT EXISTS `wm_news_category_to_store` (
 
 INSERT INTO `wm_news_category_to_store` (`category_id`, `store_id`) VALUES
 (1, 0),
-(2, 0);
+(2, 0),
+(3, 0);
 
 -- --------------------------------------------------------
 
@@ -2965,7 +2979,7 @@ CREATE TABLE IF NOT EXISTS `wm_setting` (
   `value` text NOT NULL,
   `serialized` tinyint(1) NOT NULL,
   PRIMARY KEY (`setting_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1201 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1311 ;
 
 --
 -- Dumping data for table `wm_setting`
@@ -3001,120 +3015,120 @@ INSERT INTO `wm_setting` (`setting_id`, `store_id`, `code`, `key`, `value`, `ser
 (146, 0, 'category', 'category_status', '1', 0),
 (158, 0, 'account', 'account_status', '1', 0),
 (159, 0, 'affiliate', 'affiliate_status', '1', 0),
-(832, 0, 'config', 'config_error_filename', 'error.log', 0),
-(829, 0, 'config', 'config_compression', '0', 0),
-(830, 0, 'config', 'config_error_display', '1', 0),
-(831, 0, 'config', 'config_error_log', '1', 0),
-(826, 0, 'config', 'config_maintenance', '0', 0),
-(827, 0, 'config', 'config_password', '1', 0),
-(828, 0, 'config', 'config_encryption', '879e4cfd9175a6870e10ed98e3e7e38e', 0),
+(1307, 0, 'config', 'config_error_display', '1', 0),
+(1308, 0, 'config', 'config_error_log', '1', 0),
+(1309, 0, 'config', 'config_error_filename', 'error.log', 0),
+(1310, 0, 'config', 'config_google_analytics', '', 0),
 (94, 0, 'voucher', 'voucher_sort_order', '8', 0),
 (95, 0, 'voucher', 'voucher_status', '1', 0),
 (103, 0, 'free_checkout', 'free_checkout_status', '1', 0),
 (104, 0, 'free_checkout', 'free_checkout_order_status_id', '1', 0),
-(822, 0, 'config', 'config_seo_url', '1', 0),
-(823, 0, 'config', 'config_file_max_size', '300000', 0),
-(824, 0, 'config', 'config_file_ext_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
-(825, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
-(819, 0, 'config', 'config_secure', '0', 0),
-(820, 0, 'config', 'config_shared', '0', 0),
-(821, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
-(812, 0, 'config', 'config_ftp_status', '0', 0),
-(813, 0, 'config', 'config_mail', 'a:7:{s:8:"protocol";s:4:"mail";s:9:"parameter";s:0:"";s:13:"smtp_hostname";s:0:"";s:13:"smtp_username";s:0:"";s:13:"smtp_password";s:0:"";s:9:"smtp_port";s:0:"";s:12:"smtp_timeout";s:0:"";}', 1),
-(818, 0, 'config', 'config_fraud_status_id', '7', 0),
-(817, 0, 'config', 'config_fraud_score', '', 0),
-(814, 0, 'config', 'config_mail_alert', '', 0),
-(815, 0, 'config', 'config_fraud_detection', '0', 0),
-(816, 0, 'config', 'config_fraud_key', '', 0),
-(811, 0, 'config', 'config_ftp_root', '', 0),
-(810, 0, 'config', 'config_ftp_password', '', 0),
-(809, 0, 'config', 'config_ftp_username', '', 0),
-(808, 0, 'config', 'config_ftp_port', '21', 0),
-(807, 0, 'config', 'config_ftp_hostname', 'hoaviet.local', 0),
-(806, 0, 'config', 'config_image_location_height', '50', 0),
-(805, 0, 'config', 'config_image_location_width', '268', 0),
-(804, 0, 'config', 'config_image_cart_height', '47', 0),
-(803, 0, 'config', 'config_image_cart_width', '47', 0),
-(802, 0, 'config', 'config_image_wishlist_height', '47', 0),
-(801, 0, 'config', 'config_image_wishlist_width', '47', 0),
-(798, 0, 'config', 'config_image_related_height', '80', 0),
-(799, 0, 'config', 'config_image_compare_width', '90', 0),
-(800, 0, 'config', 'config_image_compare_height', '90', 0),
-(793, 0, 'config', 'config_image_product_width', '228', 0),
-(794, 0, 'config', 'config_image_product_height', '228', 0),
-(795, 0, 'config', 'config_image_additional_width', '74', 0),
-(796, 0, 'config', 'config_image_additional_height', '74', 0),
-(797, 0, 'config', 'config_image_related_width', '80', 0),
-(792, 0, 'config', 'config_image_popup_height', '500', 0),
-(791, 0, 'config', 'config_image_popup_width', '500', 0),
-(790, 0, 'config', 'config_image_thumb_height', '228', 0),
-(789, 0, 'config', 'config_image_thumb_width', '228', 0),
-(788, 0, 'config', 'config_image_category_height', '80', 0),
-(787, 0, 'config', 'config_image_category_width', '80', 0),
-(786, 0, 'config', 'config_icon', 'catalog/favicon.png', 0),
-(785, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
-(784, 0, 'config', 'config_return_status_id', '2', 0),
-(783, 0, 'config', 'config_return_id', '0', 0),
-(782, 0, 'config', 'config_affiliate_mail', '0', 0),
-(779, 0, 'config', 'config_affiliate_auto', '0', 0),
-(781, 0, 'config', 'config_affiliate_id', '4', 0),
-(780, 0, 'config', 'config_affiliate_commission', '5', 0),
-(778, 0, 'config', 'config_affiliate_approval', '0', 0),
-(777, 0, 'config', 'config_stock_checkout', '0', 0),
-(776, 0, 'config', 'config_stock_warning', '0', 0),
-(775, 0, 'config', 'config_stock_display', '0', 0),
-(774, 0, 'config', 'config_order_mail', '0', 0),
-(773, 0, 'config', 'config_complete_status', 'a:1:{i:0;s:1:"5";}', 1),
-(772, 0, 'config', 'config_processing_status', 'a:1:{i:0;s:1:"2";}', 1),
-(771, 0, 'config', 'config_order_status_id', '1', 0),
-(770, 0, 'config', 'config_checkout_id', '5', 0),
-(769, 0, 'config', 'config_checkout_guest', '1', 0),
-(768, 0, 'config', 'config_cart_weight', '1', 0),
-(767, 0, 'config', 'config_api_id', '1', 0),
-(766, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
-(765, 0, 'config', 'config_account_mail', '0', 0),
-(764, 0, 'config', 'config_account_id', '3', 0),
-(763, 0, 'config', 'config_login_attempts', '5', 0),
-(761, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
-(762, 0, 'config', 'config_customer_price', '0', 0),
-(760, 0, 'config', 'config_customer_group_id', '1', 0),
-(759, 0, 'config', 'config_customer_online', '0', 0),
-(758, 0, 'config', 'config_tax_customer', 'shipping', 0),
-(757, 0, 'config', 'config_tax_default', 'shipping', 0),
-(756, 0, 'config', 'config_tax', '1', 0),
-(755, 0, 'config', 'config_voucher_max', '1000', 0),
-(754, 0, 'config', 'config_voucher_min', '1', 0),
-(753, 0, 'config', 'config_review_mail', '0', 0),
-(752, 0, 'config', 'config_review_guest', '1', 0),
-(751, 0, 'config', 'config_review_status', '1', 0),
-(750, 0, 'config', 'config_limit_admin', '20', 0),
-(749, 0, 'config', 'config_product_description_length', '100', 0),
-(748, 0, 'config', 'config_product_limit', '15', 0),
-(747, 0, 'config', 'config_product_count', '1', 0),
-(746, 0, 'config', 'config_weight_class_id', '1', 0),
-(745, 0, 'config', 'config_length_class_id', '1', 0),
-(744, 0, 'config', 'config_currency_auto', '0', 0),
-(743, 0, 'config', 'config_currency', 'USD', 0),
-(742, 0, 'config', 'config_admin_language', 'en', 0),
-(741, 0, 'config', 'config_language', 'vi', 0),
-(740, 0, 'config', 'config_zone_id', '3780', 0),
-(739, 0, 'config', 'config_country_id', '230', 0),
-(738, 0, 'config', 'config_layout_id', '4', 0),
-(737, 0, 'config', 'config_template', 'default', 0),
-(736, 0, 'config', 'config_meta_keyword', 'Hóa Việt', 0),
-(735, 0, 'config', 'config_meta_description', 'Hóa Việt', 0),
-(734, 0, 'config', 'config_meta_title', 'Hóa Việt', 0),
-(733, 0, 'config', 'config_comment', '', 0),
-(732, 0, 'config', 'config_open', '', 0),
-(731, 0, 'config', 'config_image', 'catalog/favicon.png', 0),
-(730, 0, 'config', 'config_fax', '', 0),
-(728, 0, 'config', 'config_email', 'nvthiet.khtn08@gmail.com', 0),
-(729, 0, 'config', 'config_telephone', '123456789', 0),
-(726, 0, 'config', 'config_address', '229 Lê Cao Lãng', 0),
-(727, 0, 'config', 'config_geocode', '', 0),
-(725, 0, 'config', 'config_owner', 'Hoa Viet', 0),
-(724, 0, 'config', 'config_name', 'Hóa Việt', 0),
-(833, 0, 'config', 'config_google_analytics', '', 0),
+(1306, 0, 'config', 'config_compression', '0', 0),
+(1303, 0, 'config', 'config_maintenance', '0', 0),
+(1304, 0, 'config', 'config_password', '1', 0),
+(1305, 0, 'config', 'config_encryption', '879e4cfd9175a6870e10ed98e3e7e38e', 0),
+(1302, 0, 'config', 'config_file_mime_allowed', 'text/plain\r\nimage/png\r\nimage/jpeg\r\nimage/gif\r\nimage/bmp\r\nimage/vnd.microsoft.icon\r\nimage/tiff\r\nimage/svg+xml\r\napplication/zip\r\napplication/x-rar-compressed\r\napplication/x-msdownload\r\napplication/vnd.ms-cab-compressed\r\naudio/mpeg\r\nvideo/quicktime\r\napplication/pdf\r\nimage/vnd.adobe.photoshop\r\napplication/postscript\r\napplication/msword\r\napplication/rtf\r\napplication/vnd.ms-excel\r\napplication/vnd.ms-powerpoint\r\napplication/vnd.oasis.opendocument.text\r\napplication/vnd.oasis.opendocument.spreadsheet', 0),
+(1299, 0, 'config', 'config_seo_url', '1', 0),
+(1300, 0, 'config', 'config_file_max_size', '300000', 0),
+(1301, 0, 'config', 'config_file_ext_allowed', 'txt\r\npng\r\njpe\r\njpeg\r\njpg\r\ngif\r\nbmp\r\nico\r\ntiff\r\ntif\r\nsvg\r\nsvgz\r\nzip\r\nrar\r\nmsi\r\ncab\r\nmp3\r\nqt\r\nmov\r\npdf\r\npsd\r\nai\r\neps\r\nps\r\ndoc\r\nrtf\r\nxls\r\nppt\r\nodt\r\nods', 0),
+(1298, 0, 'config', 'config_robots', 'abot\r\ndbot\r\nebot\r\nhbot\r\nkbot\r\nlbot\r\nmbot\r\nnbot\r\nobot\r\npbot\r\nrbot\r\nsbot\r\ntbot\r\nvbot\r\nybot\r\nzbot\r\nbot.\r\nbot/\r\n_bot\r\n.bot\r\n/bot\r\n-bot\r\n:bot\r\n(bot\r\ncrawl\r\nslurp\r\nspider\r\nseek\r\naccoona\r\nacoon\r\nadressendeutschland\r\nah-ha.com\r\nahoy\r\naltavista\r\nananzi\r\nanthill\r\nappie\r\narachnophilia\r\narale\r\naraneo\r\naranha\r\narchitext\r\naretha\r\narks\r\nasterias\r\natlocal\r\natn\r\natomz\r\naugurfind\r\nbackrub\r\nbannana_bot\r\nbaypup\r\nbdfetch\r\nbig brother\r\nbiglotron\r\nbjaaland\r\nblackwidow\r\nblaiz\r\nblog\r\nblo.\r\nbloodhound\r\nboitho\r\nbooch\r\nbradley\r\nbutterfly\r\ncalif\r\ncassandra\r\nccubee\r\ncfetch\r\ncharlotte\r\nchurl\r\ncienciaficcion\r\ncmc\r\ncollective\r\ncomagent\r\ncombine\r\ncomputingsite\r\ncsci\r\ncurl\r\ncusco\r\ndaumoa\r\ndeepindex\r\ndelorie\r\ndepspid\r\ndeweb\r\ndie blinde kuh\r\ndigger\r\nditto\r\ndmoz\r\ndocomo\r\ndownload express\r\ndtaagent\r\ndwcp\r\nebiness\r\nebingbong\r\ne-collector\r\nejupiter\r\nemacs-w3 search engine\r\nesther\r\nevliya celebi\r\nezresult\r\nfalcon\r\nfelix ide\r\nferret\r\nfetchrover\r\nfido\r\nfindlinks\r\nfireball\r\nfish search\r\nfouineur\r\nfunnelweb\r\ngazz\r\ngcreep\r\ngenieknows\r\ngetterroboplus\r\ngeturl\r\nglx\r\ngoforit\r\ngolem\r\ngrabber\r\ngrapnel\r\ngralon\r\ngriffon\r\ngromit\r\ngrub\r\ngulliver\r\nhamahakki\r\nharvest\r\nhavindex\r\nhelix\r\nheritrix\r\nhku www octopus\r\nhomerweb\r\nhtdig\r\nhtml index\r\nhtml_analyzer\r\nhtmlgobble\r\nhubater\r\nhyper-decontextualizer\r\nia_archiver\r\nibm_planetwide\r\nichiro\r\niconsurf\r\niltrovatore\r\nimage.kapsi.net\r\nimagelock\r\nincywincy\r\nindexer\r\ninfobee\r\ninformant\r\ningrid\r\ninktomisearch.com\r\ninspector web\r\nintelliagent\r\ninternet shinchakubin\r\nip3000\r\niron33\r\nisraeli-search\r\nivia\r\njack\r\njakarta\r\njavabee\r\njetbot\r\njumpstation\r\nkatipo\r\nkdd-explorer\r\nkilroy\r\nknowledge\r\nkototoi\r\nkretrieve\r\nlabelgrabber\r\nlachesis\r\nlarbin\r\nlegs\r\nlibwww\r\nlinkalarm\r\nlink validator\r\nlinkscan\r\nlockon\r\nlwp\r\nlycos\r\nmagpie\r\nmantraagent\r\nmapoftheinternet\r\nmarvin/\r\nmattie\r\nmediafox\r\nmediapartners\r\nmercator\r\nmerzscope\r\nmicrosoft url control\r\nminirank\r\nmiva\r\nmj12\r\nmnogosearch\r\nmoget\r\nmonster\r\nmoose\r\nmotor\r\nmultitext\r\nmuncher\r\nmuscatferret\r\nmwd.search\r\nmyweb\r\nnajdi\r\nnameprotect\r\nnationaldirectory\r\nnazilla\r\nncsa beta\r\nnec-meshexplorer\r\nnederland.zoek\r\nnetcarta webmap engine\r\nnetmechanic\r\nnetresearchserver\r\nnetscoop\r\nnewscan-online\r\nnhse\r\nnokia6682/\r\nnomad\r\nnoyona\r\nnutch\r\nnzexplorer\r\nobjectssearch\r\noccam\r\nomni\r\nopen text\r\nopenfind\r\nopenintelligencedata\r\norb search\r\nosis-project\r\npack rat\r\npageboy\r\npagebull\r\npage_verifier\r\npanscient\r\nparasite\r\npartnersite\r\npatric\r\npear.\r\npegasus\r\nperegrinator\r\npgp key agent\r\nphantom\r\nphpdig\r\npicosearch\r\npiltdownman\r\npimptrain\r\npinpoint\r\npioneer\r\npiranha\r\nplumtreewebaccessor\r\npogodak\r\npoirot\r\npompos\r\npoppelsdorf\r\npoppi\r\npopular iconoclast\r\npsycheclone\r\npublisher\r\npython\r\nrambler\r\nraven search\r\nroach\r\nroad runner\r\nroadhouse\r\nrobbie\r\nrobofox\r\nrobozilla\r\nrules\r\nsalty\r\nsbider\r\nscooter\r\nscoutjet\r\nscrubby\r\nsearch.\r\nsearchprocess\r\nsemanticdiscovery\r\nsenrigan\r\nsg-scout\r\nshai''hulud\r\nshark\r\nshopwiki\r\nsidewinder\r\nsift\r\nsilk\r\nsimmany\r\nsite searcher\r\nsite valet\r\nsitetech-rover\r\nskymob.com\r\nsleek\r\nsmartwit\r\nsna-\r\nsnappy\r\nsnooper\r\nsohu\r\nspeedfind\r\nsphere\r\nsphider\r\nspinner\r\nspyder\r\nsteeler/\r\nsuke\r\nsuntek\r\nsupersnooper\r\nsurfnomore\r\nsven\r\nsygol\r\nszukacz\r\ntach black widow\r\ntarantula\r\ntempleton\r\n/teoma\r\nt-h-u-n-d-e-r-s-t-o-n-e\r\ntheophrastus\r\ntitan\r\ntitin\r\ntkwww\r\ntoutatis\r\nt-rex\r\ntutorgig\r\ntwiceler\r\ntwisted\r\nucsd\r\nudmsearch\r\nurl check\r\nupdated\r\nvagabondo\r\nvalkyrie\r\nverticrawl\r\nvictoria\r\nvision-search\r\nvolcano\r\nvoyager/\r\nvoyager-hc\r\nw3c_validator\r\nw3m2\r\nw3mir\r\nwalker\r\nwallpaper\r\nwanderer\r\nwauuu\r\nwavefire\r\nweb core\r\nweb hopper\r\nweb wombat\r\nwebbandit\r\nwebcatcher\r\nwebcopy\r\nwebfoot\r\nweblayers\r\nweblinker\r\nweblog monitor\r\nwebmirror\r\nwebmonkey\r\nwebquest\r\nwebreaper\r\nwebsitepulse\r\nwebsnarf\r\nwebstolperer\r\nwebvac\r\nwebwalk\r\nwebwatch\r\nwebwombat\r\nwebzinger\r\nwhizbang\r\nwhowhere\r\nwild ferret\r\nworldlight\r\nwwwc\r\nwwwster\r\nxenu\r\nxget\r\nxift\r\nxirq\r\nyandex\r\nyanga\r\nyeti\r\nyodao\r\nzao\r\nzippp\r\nzyborg', 0),
+(1294, 0, 'config', 'config_fraud_score', '', 0),
+(1295, 0, 'config', 'config_fraud_status_id', '7', 0),
+(1296, 0, 'config', 'config_secure', '0', 0),
+(1297, 0, 'config', 'config_shared', '0', 0),
+(1293, 0, 'config', 'config_fraud_key', '', 0),
+(1292, 0, 'config', 'config_fraud_detection', '0', 0),
+(1291, 0, 'config', 'config_mail_alert', '', 0),
+(1290, 0, 'config', 'config_mail', 'a:7:{s:8:"protocol";s:4:"mail";s:9:"parameter";s:0:"";s:13:"smtp_hostname";s:0:"";s:13:"smtp_username";s:0:"";s:13:"smtp_password";s:0:"";s:9:"smtp_port";s:0:"";s:12:"smtp_timeout";s:0:"";}', 1),
+(1289, 0, 'config', 'config_ftp_status', '0', 0),
+(1288, 0, 'config', 'config_ftp_root', '', 0),
+(1287, 0, 'config', 'config_ftp_password', '', 0),
+(1285, 0, 'config', 'config_ftp_port', '21', 0),
+(1286, 0, 'config', 'config_ftp_username', '', 0),
+(1284, 0, 'config', 'config_ftp_hostname', 'hoaviet.local', 0),
+(1283, 0, 'config', 'config_image_location_height', '50', 0),
+(1282, 0, 'config', 'config_image_location_width', '268', 0),
+(1281, 0, 'config', 'config_image_cart_height', '47', 0),
+(1280, 0, 'config', 'config_image_cart_width', '47', 0),
+(1273, 0, 'config', 'config_image_additional_height', '74', 0),
+(1274, 0, 'config', 'config_image_related_width', '80', 0),
+(1275, 0, 'config', 'config_image_related_height', '80', 0),
+(1279, 0, 'config', 'config_image_wishlist_height', '47', 0),
+(1278, 0, 'config', 'config_image_wishlist_width', '47', 0),
+(1277, 0, 'config', 'config_image_compare_height', '90', 0),
+(1276, 0, 'config', 'config_image_compare_width', '90', 0),
+(1272, 0, 'config', 'config_image_additional_width', '74', 0),
+(1271, 0, 'config', 'config_image_product_height', '228', 0),
+(1270, 0, 'config', 'config_image_product_width', '228', 0),
+(1269, 0, 'config', 'config_image_popup_height', '500', 0),
+(1268, 0, 'config', 'config_image_popup_width', '500', 0),
+(1267, 0, 'config', 'config_image_thumb_height', '228', 0),
+(1266, 0, 'config', 'config_image_thumb_width', '228', 0),
+(1265, 0, 'config', 'config_image_category_height', '80', 0),
+(1264, 0, 'config', 'config_image_category_width', '80', 0),
+(1263, 0, 'config', 'config_icon', 'catalog/favicon.png', 0),
+(1262, 0, 'config', 'config_logo', 'catalog/logo.png', 0),
+(1261, 0, 'config', 'config_return_status_id', '2', 0),
+(1257, 0, 'config', 'config_affiliate_commission', '5', 0),
+(1258, 0, 'config', 'config_affiliate_id', '4', 0),
+(1259, 0, 'config', 'config_affiliate_mail', '0', 0),
+(1260, 0, 'config', 'config_return_id', '0', 0),
+(1256, 0, 'config', 'config_affiliate_auto', '0', 0),
+(1255, 0, 'config', 'config_affiliate_approval', '0', 0),
+(1254, 0, 'config', 'config_stock_checkout', '0', 0),
+(1253, 0, 'config', 'config_stock_warning', '0', 0),
+(1251, 0, 'config', 'config_order_mail', '0', 0),
+(1252, 0, 'config', 'config_stock_display', '0', 0),
+(1250, 0, 'config', 'config_complete_status', 'a:1:{i:0;s:1:"5";}', 1),
+(1249, 0, 'config', 'config_processing_status', 'a:1:{i:0;s:1:"2";}', 1),
+(1248, 0, 'config', 'config_order_status_id', '1', 0),
+(1247, 0, 'config', 'config_checkout_id', '5', 0),
+(1246, 0, 'config', 'config_checkout_guest', '1', 0),
+(1245, 0, 'config', 'config_cart_weight', '1', 0),
+(1244, 0, 'config', 'config_api_id', '1', 0),
+(1243, 0, 'config', 'config_invoice_prefix', 'INV-2013-00', 0),
+(1242, 0, 'config', 'config_account_mail', '0', 0),
+(1241, 0, 'config', 'config_account_id', '3', 0),
+(1238, 0, 'config', 'config_customer_group_display', 'a:1:{i:0;s:1:"1";}', 1),
+(1240, 0, 'config', 'config_login_attempts', '5', 0),
+(1239, 0, 'config', 'config_customer_price', '0', 0),
+(1237, 0, 'config', 'config_customer_group_id', '1', 0),
+(1236, 0, 'config', 'config_customer_online', '0', 0),
+(1235, 0, 'config', 'config_tax_customer', 'shipping', 0),
+(1234, 0, 'config', 'config_tax_default', 'shipping', 0),
+(1233, 0, 'config', 'config_tax', '1', 0),
+(1232, 0, 'config', 'config_voucher_max', '1000', 0),
+(1231, 0, 'config', 'config_voucher_min', '1', 0),
+(1230, 0, 'config', 'config_review_mail', '0', 0),
+(1229, 0, 'config', 'config_review_guest', '1', 0),
+(1228, 0, 'config', 'config_review_status', '1', 0),
+(1227, 0, 'config', 'config_limit_admin', '20', 0),
+(1226, 0, 'config', 'config_product_description_length', '100', 0),
+(1225, 0, 'config', 'config_product_limit', '15', 0),
+(1224, 0, 'config', 'config_product_count', '1', 0),
+(1222, 0, 'config', 'config_length_class_id', '1', 0),
+(1223, 0, 'config', 'config_weight_class_id', '1', 0),
+(1221, 0, 'config', 'config_currency_auto', '0', 0),
+(1220, 0, 'config', 'config_currency', 'USD', 0),
+(1219, 0, 'config', 'config_admin_language', 'vi', 0),
+(1218, 0, 'config', 'config_language', 'vi', 0),
+(1217, 0, 'config', 'config_zone_id', '3780', 0),
+(1216, 0, 'config', 'config_country_id', '230', 0),
+(1215, 0, 'config', 'config_layout_id', '4', 0),
+(1214, 0, 'config', 'config_template', 'default', 0),
+(1213, 0, 'config', 'config_meta_keyword', 'Hóa Việt', 0),
+(1212, 0, 'config', 'config_meta_description', 'Hóa Việt', 0),
+(1211, 0, 'config', 'config_meta_title', 'Hóa Việt', 0),
+(1210, 0, 'config', 'config_comment', '', 0),
+(1208, 0, 'config', 'config_image', 'catalog/favicon.png', 0),
+(1209, 0, 'config', 'config_open', '', 0),
+(1207, 0, 'config', 'config_fax', '', 0),
+(1206, 0, 'config', 'config_telephone', '123456789', 0),
+(1204, 0, 'config', 'config_geocode', '', 0),
+(1205, 0, 'config', 'config_email', 'nvthiet.khtn08@gmail.com', 0),
+(1203, 0, 'config', 'config_address', '229 Lê Cao Lãng', 0),
+(1202, 0, 'config', 'config_owner', 'Hoa Viet', 0),
+(1201, 0, 'config', 'config_name', 'Hóa Việt', 0),
 (1200, 0, 'news', 'news_image_related_height', '240', 0),
 (1199, 0, 'news', 'news_image_related_width', '320', 0),
 (1198, 0, 'news', 'news_image_article_height', '240', 0),
@@ -3292,7 +3306,7 @@ CREATE TABLE IF NOT EXISTS `wm_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=873 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=879 ;
 
 --
 -- Dumping data for table `wm_url_alias`
@@ -3310,6 +3324,8 @@ INSERT INTO `wm_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (847, 'product_id=50', ''),
 (871, 'news_category_id=1', 'tin-noi-bo'),
 (872, 'news_category_id=2', 'tin-san-pham'),
+(878, 'news_category_id=3', 'tuyen-dung'),
+(875, 'article_id=6', 'tuyen-dung-nhan-vien-kinhdoanh-t1-2015'),
 (828, 'manufacturer_id=9', 'canon'),
 (829, 'manufacturer_id=5', 'htc'),
 (830, 'manufacturer_id=7', 'hewlett-packard'),

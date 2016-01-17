@@ -80,17 +80,6 @@
     </div>
     <?php //echo $column_right; ?></div>
 </div>
-<script type="text/javascript"><!--
-  $(document).ready(function() {
-    $('.thumbnails').magnificPopup({
-      type:'image',
-      delegate: 'a',
-      gallery: {
-        enabled:true
-      }
-    });
-  });
-//--></script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5693f5f5b2d34123" async="async"></script>
 <?php echo $footer; ?>
