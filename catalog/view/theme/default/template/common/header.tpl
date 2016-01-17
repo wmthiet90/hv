@@ -69,11 +69,11 @@
           </div>
           <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-              <li class="<?php echo ($m_active == 'home' ? 'active': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a>
+              <li class="<?php echo ($active_menu == 'home' ? 'active': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_home; ?></a>
               </li>
-              <li><a href="<?php echo $home; ?>"><?php echo $text_introduction; ?></a>
+              <li class="<?php echo ($active_menu == 'about' ? 'active': '') ?>"><a href="<?php echo $about; ?>"><?php echo $text_introduction; ?></a>
               </li>
-              <li class="dropdown <?php echo ($m_active == 'product' ? 'active': '') ?>">
+              <li class="dropdown <?php echo ($active_menu == 'product' ? 'active': '') ?>">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_product; ?></a>
                 <div class="dropdown-menu">
                   <div class="dropdown-inner">
@@ -85,7 +85,7 @@
                     </ul>
                   </div>
               </li>
-              <li class="dropdown <?php echo ($m_active == 'news' ? 'active': '') ?>">
+              <li class="dropdown <?php echo ($active_menu == 'news' ? 'active': '') ?>">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_newsevent; ?></a>
                 <div class="dropdown-menu">
                   <div class="dropdown-inner">
@@ -116,10 +116,10 @@
                   </div>
                 </div>
               </li>              
-              <li class="<?php echo ($m_active == 'home' ? 'download': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_downloads; ?></a></li>
-              <li class="<?php echo ($m_active == 'job' ? 'active': '') ?>"><a href="<?php echo $recruitment; ?>"><?php echo $text_job; ?></a>
+              <li class="<?php echo ($active_menu == 'download' ? 'active': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_downloads; ?></a></li>
+              <li class="<?php echo ($active_menu == 'recruitment' ? 'active': '') ?>"><a href="<?php echo $recruitment; ?>"><?php echo $text_job; ?></a>
               </li>
-              <li class="<?php echo ($m_active == 'contact' ? 'active': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_contact; ?></a>
+              <li class="<?php echo ($active_menu == 'contact' ? 'active': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_contact; ?></a>
               </li>
             </ul>
           </div>          

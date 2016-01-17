@@ -28,3 +28,4 @@ define('DB_PREFIX', 'wm_');
 
 //Config Data
 define("DEFAULT_RECRUITMENTCATEGORY_ID", 3);
+define("DEFAULT_ABOUT_US_NEWS_ID", 16);

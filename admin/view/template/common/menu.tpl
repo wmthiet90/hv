@@ -6,7 +6,7 @@
       <li><a href="<?php echo $product; ?>"><?php echo $text_product; ?></a></li>
       <li class="hidden"><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>
       <li><a href="<?php echo $manufacturer; ?>"><?php echo $text_manufacturer; ?></a></li>
-      <li><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
+      <li class="hidden"><a href="<?php echo $information; ?>"><?php echo $text_information; ?></a></li>
     </ul>
   </li>
   <li id="news"><a class="parent"><i class="fa fa-pencil fa-fw"></i> <span><?php echo $text_news; ?></span></a>

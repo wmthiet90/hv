@@ -10,6 +10,7 @@ $_['text_contact']           = 'Contact';
 $_['text_see_all']           = 'See all';
 $_['text_see_more']           = 'See more';
 $_['text_partners']           = 'Partners';
+$_['text_aboutus']           = 'About Us';
 
 $_['text_workinhoaviet'] = 'Working in HoaViet';
 $_['text_openjobs'] = 'Open jobs';

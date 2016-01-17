@@ -10,6 +10,7 @@ $_['text_contact']           = 'Liên hệ';
 $_['text_see_all']           = 'Xem tất cả';
 $_['text_see_more']           = 'Xem chi tiết';
 $_['text_partners']           = 'Đối tác';
+$_['text_aboutus']           = 'Về Chúng Tôi';
 
 $_['text_workinhoaviet'] = 'Làm việc tại Hóa Việt';
 $_['text_openjobs'] = 'Vị trí tuyển dụng';

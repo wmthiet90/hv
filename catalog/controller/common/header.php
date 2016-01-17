@@ -21,14 +21,6 @@ class ControllerCommonHeader extends Controller {
 		$data['google_analytics'] = html_entity_decode($this->config->get('config_google_analytics'), ENT_QUOTES, 'UTF-8');
 		$data['name'] = $this->config->get('config_name');
 		
-		$currentRoute = isset($this->request->get['route']) ? $this->request->get['route'] : '';
-		$data['m_active'] = '';
-		if($currentRoute == '' || $currentRoute == 'common/home') {
-			$data['m_active'] = 'home';
-		} else if($currentRoute == 'news/category' || $currentRoute == 'news/article') {
-			$data['m_active'] = 'news';
-		}
-
 		if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
 			$data['icon'] = $server . 'image/' . $this->config->get('config_icon');
 		} else {
@@ -79,6 +71,7 @@ class ControllerCommonHeader extends Controller {
 		$data['shopping_cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
 		$data['contact'] = $this->url->link('information/contact');
+		$data['about'] = $this->url->link('common/about');
 		$data['recruitment'] = $this->url->link('news/category', 'news_path=' . DEFAULT_RECRUITMENTCATEGORY_ID);
 		$data['telephone'] = $this->config->get('config_telephone');
 
@@ -179,6 +172,8 @@ class ControllerCommonHeader extends Controller {
 				$class = '-' . $this->request->get['path'];
 			} elseif (isset($this->request->get['manufacturer_id'])) {
 				$class = '-' . $this->request->get['manufacturer_id'];
+			} elseif (isset($this->request->get['news_path'])) {
+				$class = '-' . $this->request->get['news_path'];
 			} else {
 				$class = '';
 			}
@@ -186,6 +181,20 @@ class ControllerCommonHeader extends Controller {
 			$data['class'] = str_replace('/', '-', $this->request->get['route']) . $class;
 		} else {
 			$data['class'] = 'common-home';
+		}
+
+		//Menu active
+		$data['active_menu'] = 'home';
+		if($data['class'] == 'common-about') {
+			$data['active_menu'] = 'about';
+		} elseif ($data['class'] == 'news-category-3' || $data['class'] == 'news-article-3' ) {
+			$data['active_menu'] = 'recruitment';
+		} elseif ($data['class'] == 'information-contact') {
+			$data['active_menu'] = 'contact';
+		} elseif (strrpos($data['class'], 'product') != false) {
+			$data['active_menu'] = 'product';
+		} elseif (strrpos($data['class'], 'news-category') != false) {
+			$data['active_menu'] = 'news';
 		}
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/header.tpl')) {
