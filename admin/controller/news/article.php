@@ -492,6 +492,7 @@ class ControllerNewsArticle extends Controller {
 		$data['entry_layout'] = $this->language->get('entry_layout');
 		$data['entry_store'] = $this->language->get('entry_store');
 		$data['entry_login_to_view'] = $this->language->get('entry_login_to_view');
+		$data['entry_is_hot_news'] = $this->language->get('entry_is_hot_news');
 		$data['entry_related'] = $this->language->get('entry_related');
 		$data['entry_short_description'] = $this->language->get('entry_short_description');
 		$data['entry_author'] = $this->language->get('entry_author');
@@ -646,6 +647,14 @@ class ControllerNewsArticle extends Controller {
 			$data['login_to_view'] = $article_info['login_to_view'];
 		} else {
 			$data['login_to_view'] = '';
+		}
+
+		if (isset($this->request->post['is_hot_news'])) {
+			$data['is_hot_news'] = $this->request->post['is_hot_news'];
+		} elseif (!empty($article_info)) {
+			$data['is_hot_news'] = $article_info['is_hot_news'];
+		} else {
+			$data['is_hot_news'] = '';
 		}
 
 		if (isset($this->request->post['keyword'])) {

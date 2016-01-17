@@ -88,123 +88,137 @@
           </div>
           <div class="tab-pane" id="tab-data">
             <div class="form-group hidden">
-                  <label class="col-sm-2 control-label" for="input-login-to-view"><?php echo $entry_login_to_view; ?></label>
-                  <div class="col-sm-10">
-                    <select name="login_to_view" id="input-login-to-view" class="form-control">
-                      <?php if ($login_to_view) { ?>
-                      <option value="1" selected="selected"><?php echo $text_yes; ?></option>
-                      <option value="0"><?php echo $text_no; ?></option>
-                      <?php } else { ?>
-                      <option value="1"><?php echo $text_yes; ?></option>
-                      <option value="0" selected="selected"><?php echo $text_no; ?></option>
-                      <?php } ?>
-                    </select>
-                  </div>
-                </div>
-              <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-category"><span data-toggle="tooltip" title="<?php echo $help_category; ?>"><?php echo $entry_category; ?></span></label>
-                  <div class="col-sm-10">
-                    <input type="text" name="category" value="" placeholder="<?php echo $entry_category; ?>" id="input-category" class="form-control" />
-                    <div id="article-category" class="well well-sm" style="height: 150px; overflow: auto;">
-                      <?php foreach ($article_categories as $article_category) { ?>
-                      <div id="article-category<?php echo $article_category['category_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $article_category['name']; ?>
-                        <input type="hidden" name="article_category[]" value="<?php echo $article_category['category_id']; ?>" />
-                      </div>
-                      <?php } ?>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-author"><?php echo $entry_author; ?></label>
-                  <div class="col-sm-10">
-                    <select name="article_author" id="input-author" class="form-control">
-                      <?php foreach($authors as $author){ ?>
-                      <?php if($author['user_id'] == $article_author){ ?>
-                      <option value="<?php echo $author['user_id']; ?>" selected="selected"><?php echo $author['username']; ?></option>
-                      <?php } else { ?>
-                      <option value="<?php echo $author['user_id']; ?>" ><?php echo $author['username']; ?></option>
-                      <?php } ?>
-                      <?php } ?>
-                    </select>
-                  </div>
-                </div>
-             <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-image"><?php echo $entry_image; ?></label>
-                  <div class="col-sm-10">
-                    <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
-                    <input type="hidden" name="image" value="<?php echo $image; ?>" id="input-image" />
-                  </div>
-                </div>
-             <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="<?php echo $help_keyword; ?>"><?php echo $entry_keyword; ?></span></label>
-                  <div class="col-sm-10">
-                    <input type="text" name="keyword" value="<?php echo $keyword; ?>" placeholder="<?php echo $entry_keyword; ?>" id="input-keyword" class="form-control" />
-                  </div>
-                </div>
-              <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-related"><span data-toggle="tooltip" title="<?php echo $help_related; ?>"><?php echo $entry_related; ?></span></label>
-                  <div class="col-sm-10">
-                    <input type="text" name="related" value="" placeholder="<?php echo $entry_related; ?>" id="input-related" class="form-control" />
-                    <div id="article-related" class="well well-sm" style="height: 150px; overflow: auto;">
-                      <?php foreach ($article_relateds as $article_related) { ?>
-                      <div id="article-related<?php echo $article_related['article_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $article_related['name']; ?>
-                        <input type="hidden" name="article_related[]" value="<?php echo $article_related['article_id']; ?>" />
-                      </div>
-                      <?php } ?>
-                    </div>
-                  </div>
-                </div>
-              <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
-                  <div class="col-sm-10">
-                    <select name="status" id="input-status" class="form-control">
-                      <?php if ($status) { ?>
-                      <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
-                      <option value="0"><?php echo $text_disabled; ?></option>
-                      <?php } else { ?>
-                      <option value="1"><?php echo $text_enabled; ?></option>
-                      <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
-                      <?php } ?>
-                    </select>
-                  </div>
-                </div>
-              <div class="form-group hidden">
-                <label class="col-sm-2 control-label"><?php echo $entry_store; ?></label>
+              <label class="col-sm-2 control-label" for="input-login-to-view"><?php echo $entry_login_to_view; ?></label>
+              <div class="col-sm-10">
+                <select name="login_to_view" id="input-login-to-view" class="form-control">
+                  <?php if ($login_to_view) { ?>
+                  <option value="1" selected="selected"><?php echo $text_yes; ?></option>
+                  <option value="0"><?php echo $text_no; ?></option>
+                  <?php } else { ?>
+                  <option value="1"><?php echo $text_yes; ?></option>
+                  <option value="0" selected="selected"><?php echo $text_no; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-is_hot_news"><?php echo $entry_is_hot_news; ?></label>
+              <div class="col-sm-10">
+                <select name="is_hot_news" id="input-is_hot_news" class="form-control">
+                  <?php if ($is_hot_news) { ?>
+                  <option value="1" selected="selected"><?php echo $text_yes; ?></option>
+                  <option value="0"><?php echo $text_no; ?></option>
+                  <?php } else { ?>
+                  <option value="1"><?php echo $text_yes; ?></option>
+                  <option value="0" selected="selected"><?php echo $text_no; ?></option>
+                  <?php } ?>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-category"><span data-toggle="tooltip" title="<?php echo $help_category; ?>"><?php echo $entry_category; ?></span></label>
                 <div class="col-sm-10">
-                  <div class="well well-sm" style="height: 150px; overflow: auto;">
-                    <div class="checkbox">
-                      <label>
-                        <?php if (in_array(0, $article_store)) { ?>
-                        <input type="checkbox" name="article_store[]" value="0" checked="checked" />
-                        <?php echo $text_default; ?>
-                        <?php } else { ?>
-                        <input type="checkbox" name="article_store[]" value="0" />
-                        <?php echo $text_default; ?>
-                        <?php } ?>
-                      </label>
-                    </div>
-                    <?php foreach ($stores as $store) { ?>
-                    <div class="checkbox">
-                      <label>
-                        <?php if (in_array($store['store_id'], $article_store)) { ?>
-                        <input type="checkbox" name="article_store[]" value="<?php echo $store['store_id']; ?>" checked="checked" />
-                        <?php echo $store['name']; ?>
-                        <?php } else { ?>
-                        <input type="checkbox" name="article_store[]" value="<?php echo $store['store_id']; ?>" />
-                        <?php echo $store['name']; ?>
-                        <?php } ?>
-                      </label>
+                  <input type="text" name="category" value="" placeholder="<?php echo $entry_category; ?>" id="input-category" class="form-control" />
+                  <div id="article-category" class="well well-sm" style="height: 150px; overflow: auto;">
+                    <?php foreach ($article_categories as $article_category) { ?>
+                    <div id="article-category<?php echo $article_category['category_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $article_category['name']; ?>
+                      <input type="hidden" name="article_category[]" value="<?php echo $article_category['category_id']; ?>" />
                     </div>
                     <?php } ?>
                   </div>
                 </div>
               </div>
               <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-sort-order"><?php echo $entry_sort_order; ?></label>
-                  <div class="col-sm-10">
-                    <input type="text" name="sort_order" value="<?php echo $sort_order; ?>" placeholder="<?php echo $entry_sort_order; ?>" id="input-sort-order" class="form-control" />
+                <label class="col-sm-2 control-label" for="input-author"><?php echo $entry_author; ?></label>
+                <div class="col-sm-10">
+                  <select name="article_author" id="input-author" class="form-control">
+                    <?php foreach($authors as $author){ ?>
+                    <?php if($author['user_id'] == $article_author){ ?>
+                    <option value="<?php echo $author['user_id']; ?>" selected="selected"><?php echo $author['username']; ?></option>
+                    <?php } else { ?>
+                    <option value="<?php echo $author['user_id']; ?>" ><?php echo $author['username']; ?></option>
+                    <?php } ?>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+           <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-image"><?php echo $entry_image; ?></label>
+                <div class="col-sm-10">
+                  <a href="" id="thumb-image" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
+                  <input type="hidden" name="image" value="<?php echo $image; ?>" id="input-image" />
+                </div>
+              </div>
+           <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-keyword"><span data-toggle="tooltip" title="<?php echo $help_keyword; ?>"><?php echo $entry_keyword; ?></span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="keyword" value="<?php echo $keyword; ?>" placeholder="<?php echo $entry_keyword; ?>" id="input-keyword" class="form-control" />
+                </div>
+              </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-related"><span data-toggle="tooltip" title="<?php echo $help_related; ?>"><?php echo $entry_related; ?></span></label>
+                <div class="col-sm-10">
+                  <input type="text" name="related" value="" placeholder="<?php echo $entry_related; ?>" id="input-related" class="form-control" />
+                  <div id="article-related" class="well well-sm" style="height: 150px; overflow: auto;">
+                    <?php foreach ($article_relateds as $article_related) { ?>
+                    <div id="article-related<?php echo $article_related['article_id']; ?>"><i class="fa fa-minus-circle"></i> <?php echo $article_related['name']; ?>
+                      <input type="hidden" name="article_related[]" value="<?php echo $article_related['article_id']; ?>" />
+                    </div>
+                    <?php } ?>
                   </div>
                 </div>
+              </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
+                <div class="col-sm-10">
+                  <select name="status" id="input-status" class="form-control">
+                    <?php if ($status) { ?>
+                    <option value="1" selected="selected"><?php echo $text_enabled; ?></option>
+                    <option value="0"><?php echo $text_disabled; ?></option>
+                    <?php } else { ?>
+                    <option value="1"><?php echo $text_enabled; ?></option>
+                    <option value="0" selected="selected"><?php echo $text_disabled; ?></option>
+                    <?php } ?>
+                  </select>
+                </div>
+              </div>
+            <div class="form-group hidden">
+              <label class="col-sm-2 control-label"><?php echo $entry_store; ?></label>
+              <div class="col-sm-10">
+                <div class="well well-sm" style="height: 150px; overflow: auto;">
+                  <div class="checkbox">
+                    <label>
+                      <?php if (in_array(0, $article_store)) { ?>
+                      <input type="checkbox" name="article_store[]" value="0" checked="checked" />
+                      <?php echo $text_default; ?>
+                      <?php } else { ?>
+                      <input type="checkbox" name="article_store[]" value="0" />
+                      <?php echo $text_default; ?>
+                      <?php } ?>
+                    </label>
+                  </div>
+                  <?php foreach ($stores as $store) { ?>
+                  <div class="checkbox">
+                    <label>
+                      <?php if (in_array($store['store_id'], $article_store)) { ?>
+                      <input type="checkbox" name="article_store[]" value="<?php echo $store['store_id']; ?>" checked="checked" />
+                      <?php echo $store['name']; ?>
+                      <?php } else { ?>
+                      <input type="checkbox" name="article_store[]" value="<?php echo $store['store_id']; ?>" />
+                      <?php echo $store['name']; ?>
+                      <?php } ?>
+                    </label>
+                  </div>
+                  <?php } ?>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="input-sort-order"><?php echo $entry_sort_order; ?></label>
+              <div class="col-sm-10">
+                <input type="text" name="sort_order" value="<?php echo $sort_order; ?>" placeholder="<?php echo $entry_sort_order; ?>" id="input-sort-order" class="form-control" />
+              </div>
+            </div>
           </div>
           <div class="tab-pane hidden" id="tab-design">
                 <div class="table-responsive">

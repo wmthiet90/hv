@@ -3,7 +3,7 @@ class ModelNewsArticle extends Model {
 	public function addArticle($data) {
 		$this->event->trigger('pre.admin.article.add', $data);
 
-		$this->db->query("INSERT INTO " . DB_PREFIX . "news_articles SET sort_order = '" . (int)$data['sort_order'] . "', author_id = '" . $data['article_author'] . "', status = '" . (int)$data['status'] . "', date_added = NOW(), date_modified = NOW()");
+		$this->db->query("INSERT INTO " . DB_PREFIX . "news_articles SET sort_order = '" . (int)$data['sort_order'] . "', author_id = '" . $data['article_author'] . "', status = '" . (int)$data['status'] . "', date_added = NOW(), date_modified = NOW(), is_hot_news = '".(int)$data['is_hot_news']."'");
 
 		$article_id = $this->db->getLastId();
 
@@ -46,9 +46,10 @@ class ModelNewsArticle extends Model {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'article_id=" . (int)$article_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
 		} else {
             $firstlang_data = $data['article_description'][$this->config->get('config_language_id')];
-            $keyword = preg_replace('~&([a-z]{1,2})(acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i', '$1', htmlentities(strtolower(str_replace(' ', '_', $firstlang_data['name'])), ENT_QUOTES, 'UTF-8'));
+            $keyword = preg_replace('~&([a-z]{1,2})(acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i', '$1', htmlentities(strtolower(str_replace(' ', '-', $firstlang_data['name'])), ENT_QUOTES, 'UTF-8'));
             $keyword = preg_replace("/^[^a-z0-9]?(.*?)[^a-z0-9]?$/i", "$1", $keyword);
             unset($firstlang_data);
+
             $this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'article_id=" . (int)$article_id . "', keyword = '" . $this->db->escape($keyword) . "'");
         }
 
@@ -58,9 +59,10 @@ class ModelNewsArticle extends Model {
 			}
 		} else {
             $firstlang_data = $data['article_description'][$this->config->get('config_language_id')];
-            $keyword = preg_replace('~&([a-z]{1,2})(acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i', '$1', htmlentities(strtolower(str_replace(' ', '_', $firstlang_data['name'])), ENT_QUOTES, 'UTF-8'));
+            $keyword = preg_replace('~&([a-z]{1,2})(acute|cedil|circ|grave|lig|orn|ring|slash|th|tilde|uml);~i', '$1', htmlentities(strtolower(str_replace(' ', '-', $firstlang_data['name'])), ENT_QUOTES, 'UTF-8'));
             $keyword = preg_replace("/^[^a-z0-9]?(.*?)[^a-z0-9]?$/i", "$1", $keyword);
             unset($firstlang_data);
+
             $this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'article_id=" . (int)$article_id . "', keyword = '" . $this->db->escape($keyword) . "'");
         }
 
@@ -69,9 +71,9 @@ class ModelNewsArticle extends Model {
 
 	public function editArticle($article_id, $data) {
 		if($data['login_to_view']){
-			$this->db->query("UPDATE " . DB_PREFIX . "news_articles SET sort_order = '" . (int)$data['sort_order'] . "', author_id = '" . $data['article_author'] . "', login_to_view = '" . $data['login_to_view'] . "', status = '" . (int)$data['status'] . "', date_modified = NOW() WHERE article_id = '" . (int)$article_id . "'");
+			$this->db->query("UPDATE " . DB_PREFIX . "news_articles SET sort_order = '" . (int)$data['sort_order'] . "', author_id = '" . $data['article_author'] . "', login_to_view = '" . $data['login_to_view'] . "', status = '" . (int)$data['status'] . "', date_modified = NOW(), is_hot_news='".(int)$data['is_hot_news']."' WHERE article_id = '" . (int)$article_id . "'");
 		} else {
-			$this->db->query("UPDATE " . DB_PREFIX . "news_articles SET sort_order = '" . (int)$data['sort_order'] . "', author_id = '1', login_to_view = '0', status = '" . (int)$data['status'] . "', date_modified = NOW() WHERE article_id = '" . (int)$article_id . "'");
+			$this->db->query("UPDATE " . DB_PREFIX . "news_articles SET sort_order = '" . (int)$data['sort_order'] . "', author_id = '1', login_to_view = '0', status = '" . (int)$data['status'] . "', date_modified = NOW(), is_hot_news='".(int)$data['is_hot_news']."' WHERE article_id = '" . (int)$article_id . "'");
 		}
 
 		$this->db->query("DELETE FROM " . DB_PREFIX . "news_articles_description WHERE article_id = '" . (int)$article_id . "'");

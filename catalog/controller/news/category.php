@@ -181,6 +181,7 @@ class ControllerNewsCategory extends Controller {
 				} else {
 					$rating = false;
 				}
+
 				$data['articles'][] = array(
 					'article_id'  => $result['article_id'],					
 					'date_added'  => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
@@ -189,6 +190,7 @@ class ControllerNewsCategory extends Controller {
 					'description' => html_entity_decode($result['description']), //utf8_substr(strip_tags(, ENT_QUOTES, 'UTF-8')), 0, 100) . '..',
 					'short_description' => $result['short_description'],
 					'rating'      => $result['rating'],
+					'is_hot_news'      => $result['is_hot_news'] == '1',
 					'href'        => $this->url->link('news/article', 'news_path=' . $this->request->get['news_path'] . '&article_id=' . $result['article_id'] . $url)
 				);				
 			}

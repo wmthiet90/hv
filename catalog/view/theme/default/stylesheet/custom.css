@@ -598,10 +598,19 @@ footer .social-links .social-icon:hover > i {
 .recruitment-page .job-list a {
     padding: 7px 15px;
     text-transform: uppercase;
-    display: block;   
+    display: block; 
+    -webkit-transition: all .3s;
+    transition: all .3s; 
 }
 .recruitment-page .job-list a:hover {
     background-color: #a52e30;
+    color: #FFF;
+}
+.recruitment-page .job-list li.hot a {
+    color: #a52e30;
+    font-size: 15px;
+}
+.recruitment-page .job-list li.hot a:hover {
     color: #FFF;
 }
 .recruitment-page .news-content h1.heading-title {
@@ -618,7 +627,7 @@ footer .social-links .social-icon:hover > i {
     border-bottom: 1px solid #CCC;
 }
 
-.sub-heading-title > span {    
+.sub-heading-title > span { 
     background: #FFF;
     padding: 0 30px;
     font-size: 24px;
@@ -923,7 +932,7 @@ ul.none-style {
 
 .btn-link {
     cursor: pointer;
-    color: #989898;
+    color: #989898;    
 }
 .btn-link:hover {
     color: #9d0a0e;

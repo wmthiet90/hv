@@ -44,7 +44,7 @@ $_['entry_tag']      = 'Tags:';
 $_['entry_related']      = 'Tin tức liên quan';
 $_['entry_author']      = 'Tác giả';
 $_['entry_login_to_view']      = 'Đăng nhập để xem';
-
+$_['entry_is_hot_news']      = 'Tin hot';
 
 // Error
 $_['error_warning']     = 'Cảnh báo: Xin kiểm tra lại lỗi!';

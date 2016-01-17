@@ -29,8 +29,8 @@ class ControllerCommonFooter extends Controller {
 		$data['product_url'] = $this->url->link('common/home');
 		$data['news_url'] = $this->url->link('common/home');
 		$data['download_url'] = $this->url->link('common/home');
-		$data['jobs_url'] = $this->url->link('common/home');
-		$data['sitemap_url'] = $this->url->link('information/sitemap');	
+		$data['jobs_url'] = $this->url->link('news/category', 'news_path=' . DEFAULT_RECRUITMENTCATEGORY_ID);
+		$data['sitemap_url'] = $this->url->link('information/sitemap');
 
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
 

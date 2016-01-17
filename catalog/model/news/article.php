@@ -37,7 +37,8 @@ class ModelNewsArticle extends Model {
 				'date_added'       => $query->row['date_added'],
 				'date_modified'    => $query->row['date_modified'],
 				'viewed'           => $query->row['viewed'],
-				'login_to_view'			=> $query->row['login_to_view']
+				'login_to_view'	   => $query->row['login_to_view'],
+				'is_hot_news'	   => $query->row['is_hot_news']
 			);
 		} else {
 			return false;

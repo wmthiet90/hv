@@ -44,6 +44,7 @@ $_['entry_tag']      = 'Tags';
 $_['entry_related']      = 'Related Article';
 $_['entry_author']      = 'Author';
 $_['entry_login_to_view']      = 'Login to view';
+$_['entry_is_hot_news']      = 'Is Hot News';
 
 
 // Error

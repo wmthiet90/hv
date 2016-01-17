@@ -34,10 +34,13 @@
             <ul class="list-unstyled job-list">
               <?php $count = 1; ?>
               <?php foreach ($articles as $article) { ?>
-              <li class="<?php echo ($count ++ <= 5) ? 'show' : 'hidden' ?>">
+              <li class="<?php echo ($count ++ <= 5) ? 'show' : 'hidden' ?> <?php echo $article["is_hot_news"] ? 'hot' : '' ?>">
                 <a href="<?php echo $article['href']; ?>" title="<?php echo $article['name']; ?>">
                   <?php echo $article['name']; ?>
                   <span class="time pull-right"><?php echo $article["date_added"]; ?></span>
+                  <?php if($article["is_hot_news"]) { ?>
+                  <img src="image/icon_hot.gif" alt="hot news">
+                  <?php } ?>
                 </a>
               </li>
               <?php } ?>
