@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 18, 2016 at 05:12 PM
+-- Generation Time: Jan 19, 2016 at 04:32 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -1208,7 +1208,7 @@ CREATE TABLE IF NOT EXISTS `wm_extension` (
   `type` varchar(32) NOT NULL,
   `code` varchar(32) NOT NULL,
   PRIMARY KEY (`extension_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=435 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=436 ;
 
 --
 -- Dumping data for table `wm_extension`
@@ -1228,12 +1228,12 @@ INSERT INTO `wm_extension` (`extension_id`, `type`, `code`) VALUES
 (350, 'total', 'low_order_fee'),
 (389, 'total', 'coupon'),
 (413, 'module', 'category'),
+(435, 'module', 'news_featured'),
 (393, 'total', 'reward'),
 (398, 'total', 'voucher'),
 (407, 'payment', 'free_checkout'),
 (427, 'module', 'featured'),
 (419, 'module', 'slideshow'),
-(434, 'module', 'news_category'),
 (433, 'module', 'news_carousel'),
 (432, 'module', 'news_by_category');
 
@@ -1470,7 +1470,7 @@ CREATE TABLE IF NOT EXISTS `wm_layout_module` (
   `position` varchar(14) NOT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`layout_module_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=75 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=81 ;
 
 --
 -- Dumping data for table `wm_layout_module`
@@ -1480,7 +1480,8 @@ INSERT INTO `wm_layout_module` (`layout_module_id`, `layout_id`, `code`, `positi
 (2, 4, '0', 'content_top', 0),
 (3, 4, '0', 'content_top', 1),
 (20, 5, '0', 'column_left', 2),
-(74, 1, 'featured.28', 'content_top', 2),
+(79, 1, 'featured.28', 'content_top', 1),
+(80, 1, 'news_featured.32', 'content_bottom', 1),
 (72, 3, 'category', 'column_left', 1),
 (73, 3, 'banner.30', 'column_left', 2);
 
@@ -1496,7 +1497,7 @@ CREATE TABLE IF NOT EXISTS `wm_layout_route` (
   `store_id` int(11) NOT NULL,
   `route` varchar(255) NOT NULL,
   PRIMARY KEY (`layout_route_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=58 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=61 ;
 
 --
 -- Dumping data for table `wm_layout_route`
@@ -1504,7 +1505,7 @@ CREATE TABLE IF NOT EXISTS `wm_layout_route` (
 
 INSERT INTO `wm_layout_route` (`layout_route_id`, `layout_id`, `store_id`, `route`) VALUES
 (44, 3, 0, 'product/category'),
-(54, 1, 0, 'common/home'),
+(60, 1, 0, 'common/home'),
 (20, 2, 0, 'product/product'),
 (24, 11, 0, 'information/information'),
 (31, 8, 0, 'information/contact'),
@@ -1678,7 +1679,7 @@ CREATE TABLE IF NOT EXISTS `wm_module` (
   `code` varchar(32) NOT NULL,
   `setting` text NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
 -- Dumping data for table `wm_module`
@@ -1688,7 +1689,8 @@ INSERT INTO `wm_module` (`module_id`, `name`, `code`, `setting`) VALUES
 (30, 'Category', 'banner', 'a:5:{s:4:"name";s:17:"Banner - Category";s:9:"banner_id";s:1:"6";s:5:"width";s:3:"300";s:6:"height";s:3:"300";s:6:"status";s:1:"1";}'),
 (29, 'Home Page', 'carousel', 'a:5:{s:4:"name";s:20:"Carousel - Home Page";s:9:"banner_id";s:1:"8";s:5:"width";s:3:"130";s:6:"height";s:3:"100";s:6:"status";s:1:"1";}'),
 (28, 'Featured - Home Page', 'featured', 'a:6:{s:4:"name";s:20:"Featured - Home Page";s:7:"product";a:1:{i:0;s:2:"50";}s:5:"limit";s:1:"9";s:5:"width";s:3:"200";s:6:"height";s:3:"200";s:6:"status";s:1:"1";}'),
-(27, 'Slideshow - Home Page', 'slideshow', 'a:5:{s:4:"name";s:21:"Slideshow - Home Page";s:9:"banner_id";s:1:"7";s:5:"width";s:4:"1366";s:6:"height";s:3:"480";s:6:"status";s:1:"1";}');
+(27, 'Slideshow - Home Page', 'slideshow', 'a:5:{s:4:"name";s:21:"Slideshow - Home Page";s:9:"banner_id";s:1:"7";s:5:"width";s:4:"1366";s:6:"height";s:3:"480";s:6:"status";s:1:"1";}'),
+(32, 'Tin tức Trang Chủ', 'news_featured', 'a:6:{s:4:"name";s:21:"Tin tức Trang Chủ";s:8:"articles";a:3:{i:0;s:1:"1";i:1;s:1:"4";i:2;s:1:"5";}s:5:"limit";s:1:"5";s:5:"width";s:3:"320";s:6:"height";s:3:"240";s:6:"status";s:1:"1";}');
 
 -- --------------------------------------------------------
 
@@ -1715,12 +1717,12 @@ CREATE TABLE IF NOT EXISTS `wm_news_articles` (
 --
 
 INSERT INTO `wm_news_articles` (`article_id`, `author_id`, `date_added`, `date_modified`, `image`, `sort_order`, `status`, `viewed`, `login_to_view`, `is_hot_news`) VALUES
-(1, 1, '2016-01-10 16:50:30', '2016-01-12 00:05:22', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 37, 0, 0),
+(1, 1, '2016-01-10 16:50:30', '2016-01-12 00:05:22', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 40, 0, 0),
 (2, 1, '2016-01-10 23:48:43', '2016-01-10 23:48:43', 'catalog/demo/tintuc/tintuc1.jpg', 1, 1, 33, 0, 0),
 (3, 1, '2016-01-12 00:13:15', '2016-01-12 00:23:53', 'catalog/demo/tintuc/IMG_3432.png', 0, 1, 27, 0, 0),
 (4, 1, '2016-01-12 00:30:04', '2016-01-12 00:35:50', 'catalog/demo/tintuc/DSC_1025.jpg', 1, 1, 9, 0, 0),
 (5, 1, '2016-01-12 00:41:40', '2016-01-12 00:43:07', 'catalog/demo/tintuc/EXPO2.jpg', 0, 1, 4, 0, 0),
-(6, 1, '2016-01-16 01:13:17', '2016-01-18 23:01:18', '', 1, 1, 30, 0, 0),
+(6, 1, '2016-01-16 01:13:17', '2016-01-18 23:01:18', '', 1, 1, 33, 0, 0),
 (7, 1, '2016-01-17 12:03:33', '2016-01-18 23:01:43', '', 1, 1, 2, 0, 0),
 (8, 1, '2016-01-17 12:05:23', '2016-01-18 23:01:54', '', 1, 1, 1, 0, 0),
 (9, 1, '2016-01-17 12:12:57', '2016-01-18 23:02:24', '', 1, 1, 0, 0, 0),
@@ -3457,7 +3459,7 @@ CREATE TABLE IF NOT EXISTS `wm_user_group` (
 --
 
 INSERT INTO `wm_user_group` (`user_group_id`, `name`, `permission`) VALUES
-(1, 'Administrator', 'a:2:{s:6:"access";a:118:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:13:"module/banner";i:57;s:17:"module/bestseller";i:58;s:15:"module/carousel";i:59;s:15:"module/category";i:60;s:15:"module/featured";i:61;s:13:"module/filter";i:62;s:11:"module/html";i:63;s:18:"module/information";i:64;s:13:"module/latest";i:65;s:23:"module/news_by_category";i:66;s:20:"module/news_carousel";i:67;s:20:"module/news_category";i:68;s:16:"module/slideshow";i:69;s:14:"module/special";i:70;s:12:"module/store";i:71;s:12:"news/article";i:72;s:13:"news/category";i:73;s:8:"news/pro";i:74;s:11:"news/review";i:75;s:12:"news/setting";i:76;s:16:"report/affiliate";i:77;s:25:"report/affiliate_activity";i:78;s:22:"report/affiliate_login";i:79;s:24:"report/customer_activity";i:80;s:22:"report/customer_credit";i:81;s:21:"report/customer_login";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:16:"report/marketing";i:86;s:24:"report/product_purchased";i:87;s:21:"report/product_viewed";i:88;s:18:"report/sale_coupon";i:89;s:17:"report/sale_order";i:90;s:18:"report/sale_return";i:91;s:20:"report/sale_shipping";i:92;s:15:"report/sale_tax";i:93;s:15:"setting/setting";i:94;s:13:"setting/store";i:95;s:11:"tool/backup";i:96;s:14:"tool/error_log";i:97;s:11:"tool/upload";i:98;s:12:"total/coupon";i:99;s:12:"total/credit";i:100;s:14:"total/handling";i:101;s:16:"total/klarna_fee";i:102;s:19:"total/low_order_fee";i:103;s:12:"total/reward";i:104;s:14:"total/shipping";i:105;s:15:"total/sub_total";i:106;s:9:"total/tax";i:107;s:11:"total/total";i:108;s:13:"total/voucher";i:109;s:8:"user/api";i:110;s:9:"user/user";i:111;s:20:"user/user_permission";i:112;s:20:"module/news_category";i:113;s:20:"module/news_carousel";i:114;s:23:"module/news_by_category";i:115;s:23:"module/news_by_category";i:116;s:20:"module/news_carousel";i:117;s:20:"module/news_category";}s:6:"modify";a:118:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:13:"module/banner";i:57;s:17:"module/bestseller";i:58;s:15:"module/carousel";i:59;s:15:"module/category";i:60;s:15:"module/featured";i:61;s:13:"module/filter";i:62;s:11:"module/html";i:63;s:18:"module/information";i:64;s:13:"module/latest";i:65;s:23:"module/news_by_category";i:66;s:20:"module/news_carousel";i:67;s:20:"module/news_category";i:68;s:16:"module/slideshow";i:69;s:14:"module/special";i:70;s:12:"module/store";i:71;s:12:"news/article";i:72;s:13:"news/category";i:73;s:8:"news/pro";i:74;s:11:"news/review";i:75;s:12:"news/setting";i:76;s:16:"report/affiliate";i:77;s:25:"report/affiliate_activity";i:78;s:22:"report/affiliate_login";i:79;s:24:"report/customer_activity";i:80;s:22:"report/customer_credit";i:81;s:21:"report/customer_login";i:82;s:22:"report/customer_online";i:83;s:21:"report/customer_order";i:84;s:22:"report/customer_reward";i:85;s:16:"report/marketing";i:86;s:24:"report/product_purchased";i:87;s:21:"report/product_viewed";i:88;s:18:"report/sale_coupon";i:89;s:17:"report/sale_order";i:90;s:18:"report/sale_return";i:91;s:20:"report/sale_shipping";i:92;s:15:"report/sale_tax";i:93;s:15:"setting/setting";i:94;s:13:"setting/store";i:95;s:11:"tool/backup";i:96;s:14:"tool/error_log";i:97;s:11:"tool/upload";i:98;s:12:"total/coupon";i:99;s:12:"total/credit";i:100;s:14:"total/handling";i:101;s:16:"total/klarna_fee";i:102;s:19:"total/low_order_fee";i:103;s:12:"total/reward";i:104;s:14:"total/shipping";i:105;s:15:"total/sub_total";i:106;s:9:"total/tax";i:107;s:11:"total/total";i:108;s:13:"total/voucher";i:109;s:8:"user/api";i:110;s:9:"user/user";i:111;s:20:"user/user_permission";i:112;s:20:"module/news_category";i:113;s:20:"module/news_carousel";i:114;s:23:"module/news_by_category";i:115;s:23:"module/news_by_category";i:116;s:20:"module/news_carousel";i:117;s:20:"module/news_category";}}');
+(1, 'Administrator', 'a:2:{s:6:"access";a:109:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:13:"module/banner";i:57;s:15:"module/carousel";i:58;s:15:"module/category";i:59;s:15:"module/featured";i:60;s:13:"module/filter";i:61;s:11:"module/html";i:62;s:18:"module/information";i:63;s:13:"module/latest";i:64;s:23:"module/news_by_category";i:65;s:20:"module/news_carousel";i:66;s:20:"module/news_featured";i:67;s:16:"module/slideshow";i:68;s:12:"news/article";i:69;s:13:"news/category";i:70;s:8:"news/pro";i:71;s:11:"news/review";i:72;s:12:"news/setting";i:73;s:16:"report/affiliate";i:74;s:25:"report/affiliate_activity";i:75;s:22:"report/affiliate_login";i:76;s:24:"report/customer_activity";i:77;s:22:"report/customer_credit";i:78;s:21:"report/customer_login";i:79;s:22:"report/customer_online";i:80;s:21:"report/customer_order";i:81;s:22:"report/customer_reward";i:82;s:16:"report/marketing";i:83;s:24:"report/product_purchased";i:84;s:21:"report/product_viewed";i:85;s:18:"report/sale_coupon";i:86;s:17:"report/sale_order";i:87;s:18:"report/sale_return";i:88;s:20:"report/sale_shipping";i:89;s:15:"report/sale_tax";i:90;s:15:"setting/setting";i:91;s:13:"setting/store";i:92;s:11:"tool/backup";i:93;s:14:"tool/error_log";i:94;s:11:"tool/upload";i:95;s:12:"total/coupon";i:96;s:12:"total/credit";i:97;s:14:"total/handling";i:98;s:16:"total/klarna_fee";i:99;s:19:"total/low_order_fee";i:100;s:12:"total/reward";i:101;s:14:"total/shipping";i:102;s:15:"total/sub_total";i:103;s:9:"total/tax";i:104;s:11:"total/total";i:105;s:13:"total/voucher";i:106;s:8:"user/api";i:107;s:9:"user/user";i:108;s:20:"user/user_permission";}s:6:"modify";a:109:{i:0;s:17:"catalog/attribute";i:1;s:23:"catalog/attribute_group";i:2;s:16:"catalog/category";i:3;s:16:"catalog/download";i:4;s:14:"catalog/filter";i:5;s:19:"catalog/information";i:6;s:20:"catalog/manufacturer";i:7;s:14:"catalog/option";i:8;s:15:"catalog/product";i:9;s:17:"catalog/recurring";i:10;s:14:"catalog/review";i:11;s:18:"common/column_left";i:12;s:18:"common/filemanager";i:13;s:11:"common/menu";i:14;s:14:"common/profile";i:15;s:12:"common/stats";i:16;s:18:"dashboard/activity";i:17;s:15:"dashboard/chart";i:18;s:18:"dashboard/customer";i:19;s:13:"dashboard/map";i:20;s:16:"dashboard/online";i:21;s:15:"dashboard/order";i:22;s:16:"dashboard/recent";i:23;s:14:"dashboard/sale";i:24;s:13:"design/banner";i:25;s:13:"design/layout";i:26;s:14:"extension/feed";i:27;s:19:"extension/installer";i:28;s:22:"extension/modification";i:29;s:16:"extension/module";i:30;s:17:"extension/openbay";i:31;s:17:"extension/payment";i:32;s:18:"extension/shipping";i:33;s:15:"extension/total";i:34;s:16:"feed/google_base";i:35;s:19:"feed/google_sitemap";i:36;s:15:"feed/openbaypro";i:37;s:20:"localisation/country";i:38;s:21:"localisation/currency";i:39;s:21:"localisation/geo_zone";i:40;s:21:"localisation/language";i:41;s:25:"localisation/length_class";i:42;s:21:"localisation/location";i:43;s:25:"localisation/order_status";i:44;s:26:"localisation/return_action";i:45;s:26:"localisation/return_reason";i:46;s:26:"localisation/return_status";i:47;s:25:"localisation/stock_status";i:48;s:22:"localisation/tax_class";i:49;s:21:"localisation/tax_rate";i:50;s:25:"localisation/weight_class";i:51;s:17:"localisation/zone";i:52;s:19:"marketing/affiliate";i:53;s:17:"marketing/contact";i:54;s:16:"marketing/coupon";i:55;s:19:"marketing/marketing";i:56;s:13:"module/banner";i:57;s:15:"module/carousel";i:58;s:15:"module/category";i:59;s:15:"module/featured";i:60;s:13:"module/filter";i:61;s:11:"module/html";i:62;s:18:"module/information";i:63;s:13:"module/latest";i:64;s:23:"module/news_by_category";i:65;s:20:"module/news_carousel";i:66;s:20:"module/news_featured";i:67;s:16:"module/slideshow";i:68;s:12:"news/article";i:69;s:13:"news/category";i:70;s:8:"news/pro";i:71;s:11:"news/review";i:72;s:12:"news/setting";i:73;s:16:"report/affiliate";i:74;s:25:"report/affiliate_activity";i:75;s:22:"report/affiliate_login";i:76;s:24:"report/customer_activity";i:77;s:22:"report/customer_credit";i:78;s:21:"report/customer_login";i:79;s:22:"report/customer_online";i:80;s:21:"report/customer_order";i:81;s:22:"report/customer_reward";i:82;s:16:"report/marketing";i:83;s:24:"report/product_purchased";i:84;s:21:"report/product_viewed";i:85;s:18:"report/sale_coupon";i:86;s:17:"report/sale_order";i:87;s:18:"report/sale_return";i:88;s:20:"report/sale_shipping";i:89;s:15:"report/sale_tax";i:90;s:15:"setting/setting";i:91;s:13:"setting/store";i:92;s:11:"tool/backup";i:93;s:14:"tool/error_log";i:94;s:11:"tool/upload";i:95;s:12:"total/coupon";i:96;s:12:"total/credit";i:97;s:14:"total/handling";i:98;s:16:"total/klarna_fee";i:99;s:19:"total/low_order_fee";i:100;s:12:"total/reward";i:101;s:14:"total/shipping";i:102;s:15:"total/sub_total";i:103;s:9:"total/tax";i:104;s:11:"total/total";i:105;s:13:"total/voucher";i:106;s:8:"user/api";i:107;s:9:"user/user";i:108;s:20:"user/user_permission";}}');
 
 -- --------------------------------------------------------
 
