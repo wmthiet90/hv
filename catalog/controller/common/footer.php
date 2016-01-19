@@ -1,14 +1,13 @@
 <?php
 class ControllerCommonFooter extends Controller {
 	public function index() {
-		$this->load->language('common/footer');
 		$this->load->language('common/header');
+		$this->load->language('common/footer');
 
 		$data['text_contact'] = $this->language->get('text_contact');
 		$data['text_sitemap'] = $this->language->get('text_sitemap');
 		$data['text_findonmap'] = $this->language->get('text_findonmap');
 		$data['text_powered'] = $this->language->get('text_powered');
-		$data['text_headoffice'] = $this->language->get('text_headoffice');
 
 		$data['text_contact_name'] = $this->language->get('text_contact_name');
 		$data['text_contact_email'] = $this->language->get('text_contact_email');
@@ -23,6 +22,7 @@ class ControllerCommonFooter extends Controller {
 		$data['text_downloads'] = $this->language->get('text_downloads');
 		$data['text_job'] = $this->language->get('text_job');
 		$data['text_contact'] = $this->language->get('text_contact');
+		$data['text_headoffice'] = $this->language->get('text_headoffice');
 
 		$data['home_url'] = $this->url->link('common/home');
 		$data['introduction_url'] = $this->url->link('common/about');

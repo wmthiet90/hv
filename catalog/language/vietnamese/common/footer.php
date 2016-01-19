@@ -13,4 +13,6 @@ $_['text_contact_message']      = 'Nội dung';
 
 $_['text_send']      = 'Gửi';
 
+$_['text_headoffice']    = 'Trụ sở chính';
+
 ?>

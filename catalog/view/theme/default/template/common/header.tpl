@@ -119,7 +119,7 @@
               <li class="<?php echo ($active_menu == 'download' ? 'active': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_downloads; ?></a></li>
               <li class="<?php echo ($active_menu == 'recruitment' ? 'active': '') ?>"><a href="<?php echo $recruitment; ?>"><?php echo $text_job; ?></a>
               </li>
-              <li class="<?php echo ($active_menu == 'contact' ? 'active': '') ?>"><a href="<?php echo $home; ?>"><?php echo $text_contact; ?></a>
+              <li id="gotocontact" class="<?php echo ($active_menu == 'contact' ? 'active': '') ?>"><a href="<?php echo $base; ?>#contact"><?php echo $text_contact; ?></a>
               </li>
             </ul>
           </div>          

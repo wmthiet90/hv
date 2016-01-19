@@ -40,6 +40,7 @@
       </div>
       <div class="col-sm-3">
         <div class="map-info">
+            <a class="invisible" name="contact"></a>
             <h3 class="uppercase"><?php echo $text_contact; ?></h3>
             <form role="form">
               <div class="form-group">
