@@ -5,7 +5,7 @@
         <div class="company-info">
           <h2 class="uppercase">Công ty TNHH Hóa Việt</h2>
           <p class="info">
-            <span>Head Office:</span> 229 - 231 Lê Cao Lãng, P. Phú Thạnh, Q. Tân Phú, TP.HCM
+            <span><?php echo $text_headoffice; ?>:</span> 229 - 231 Lê Cao Lãng, P. Phú Thạnh, Q. Tân Phú, TP.HCM
           </p>
           <div class="info-phones">
             <p class="info">
