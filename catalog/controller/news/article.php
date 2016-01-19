@@ -4,7 +4,8 @@ class ControllerNewsArticle extends Controller {
 
 	public function index() {
 
-		$this->load->language('news/article');		
+		$this->load->language('common/common');
+		$this->load->language('news/article');
 
 		$data['breadcrumbs'] = array();
 
@@ -193,8 +194,8 @@ class ControllerNewsArticle extends Controller {
 			//$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
 			//$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
 
-			$data['heading_title'] = $article_info['name'];
-
+			$data['heading_title'] = $article_info['name'];			
+			$data['text_jobcontact'] = $this->language->get('text_jobcontact');
 			$data['text_related'] = $this->language->get('text_related');
 			$data['text_on'] = $this->language->get('text_on');
 			$data['text_write'] = $this->language->get('text_write');
@@ -319,9 +320,6 @@ class ControllerNewsArticle extends Controller {
 			$data['header'] = $this->load->controller('common/header');
 
 			if($category_id == DEFAULT_RECRUITMENTCATEGORY_ID) {
-				$this->load->language('common/common');
-				$data['text_jobcontact'] = $this->language->get('text_jobcontact');
-
 				if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/news/recruitment_detail.tpl')) {
 					$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/news/recruitment_detail.tpl', $data));
 				} else {
