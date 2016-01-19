@@ -77,6 +77,7 @@
     <div class="row">
         <div id="content" class="col-sm-12">
             <?php echo $content_top; ?>
+            <hr>
             <?php echo $content_bottom; ?>
         </div>
     </div>

@@ -1,40 +1,40 @@
 <?php
-class ControllerModuleSpecial extends Controller {
+class ControllerModuleNewsFeatured extends Controller {
 	private $error = array();
 
 	public function index() {
-		$this->load->language('module/special');
+		$this->load->language('module/news_featured');
 
 		$this->document->setTitle($this->language->get('heading_title'));
-
+		
 		$this->load->model('extension/module');
 
 		if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
-			if (!isset($this->request->get['module_id'])) {
-				$this->model_extension_module->addModule('special', $this->request->post);
+			if (!isset($this->request->get['module_id'])) {				
+				$this->model_extension_module->addModule('news_featured', $this->request->post);
 			} else {
 				$this->model_extension_module->editModule($this->request->get['module_id'], $this->request->post);
 			}
-			
-			$this->cache->delete('product');
-
+						
 			$this->session->data['success'] = $this->language->get('text_success');
 
 			$this->response->redirect($this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL'));
 		}
 
 		$data['heading_title'] = $this->language->get('heading_title');
-		
+
 		$data['text_edit'] = $this->language->get('text_edit');
 		$data['text_enabled'] = $this->language->get('text_enabled');
 		$data['text_disabled'] = $this->language->get('text_disabled');
 		
 		$data['entry_name'] = $this->language->get('entry_name');
+		$data['entry_product'] = $this->language->get('entry_product');
 		$data['entry_limit'] = $this->language->get('entry_limit');
-		$data['entry_image'] = $this->language->get('entry_image');
 		$data['entry_width'] = $this->language->get('entry_width');
 		$data['entry_height'] = $this->language->get('entry_height');
 		$data['entry_status'] = $this->language->get('entry_status');
+
+		$data['help_product'] = $this->language->get('help_product');
 
 		$data['button_save'] = $this->language->get('button_save');
 		$data['button_cancel'] = $this->language->get('button_cancel');
@@ -78,19 +78,19 @@ class ControllerModuleSpecial extends Controller {
 		if (!isset($this->request->get['module_id'])) {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('module/special', 'token=' . $this->session->data['token'], 'SSL')
+				'href' => $this->url->link('module/news_featured', 'token=' . $this->session->data['token'], 'SSL')
 			);
 		} else {
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('heading_title'),
-				'href' => $this->url->link('module/special', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], 'SSL')
+				'href' => $this->url->link('module/news_featured', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], 'SSL')
 			);			
 		}
 
 		if (!isset($this->request->get['module_id'])) {
-			$data['action'] = $this->url->link('module/special', 'token=' . $this->session->data['token'], 'SSL');
+			$data['action'] = $this->url->link('module/news_featured', 'token=' . $this->session->data['token'], 'SSL');
 		} else {
-			$data['action'] = $this->url->link('module/special', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], 'SSL');
+			$data['action'] = $this->url->link('module/news_featured', 'token=' . $this->session->data['token'] . '&module_id=' . $this->request->get['module_id'], 'SSL');
 		}
 		
 		$data['cancel'] = $this->url->link('extension/module', 'token=' . $this->session->data['token'], 'SSL');
@@ -99,14 +99,39 @@ class ControllerModuleSpecial extends Controller {
 			$module_info = $this->model_extension_module->getModule($this->request->get['module_id']);
 		}
 		
+		$data['token'] = $this->session->data['token'];
+
 		if (isset($this->request->post['name'])) {
 			$data['name'] = $this->request->post['name'];
 		} elseif (!empty($module_info)) {
 			$data['name'] = $module_info['name'];
 		} else {
 			$data['name'] = '';
+		}
+
+		$this->load->model('news/article');
+		
+		$data['articles'] = array();
+		
+		if (isset($this->request->post['articles'])) {
+			$articles = $this->request->post['articles'];
+		} elseif (!empty($module_info)) {
+			$articles = $module_info['articles'];
+		} else {
+			$articles = array();
 		}	
-					
+		
+		foreach ($articles as $article_id) {
+			$article_info = $this->model_news_article->getArticle($article_id);
+
+			if ($article_info) {
+				$data['articles'][] = array(
+					'article_id' => $article_info['article_id'],
+					'name'    => $article_info['name']
+				);
+			}
+		}
+		
 		if (isset($this->request->post['limit'])) {
 			$data['limit'] = $this->request->post['limit'];
 		} elseif (!empty($module_info)) {
@@ -114,7 +139,7 @@ class ControllerModuleSpecial extends Controller {
 		} else {
 			$data['limit'] = 5;
 		}	
-
+				
 		if (isset($this->request->post['width'])) {
 			$data['width'] = $this->request->post['width'];
 		} elseif (!empty($module_info)) {
@@ -129,7 +154,7 @@ class ControllerModuleSpecial extends Controller {
 			$data['height'] = $module_info['height'];
 		} else {
 			$data['height'] = 200;
-		}
+		}		
 		
 		if (isset($this->request->post['status'])) {
 			$data['status'] = $this->request->post['status'];
@@ -138,16 +163,16 @@ class ControllerModuleSpecial extends Controller {
 		} else {
 			$data['status'] = '';
 		}
-		
+				
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['footer'] = $this->load->controller('common/footer');
 
-		$this->response->setOutput($this->load->view('module/special.tpl', $data));
+		$this->response->setOutput($this->load->view('module/news_featured.tpl', $data));
 	}
 
 	protected function validate() {
-		if (!$this->user->hasPermission('modify', 'module/special')) {
+		if (!$this->user->hasPermission('modify', 'module/news_featured')) {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 		
@@ -162,7 +187,7 @@ class ControllerModuleSpecial extends Controller {
 		if (!$this->request->post['height']) {
 			$this->error['height'] = $this->language->get('error_height');
 		}
-
+		
 		return !$this->error;
 	}
 }

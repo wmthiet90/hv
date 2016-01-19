@@ -185,15 +185,16 @@ class ControllerCommonHeader extends Controller {
 
 		//Menu active
 		$data['active_menu'] = 'home';
+
 		if($data['class'] == 'common-about') {
 			$data['active_menu'] = 'about';
 		} elseif ($data['class'] == 'news-category-3' || $data['class'] == 'news-article-3' ) {
 			$data['active_menu'] = 'recruitment';
 		} elseif ($data['class'] == 'information-contact') {
 			$data['active_menu'] = 'contact';
-		} elseif (strrpos($data['class'], 'product') != false) {
+		} elseif (strrpos($data['class'], 'product') === 0) {
 			$data['active_menu'] = 'product';
-		} elseif (strrpos($data['class'], 'news-category') != false) {
+		} elseif (strrpos($data['class'], 'news-category') === 0) {
 			$data['active_menu'] = 'news';
 		}
 
