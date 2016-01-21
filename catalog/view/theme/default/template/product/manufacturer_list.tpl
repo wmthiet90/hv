@@ -17,8 +17,8 @@
     <div id="content" class="<?php echo $class; ?> product-page">
       <?php echo $content_top; ?>
       <div class="filter-box">
-        <select>
-          <option value="0">Chon Nha San Xuat</option>
+        <select class="js-manufacturers">
+          <option value="0"><?php echo $text_select_manufacturer; ?></option>
           <?php if ($manufacturers) { ?>
             <?php foreach ($manufacturers as $manufacturer) { ?>
               <option value="<?php echo $manufacturer['manufacturer_id']; ?>"><?php echo $manufacturer['name']; ?>

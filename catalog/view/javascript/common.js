@@ -138,6 +138,13 @@ $(document).ready(function() {
 		$(".job-list .hidden").removeClass("hidden");
 		$(this).hide(0);
 	});
+
+	$(".js-manufacturers").on("change", function(e){
+		var option = $(this).find("option:selected");
+		if(option.length > 0){
+			location.href = option.data("url");
+		}
+	});
 });
 
 /* Agree to Terms */

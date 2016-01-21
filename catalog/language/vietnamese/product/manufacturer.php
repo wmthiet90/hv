@@ -1,14 +1,14 @@
 <?php
 // Heading
-$_['heading_title']     = 'Tìm thương hiệu ưa thích';
+$_['heading_title']     = 'Sản phẩm';
 
 // Text
-$_['text_brand']        = 'Thương hiệu';
-$_['text_index']        = 'Danh sách thương hiệu:';
+$_['text_brand']        = 'Hãng sản xuất';
+$_['text_index']        = 'Danh sách hãng sản xuất';
 $_['text_error']        = 'Không tồn tại!';
-$_['text_empty']        = 'Không có thương hiệu nào trong danh sách.';
+$_['text_empty']        = 'Không tìm thấy thông tin.';
 $_['text_quantity']     = 'Số lượng:';
-$_['text_manufacturer'] = 'Thương hiệu:';
+$_['text_manufacturer'] = 'NSX:';
 $_['text_model']        = 'Mã sản phẩm:'; 
 $_['text_points']       = 'Điểm thưởng:'; 
 $_['text_price']        = 'Giá:'; 
@@ -29,4 +29,9 @@ $_['text_rating_desc']  = 'Bình chọn (Cao nhất)';
 $_['text_model_asc']    = 'Kiểu (A - Z)';
 $_['text_model_desc']   = 'Kiểu (Z - A)';
 $_['text_limit']        = 'Hiển thị:';
+
+$_['text_manufacturer_list'] = 'Danh sách hãng sản xuất';
+$_['text_select_manufacturer'] = 'Chọn hãng sản xuất';
+
 ?>
+
