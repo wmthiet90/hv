@@ -34,7 +34,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="form-group">
+          <div class="form-group hidden">
             <label class="col-sm-2 control-label"><?php echo $entry_store; ?></label>
             <div class="col-sm-10">
               <div class="well well-sm" style="height: 150px; overflow: auto;">

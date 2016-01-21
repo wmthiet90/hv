@@ -2,55 +2,43 @@
 class ControllerProductManufacturer extends Controller {
 	public function index() {
 		$this->load->language('product/manufacturer');
-
 		$this->load->model('catalog/manufacturer');
-
 		$this->load->model('tool/image');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
 		$data['heading_title'] = $this->language->get('heading_title');
-
 		$data['text_index'] = $this->language->get('text_index');
 		$data['text_empty'] = $this->language->get('text_empty');
-
 		$data['button_continue'] = $this->language->get('button_continue');
 
 		$data['breadcrumbs'] = array();
-
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
 			'href' => $this->url->link('common/home')
 		);
-
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_brand'),
 			'href' => $this->url->link('product/manufacturer')
 		);
 
-		$data['categories'] = array();
-
+		$data['manufacturers'] = array();
 		$results = $this->model_catalog_manufacturer->getManufacturers();
-
 		foreach ($results as $result) {
-			if (is_numeric(utf8_substr($result['name'], 0, 1))) {
-				$key = '0 - 9';
+			if ($result['image']) {
+				$image = $this->model_tool_image->resize($result['image'], 160, 113);
 			} else {
-				$key = utf8_substr(utf8_strtoupper($result['name']), 0, 1);
+				$image = $this->model_tool_image->resize('placeholder.png', 160, 113);
 			}
-
-			if (!isset($data['categories'][$key])) {
-				$data['categories'][$key]['name'] = $key;
-			}
-
-			$data['categories'][$key]['manufacturer'][] = array(
+			$data['manufacturers'][] = array(
+				'manufacturer_id' => $result['manufacturer_id'],
+				'thumb' => $image,
 				'name' => $result['name'],
 				'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
 			);
 		}
 
 		$data['continue'] = $this->url->link('common/home');
-
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');

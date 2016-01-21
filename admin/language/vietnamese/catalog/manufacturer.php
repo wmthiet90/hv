@@ -20,12 +20,12 @@ $_['column_sort_order']  = 'Thứ tự';
 $_['column_action']      = 'Thao tác';
 
 // Entry
-$_['entry_name']         = 'Tên hãng sản xuất:';
-$_['entry_store']        = 'Cửa hàng:';
-$_['entry_keyword']      = 'Từ khóa SEO:';
-$_['entry_image']        = 'Hình ảnh:';
-$_['entry_sort_order']   = 'Thứ tự:';
-$_['entry_type']         = 'Loại:';
+$_['entry_name']         = 'Tên hãng sản xuất';
+$_['entry_store']        = 'Cửa hàng';
+$_['entry_keyword']      = 'Từ khóa SEO';
+$_['entry_image']        = 'Hình ảnh';
+$_['entry_sort_order']   = 'Thứ tự';
+$_['entry_type']         = 'Loại';
 
 // Help
 $_['help_keyword']       = 'Không sử dụng khoảng trống, nếu cần hãy sử dụng dấu - , Ví dụ: Apple.';

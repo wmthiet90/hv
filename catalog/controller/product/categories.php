@@ -22,8 +22,7 @@ class ControllerProductCategories extends Controller {
 		);
 
 		$results = $this->model_catalog_category->getCategories(0);
-		foreach ($results as $result) {
-			
+		foreach ($results as $result) {			
 		}
 
 		$data['column_left'] = $this->load->controller('common/column_left');

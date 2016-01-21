@@ -1,9 +1,10 @@
 <?php echo $header; ?>
 <div class="container">
-  <?php /*<ul class="breadcrumb">
+  <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?></ul>*/ ?>
+    <?php } ?>
+  </ul>
   <div class="row">
     <?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
@@ -17,7 +18,7 @@
       <?php echo $content_top; ?>
       <div class="filter-box">        
       </div>
-      <div class="products-box">        
+      <div class="products-box">
       </div>
       <?php echo $content_bottom; ?>
     </div>
