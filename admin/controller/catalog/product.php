@@ -850,7 +850,7 @@ class ControllerCatalogProduct extends Controller {
 		} elseif (!empty($product_info)) {
 			$data['shipping'] = $product_info['shipping'];
 		} else {
-			$data['shipping'] = 1;
+			$data['shipping'] = 0;
 		}
 
 		if (isset($this->request->post['price'])) {
@@ -914,7 +914,7 @@ class ControllerCatalogProduct extends Controller {
 		} elseif (!empty($product_info)) {
 			$data['subtract'] = $product_info['subtract'];
 		} else {
-			$data['subtract'] = 1;
+			$data['subtract'] = 0;
 		}
 
 		if (isset($this->request->post['sort_order'])) {
