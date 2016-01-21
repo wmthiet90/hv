@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 19, 2016 at 04:32 PM
+-- Generation Time: Jan 21, 2016 at 07:44 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -1594,19 +1594,32 @@ CREATE TABLE IF NOT EXISTS `wm_manufacturer` (
   `image` varchar(255) DEFAULT NULL,
   `sort_order` int(3) NOT NULL,
   PRIMARY KEY (`manufacturer_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `wm_manufacturer`
 --
 
 INSERT INTO `wm_manufacturer` (`manufacturer_id`, `name`, `image`, `sort_order`) VALUES
-(5, 'HTC', 'catalog/demo/htc_logo.jpg', 0),
-(6, 'Palm', 'catalog/demo/palm_logo.jpg', 0),
-(7, 'Hewlett-Packard', 'catalog/demo/hp_logo.jpg', 0),
-(8, 'Apple', 'catalog/demo/apple_logo.jpg', 0),
-(9, 'Canon', 'catalog/demo/canon_logo.jpg', 0),
-(10, 'Sony', 'catalog/demo/sony_logo.jpg', 0);
+(12, 'ATAGO – NHẬT BẢN', 'catalog/products/group20.jpg', 0),
+(13, 'APTACA – Ý', 'catalog/products/group30.jpg', 0),
+(14, 'BINDER – ĐỨC', 'catalog/products/group40.jpg', 0),
+(11, 'ALLA – PHÁP', 'catalog/products/group10.jpg', 0),
+(15, 'HIRAYAMA – NHẬT BẢN', 'catalog/products/group60.jpg', 0),
+(16, 'VITLAB – ĐỨC', 'catalog/products/group90.jpg', 0),
+(17, 'KIMBLE CHASE – MỸ', 'catalog/products/group100.jpg', 0),
+(18, 'MUNKTELL AHLSTROM – THỤY ĐIỂN', 'catalog/products/group110.jpg', 0),
+(19, 'YSI – MỸ', 'catalog/products/group120.jpg', 0),
+(20, 'HIRSCHMANN – ĐỨC', 'catalog/products/group130.jpg', 0),
+(21, 'INTERSCIENCE – PHÁP', 'catalog/products/group140.jpg', 0),
+(22, 'HETTICH – ĐỨC', 'catalog/products/group150.jpg', 0),
+(23, 'WORLWIDE GLASS– MỸ', 'catalog/products/group180.jpg', 0),
+(24, 'EBERBACH – MỸ', 'catalog/products/group190.jpg', 0),
+(25, 'NIPPON DENSHOKU – NHẬT BẢN', 'catalog/products/group200.jpg', 0),
+(26, 'JIPO – CH SÉC', 'catalog/products/group210.jpg', 0),
+(27, 'MERCK – ĐỨC', 'catalog/products/group220.jpg', 0),
+(28, 'THERMCONCEPT – ĐỨC', 'catalog/products/group230.jpg', 0),
+(29, 'JP SELECTA – TÂY BAN NHA', 'catalog/products/group240.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -1625,12 +1638,25 @@ CREATE TABLE IF NOT EXISTS `wm_manufacturer_to_store` (
 --
 
 INSERT INTO `wm_manufacturer_to_store` (`manufacturer_id`, `store_id`) VALUES
-(5, 0),
-(6, 0),
-(7, 0),
-(8, 0),
-(9, 0),
-(10, 0);
+(11, 0),
+(12, 0),
+(13, 0),
+(14, 0),
+(15, 0),
+(16, 0),
+(17, 0),
+(18, 0),
+(19, 0),
+(20, 0),
+(21, 0),
+(22, 0),
+(23, 0),
+(24, 0),
+(25, 0),
+(26, 0),
+(27, 0),
+(28, 0),
+(29, 0);
 
 -- --------------------------------------------------------
 
@@ -2597,14 +2623,17 @@ CREATE TABLE IF NOT EXISTS `wm_product` (
   `date_added` datetime NOT NULL,
   `date_modified` datetime NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=51 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=54 ;
 
 --
 -- Dumping data for table `wm_product`
 --
 
 INSERT INTO `wm_product` (`product_id`, `model`, `sku`, `upc`, `ean`, `jan`, `isbn`, `mpn`, `location`, `quantity`, `stock_status_id`, `image`, `manufacturer_id`, `shipping`, `price`, `points`, `tax_class_id`, `date_available`, `weight`, `weight_class_id`, `length`, `width`, `height`, `length_class_id`, `subtract`, `minimum`, `sort_order`, `status`, `viewed`, `date_added`, `date_modified`) VALUES
-(50, 'SP-1', '', '', '', '', '', '', '', 1, 6, '', 0, 1, 0.0000, 0, 0, '2016-01-08', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-01-09 00:36:22', '0000-00-00 00:00:00');
+(50, 'SP-1', '', '', '', '', '', '', '', 1, 6, 'catalog/products/alla/baume_ke.jpg', 11, 0, 0.0000, 0, 0, '2016-01-08', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 0, '2016-01-09 00:36:22', '2016-01-22 01:23:49'),
+(51, '091', '', '', '', '', '', '', '', 1, 6, 'catalog/products/alla/con_ke.jpg', 11, 0, 0.0000, 0, 0, '2016-01-21', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 1, '2016-01-22 01:29:47', '2016-01-22 01:29:57'),
+(52, '91500', '', '', '', '', '', '', '', 1, 6, 'catalog/products/alla/dong_ho_dien_tu.jpg', 11, 0, 0.0000, 0, 0, '2016-01-21', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 1, 1, 1, 1, 1, '2016-01-22 01:32:15', '2016-01-22 01:32:44'),
+(53, '595', '', '', '', '', '', '', '', 1, 6, 'catalog/products/alla/nhiet_ke_hg_astm.jpg', 11, 0, 0.0000, 0, 0, '2016-01-21', 0.00000000, 1, 0.00000000, 0.00000000, 0.00000000, 1, 0, 1, 1, 1, 1, '2016-01-22 01:41:57', '2016-01-22 01:42:11');
 
 -- --------------------------------------------------------
 
@@ -2644,8 +2673,14 @@ CREATE TABLE IF NOT EXISTS `wm_product_description` (
 --
 
 INSERT INTO `wm_product_description` (`product_id`, `language_id`, `name`, `description`, `tag`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(50, 2, 'SP 1', '&lt;p&gt;SP 1&lt;br&gt;&lt;/p&gt;', 'SP 1', 'SP 1', 'SP 1', 'SP 1'),
-(50, 1, 'SP 1', '&lt;p&gt;SP 1&lt;br&gt;&lt;/p&gt;', 'SP 1', 'SP 1', 'SP 1', 'SP 1');
+(50, 2, 'Baume kế', '&lt;p&gt;Baume kế&lt;br&gt;&lt;/p&gt;', 'Baume kế', 'Baume kế', 'Baume kế', 'Baume kế'),
+(50, 1, 'Baume kế', '&lt;p&gt;Baume kế&lt;br&gt;&lt;/p&gt;', 'Baume kế', 'Baume kế', 'Baume kế', 'Baume kế'),
+(51, 2, 'Cồn kế', '&lt;p&gt;Cồn kế&lt;br&gt;&lt;/p&gt;', 'Cồn kế', 'Cồn kế', 'Cồn kế', 'Cồn kế'),
+(51, 1, 'Cồn kế', '&lt;p&gt;Cồn kế&lt;br&gt;&lt;/p&gt;', 'Cồn kế', 'Cồn kế', 'Cồn kế', 'Cồn kế'),
+(52, 2, 'Đồng hồ điện tử', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ điện tử 99M-59s&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-010/F&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ điện tử 19H-59M&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-011/F&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ điện tử 3 chức năng&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-012/A&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ điện tử H-M-S&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-013/S&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ 3 chức năng&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-014/A&lt;/p&gt;', 'Đồng hồ điện tử', 'Đồng hồ điện tử', 'Đồng hồ điện tử', 'Đồng hồ điện tử'),
+(52, 1, 'Đồng hồ điện tử', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ điện tử 99M-59s&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-010/F&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ điện tử 19H-59M&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-011/F&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ điện tử 3 chức năng&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-012/A&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ điện tử H-M-S&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-013/S&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Đồng hồ 3 chức năng&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 91500-014/A&lt;/p&gt;', 'Đồng hồ điện tử', 'Đồng hồ điện tử', 'Đồng hồ điện tử', 'Đồng hồ điện tử'),
+(53, 2, 'Nhiệt kế Hg ASTM', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 1C -20+150°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.001 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 2C -5+300°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.002 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 3C -5+400°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.003 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 4C -38+50°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.005 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 5C -38+50°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.005 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 6C -80+20°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.006 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 7C -2+300°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.007 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 8C -2+400°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.008 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 9C -5+110°C : 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:5956.009-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 10C +90+370°C : 2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.010ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 11C -6+400°C : 2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.011ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 12C -20+102°C : 0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.012-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 13C +155+170°C : 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.013-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 14C +38+82°C : 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.014-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 15C -2+80: 0.2ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.015 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 16C +30+200: 0.5ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.016 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 17C +19+27: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.017 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 18C +34+42: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.018 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 19C +49+57: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.019 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 20C +57+65: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.020 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 21C +79+87: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.021 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 22C +95+103: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.022 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 23C +18+28: 0.2ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.023 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 24C +39+54: 0.2ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.024 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 25C +95+105: 0.2ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.025 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 26C +130+140: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.026 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 27C +147+182: 0.5ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.027 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 28C +36.6+39.4: 0.05ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.028 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 29C +52.6+55.4: 0.05ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.029 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 33C -38+42°C :0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.033-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 39C +48+102°C :&amp;nbsp; 0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.039&amp;nbsp; ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 41C +98+152°C :&amp;nbsp; 0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.041&amp;nbsp; ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 59C -18+82°C : 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.059 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 62C -38+2°C : 0.1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:&amp;nbsp; 5950.062-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 64C +25+55: 0.1oC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.064&amp;nbsp; ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 95C +100+130°C : 0.1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5950.095-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 96C +120+150°C : 0.1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5950.096-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 99C -50+5°C :&amp;nbsp; 0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 59500.099-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 114C -80+20°C :&amp;nbsp; 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.114-qp&lt;/p&gt;', 'Nhiệt kế Hg ASTM', 'Nhiệt kế Hg ASTM', 'Nhiệt kế Hg ASTM', 'Nhiệt kế Hg ASTM'),
+(53, 1, 'Nhiệt kế Hg ASTM', '&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 1C -20+150°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.001 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 2C -5+300°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.002 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 3C -5+400°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.003 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 4C -38+50°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.005 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 5C -38+50°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.005 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 6C -80+20°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.006 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 7C -2+300°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.007 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 8C -2+400°C :&amp;nbsp; 1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.008 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 9C -5+110°C : 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:5956.009-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 10C +90+370°C : 2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.010ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 11C -6+400°C : 2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.011ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 12C -20+102°C : 0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.012-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 13C +155+170°C : 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.013-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 14C +38+82°C : 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.014-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 15C -2+80: 0.2ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.015 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 16C +30+200: 0.5ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.016 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 17C +19+27: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.017 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 18C +34+42: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.018 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 19C +49+57: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.019 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 20C +57+65: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.020 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 21C +79+87: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.021 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 22C +95+103: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.022 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 23C +18+28: 0.2ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.023 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 24C +39+54: 0.2ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.024 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 25C +95+105: 0.2ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.025 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 26C +130+140: 0.1ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.026 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 27C +147+182: 0.5ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.027 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 28C +36.6+39.4: 0.05ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:595.028 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế ASTM 29C +52.6+55.4: 0.05ºC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.029 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 33C -38+42°C :0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.033-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 39C +48+102°C :&amp;nbsp; 0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.039&amp;nbsp; ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 41C +98+152°C :&amp;nbsp; 0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.041&amp;nbsp; ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 59C -18+82°C : 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.059 ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 62C -38+2°C : 0.1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code:&amp;nbsp; 5950.062-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 64C +25+55: 0.1oC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 595.064&amp;nbsp; ASC&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 95C +100+130°C : 0.1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5950.095-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 96C +120+150°C : 0.1°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5950.096-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 99C -50+5°C :&amp;nbsp; 0.2°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 59500.099-qp&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Nhiệt kế Hg ASTM 114C -80+20°C :&amp;nbsp; 0.5°C&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px; padding: 0px 0px 10px; line-height: 20px; color: rgb(78, 76, 70); font-family: Arial;&quot;&gt;Code: 5956.114-qp&lt;/p&gt;', 'Nhiệt kế Hg ASTM', 'Nhiệt kế Hg ASTM', 'Nhiệt kế Hg ASTM', 'Nhiệt kế Hg ASTM');
 
 -- --------------------------------------------------------
 
@@ -2831,7 +2866,10 @@ CREATE TABLE IF NOT EXISTS `wm_product_to_layout` (
 --
 
 INSERT INTO `wm_product_to_layout` (`product_id`, `store_id`, `layout_id`) VALUES
-(50, 0, 0);
+(50, 0, 0),
+(51, 0, 0),
+(52, 0, 0),
+(53, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -2850,7 +2888,10 @@ CREATE TABLE IF NOT EXISTS `wm_product_to_store` (
 --
 
 INSERT INTO `wm_product_to_store` (`product_id`, `store_id`) VALUES
-(50, 0);
+(50, 0),
+(51, 0),
+(52, 0),
+(53, 0);
 
 -- --------------------------------------------------------
 
@@ -3372,23 +3413,23 @@ CREATE TABLE IF NOT EXISTS `wm_url_alias` (
   PRIMARY KEY (`url_alias_id`),
   KEY `query` (`query`),
   KEY `keyword` (`keyword`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=908 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=931 ;
 
 --
 -- Dumping data for table `wm_url_alias`
 --
 
 INSERT INTO `wm_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
+(919, 'manufacturer_id=21', 'interscince'),
 (907, 'article_id=13', 'tuyen-dụng-nhan-vien-kinh-doanh-t6-2015'),
-(730, 'manufacturer_id=8', 'apple'),
 (772, 'information_id=4', 'about_us'),
+(920, 'manufacturer_id=22', 'hettich'),
 (859, 'article_id=1', 'cong-ty-hoa-viet-gia-nhap-hoi-cac-phong-thi-nghiem-viet-nam-vinalab'),
 (858, 'article_id=2', 'thong-bao-thay-doi-dia-chi-kinh-doanh'),
 (864, 'article_id=3', 'hoaviet-vui-he-2013'),
 (868, 'article_id=4', 'trien-lam-analytica-viet-nam-2015'),
 (870, 'article_id=5', 'vietnam-medi-pharm-expo-2011'),
 (846, 'category_id=59', 'channuoi-thuysan'),
-(847, 'product_id=50', ''),
 (871, 'news_category_id=1', 'tin-noi-bo'),
 (872, 'news_category_id=2', 'tin-san-pham'),
 (878, 'news_category_id=3', 'tuyen-dung'),
@@ -3400,16 +3441,28 @@ INSERT INTO `wm_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (901, 'article_id=11', 'thong-bao-tuyen-dung-nhan-su-phong-kinh-doanh'),
 (895, 'news_category_id=4', 'thong-tin-hoaviet'),
 (900, 'article_id=16', 'gioi-thieu-hoaviet'),
+(912, 'manufacturer_id=15', 'hirayama'),
+(913, 'manufacturer_id=16', 'vitlab'),
+(916, 'manufacturer_id=17', 'kimble-chase'),
+(915, 'manufacturer_id=18', 'muntell-ahlstrom'),
 (893, 'article_id=15', ''),
 (892, 'article_id=14', ''),
-(828, 'manufacturer_id=9', 'canon'),
-(829, 'manufacturer_id=5', 'htc'),
-(830, 'manufacturer_id=7', 'hewlett-packard'),
-(831, 'manufacturer_id=6', 'palm'),
-(832, 'manufacturer_id=10', 'sony'),
+(918, 'manufacturer_id=20', 'hirschmann'),
+(917, 'manufacturer_id=19', 'ysi'),
+(911, 'manufacturer_id=14', 'binder'),
+(910, 'manufacturer_id=13', 'aptaca'),
+(909, 'manufacturer_id=12', 'atago'),
+(908, 'manufacturer_id=11', 'alla'),
 (841, 'information_id=6', 'delivery'),
 (842, 'information_id=3', 'privacy'),
-(843, 'information_id=5', 'terms');
+(843, 'information_id=5', 'terms'),
+(921, 'manufacturer_id=23', 'worlwide-glass'),
+(922, 'manufacturer_id=24', 'eberbach'),
+(923, 'manufacturer_id=25', 'nippon-denshoku'),
+(924, 'manufacturer_id=26', 'jipo'),
+(925, 'manufacturer_id=27', 'merck'),
+(926, 'manufacturer_id=28', 'thermconcept'),
+(927, 'manufacturer_id=29', 'jp-selecta');
 
 -- --------------------------------------------------------
 
