@@ -2,8 +2,8 @@
 // Text
 $_['text_search']       = 'Tìm kiếm';
 $_['text_brand']        = 'Thương hiệu';
-$_['text_manufacturer'] = 'Nhà sản xuất:';
-$_['text_model']        = 'Mã sản phẩm:';
+$_['text_manufacturer'] = 'NSX:';
+$_['text_model']        = 'Mã SP:';
 $_['text_reward']       = 'Điểm thưởng:'; 
 $_['text_points']       = 'Giá điểm thưởng:';
 $_['text_stock']        = 'Tình trạng:';

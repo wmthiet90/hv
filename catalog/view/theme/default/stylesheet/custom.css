@@ -229,6 +229,20 @@ h1.heading-title {
     background-color: #F3F3F3;
 }
 
+.sub-heading-title {
+    color: #9d0a0e;
+    position: relative;
+    text-align: center;
+    margin: 50px 0px;
+    background: transparent url(../image/line.png) repeat-x 0 50%;    
+}
+.sub-heading-title > span { 
+    background: #FFF;
+    padding: 0 30px;
+    font-size: 24px;
+}
+
+
 /* ====================
     INTERMEDIATE: Menu
    ==================== */
@@ -555,13 +569,6 @@ footer .social-links .social-icon:hover > i {
 .news-page .product-thumb .image img {
     width: 100%;
 }
-.news-page .sub-heading-title {
-    color: #9d0a0e;
-    position: relative;
-    text-align: center;
-    margin: 50px 0px;
-    background: transparent url(../image/line.png) repeat-x 0 50%;    
-}
 .news-page .related-news {    
 }
 .news-page .related-news .product-thumb {
@@ -644,7 +651,7 @@ footer .social-links .social-icon:hover > i {
     border-bottom: 1px solid #CCC;
 }
 
-.product-page {    
+.product-page {     
 }
 .product-page .filter-box {
     padding: 15px 0px;
@@ -661,7 +668,7 @@ footer .social-links .social-icon:hover > i {
 .product-page .product-grid .product-thumb .caption {
     padding: 0;
     margin-top: 10px;
-    min-height: inherit;
+    min-height: 65px;
 }
 .product-page .product-grid .caption a {
     text-transform: uppercase;
@@ -673,10 +680,49 @@ footer .social-links .social-icon:hover > i {
     color: #9d0a0e;       
 }
 
-.sub-heading-title > span { 
-    background: #FFF;
-    padding: 0 30px;
-    font-size: 24px;
+.product-details-page {
+    background-color: #FFF;   
+    padding: 35px;
+}
+.product-details-page .heading-title {
+    text-transform: uppercase;
+    color: #9d0a0e;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+}
+.product-details-page .product-info {
+    margin-bottom: 40px;
+}
+.product-details-page .product-info li {
+    display: inline-block;
+    border-left: 1px solid #DDD;
+    padding: 0 10px;
+    color: #AAA;
+}
+.product-details-page .product-info li:first-child {
+    border: none;
+    padding: 0 10px 0 0;
+}
+
+.product-details-page .thumbnails {
+
+}
+.product-details-page .thumbnails a.thumbnail {
+    border: none;
+    outline: none;
+    padding: 0;
+}
+.related-products .product-thumb .caption {
+    min-height: inherit;
+    padding: 10px 0;    
+}
+.related-products .product-thumb .image {
+    border: 1px solid #CCC;
+}
+.related-products .product-thumb .caption a {
+    color: #0e0e0e;
+    text-transform: uppercase;    
+    font-size: 14px;
 }
     
 /* ===============

@@ -1,20 +1,12 @@
 <?php echo $header; ?>
-<div class="container">
+<div class="container custom-container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li> <a href="<?php echo $breadcrumb['href']; ?>"> <?php echo $breadcrumb['text']; ?> </a> </li>
     <?php } ?>
   </ul>
   <div class="row">
-    <?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?> product-page">
+    <div id="content" class="col-sm-12 product-page product-details-page">
       <?php echo $content_top; ?>
       <div class="filter-box">
         <select class="js-manufacturers">
@@ -37,7 +29,7 @@
                   <a href="<?php echo $manufacturer['href']; ?>">
                     <img src="<?php echo $manufacturer['thumb']; ?>" alt="<?php echo $manufacturer['name']; ?>" title="<?php echo $manufacturer['name']; ?>" class="responsive-img" />
                     </a>
-                  </div>
+                </div>
                 <div class="caption">
                   <a href="<?php echo $manufacturer['href']; ?>"><?php echo $manufacturer['name']; ?></a>
                 </div>
@@ -51,6 +43,6 @@
       </div>
       <?php echo $content_bottom; ?>
     </div>
-    <?php echo $column_right; ?></div>
+  </div>
 </div>
 <?php echo $footer; ?>

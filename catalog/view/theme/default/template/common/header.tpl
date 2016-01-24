@@ -84,6 +84,7 @@
                       <li><a href="#">Sub 4</a></li>
                     </ul>
                   </div>
+                </div>
               </li>
               <li class="dropdown <?php echo ($active_menu == 'news' ? 'active': '') ?>">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_newsevent; ?></a>

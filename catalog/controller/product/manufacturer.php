@@ -26,9 +26,9 @@ class ControllerProductManufacturer extends Controller {
 		$results = $this->model_catalog_manufacturer->getManufacturers();
 		foreach ($results as $result) {
 			if ($result['image']) {
-				$image = $this->model_tool_image->resize($result['image'], 160, 113);
+				$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
 			} else {
-				$image = $this->model_tool_image->resize('placeholder.png', 160, 113);
+				$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
 			}
 			$data['manufacturers'][] = array(
 				'manufacturer_id' => $result['manufacturer_id'],
@@ -150,9 +150,9 @@ class ControllerProductManufacturer extends Controller {
 			$results = $this->model_catalog_product->getProducts($filter_data);
 			foreach ($results as $result) {
 				if ($result['image']) {
-					$image = $this->model_tool_image->resize($result['image'], 160, 113);
+					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
 				} else {
-					$image = $this->model_tool_image->resize('placeholder.png', 160, 113);
+					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
 				}
 
 				$data['products'][] = array(

@@ -22,7 +22,7 @@
             <span>f:</span> + (84) 8 39 789 555
           </p>
           <p class="info">
-            <span>e:</span> <a href="mailto: hoaviet@hoaviet.vn">hoaviet@hoaviet.vn</a>
+            <span>e:</span> <a href="mailto:hoaviet@hoaviet.vn">hoaviet@hoaviet.vn</a>
           </p>
           <div class="info social-links">            
             <a class="social-icon facebook" href="#"><i class="fa fa-facebook"></i></a>
