@@ -13,7 +13,7 @@
           <option value="0"><?php echo $text_select_manufacturer; ?></option>
           <?php if ($manufacturers) { ?>
             <?php foreach ($manufacturers as $manufacturer) { ?>
-              <option value="<?php echo $manufacturer['manufacturer_id']; ?>"><?php echo $manufacturer['name']; ?>
+              <option data-url="<?php echo $manufacturer['href']; ?>" value="<?php echo $manufacturer['manufacturer_id']; ?>"><?php echo $manufacturer['name']; ?>
               </option>
             <?php } ?> 
           <?php } ?>
