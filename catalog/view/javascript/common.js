@@ -145,6 +145,11 @@ $(document).ready(function() {
 			location.href = option.data("url");
 		}
 	});
+
+	$("#gotocontact").on("click", function(e){
+		e.preventDefault();
+		$("html, body").animate({ scrollTop: $(document).height() }, 1200);
+	})
 });
 
 /* Agree to Terms */
