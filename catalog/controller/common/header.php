@@ -73,6 +73,7 @@ class ControllerCommonHeader extends Controller {
 		$data['contact'] = $this->url->link('information/contact');
 		$data['about'] = $this->url->link('common/about');
 		$data['recruitment'] = $this->url->link('news/category', 'news_path=' . DEFAULT_RECRUITMENTCATEGORY_ID);
+		$data['product'] = $this->url->link('product/manufacturer');
 		$data['telephone'] = $this->config->get('config_telephone');
 
 		$status = true;
@@ -93,9 +94,7 @@ class ControllerCommonHeader extends Controller {
         $this->load->model('news/article');
 
         $data['news_categories'] = array();
-
         $categories = $this->model_news_category->getCategories(0);
-
         foreach ($categories as $category) {
             if ($category['top']) {
                 // Level 2
@@ -123,15 +122,23 @@ class ControllerCommonHeader extends Controller {
             }
         }
 
+        //Menu product
+        $this->load->model('catalog/manufacturer');
+        $manufacturers = $this->model_catalog_manufacturer->getManufacturers();
+        foreach ($manufacturers as $manufacturer) {
+        	$data['manufacturers'][] = array(
+				'manufacturer_id' => $manufacturer['manufacturer_id'],
+				'name' => $manufacturer['name'],
+				'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $manufacturer['manufacturer_id'])
+			);
+        }
+
 		// Menu
 		$this->load->model('catalog/category');
-
 		$this->load->model('catalog/product');
 
 		$data['categories'] = array();
-
 		$categories = $this->model_catalog_category->getCategories(0);
-
 		foreach ($categories as $category) {
 			if ($category['top']) {
 				// Level 2

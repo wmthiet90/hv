@@ -74,16 +74,19 @@
               <li class="<?php echo ($active_menu == 'about' ? 'active': '') ?>"><a href="<?php echo $about; ?>"><?php echo $text_introduction; ?></a>
               </li>
               <li class="dropdown <?php echo ($active_menu == 'product' ? 'active': '') ?>">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_product; ?></a>
+                <a href="<?php echo $product; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_product; ?></a>
                 <div class="dropdown-menu">
-                  <div class="dropdown-inner">
+                  <?php if($manufacturers) { ?>
+                  <div class="dropdown-inner sub-product-list">
                     <ul class="list-unstyled">
-                      <li><a href="#">Sub 1</a></li>
-                      <li><a href="#">Sub 2</a></li>
-                      <li><a href="#">Sub 3</a></li>
-                      <li><a href="#">Sub 4</a></li>
+                      <?php foreach ($manufacturers as $manufacturer) { ?>
+                        <li>
+                          <a href="<?php echo $manufacturer['href'] ?>"><?php echo $manufacturer['name'] ?></a>
+                        </li>                      
+                      <?php } ?>
                     </ul>
                   </div>
+                  <?php } ?>
                 </div>
               </li>
               <li class="dropdown <?php echo ($active_menu == 'news' ? 'active': '') ?>">

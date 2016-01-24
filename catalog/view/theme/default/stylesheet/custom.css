@@ -329,6 +329,9 @@ nav#menu {
     text-align: left;
     background-color: #f7f7f7;
 }
+#menu .dropdown-inner a {
+    min-width: 180px;
+}
 
 #menu-container .nav-controls {
     position: absolute;
@@ -337,6 +340,10 @@ nav#menu {
     width: 225px;
 }
 #menu-container .nav-controls-wrapper {    
+}
+
+#menu .sub-product-list a {
+    min-width: 200px;
 }
 
 /* =======================
