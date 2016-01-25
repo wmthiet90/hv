@@ -74,8 +74,8 @@
               <li class="<?php echo ($active_menu == 'about' ? 'active': '') ?>"><a href="<?php echo $about; ?>"><?php echo $text_introduction; ?></a>
               </li>
               <li class="dropdown <?php echo ($active_menu == 'product' ? 'active': '') ?>">
-                <a href="<?php echo $product; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $text_product; ?></a>
-                <div class="dropdown-menu">
+                <a href="<?php echo $product; ?>" class="dropdown-toggle"><?php echo $text_product; ?></a>
+                <div class="dropdown-menu hidden">
                   <?php if($manufacturers) { ?>
                   <div class="dropdown-inner sub-product-list">
                     <ul class="list-unstyled">
