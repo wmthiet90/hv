@@ -75,6 +75,7 @@ class ControllerCommonHeader extends Controller {
 		$data['recruitment'] = $this->url->link('news/category', 'news_path=' . DEFAULT_RECRUITMENTCATEGORY_ID);
 		$data['product'] = $this->url->link('product/manufacturer');
 		$data['telephone'] = $this->config->get('config_telephone');
+		$data['product_search'] = $this->url->link('product/search');
 
 		$status = true;
 

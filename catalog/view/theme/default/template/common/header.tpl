@@ -40,7 +40,7 @@
 <?php } ?>
 <?php echo $google_analytics; ?>
 </head>
-<body class="<?php echo $class; ?>">
+<body class="<?php echo $class; ?>" data-searchurl="<?php echo $product_search; ?>">
 <header>
   <div class="container">
     <div class="row">

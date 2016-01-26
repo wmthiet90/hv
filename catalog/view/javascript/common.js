@@ -62,21 +62,21 @@ $(document).ready(function() {
 	});
 
 	/* Search */
-	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
-		url = $('base').attr('href') + 'index.php?route=product/search';
+	var searchInput = $('#search input[name=\'search\']');
+	var searchButton = $('#search button');
+	searchButton.on('click', function() {
+		url = $('body').data("searchurl");
+		if(!url) return;
 
-		var value = $('header input[name=\'search\']').val();
-
-		if (value) {
+		var value = searchInput.val();
+		if (value && value.trim().length > 0) {
 			url += '&search=' + encodeURIComponent(value);
-		}
-
-		location = url;
+			location.href = url;
+		}	
 	});
-
-	$('#search input[name=\'search\']').on('keydown', function(e) {
+	searchInput.on('keydown', function(e) {
 		if (e.keyCode == 13) {
-			$('header input[name=\'search\']').parent().find('button').trigger('click');
+			searchButton.trigger('click');
 		}
 	});
 
