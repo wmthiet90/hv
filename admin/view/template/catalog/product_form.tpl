@@ -29,7 +29,7 @@
             <li class="active"><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
             <li><a href="#tab-data" data-toggle="tab"><?php echo $tab_data; ?></a></li>
             <li><a href="#tab-links" data-toggle="tab"><?php echo $tab_links; ?></a></li>
-            <li class="hidden"><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
+            <li><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
             <li class="hidden"><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
           </ul>
           <div class="tab-content">
@@ -413,7 +413,7 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane hidden" id="tab-image">
+            <div class="tab-pane" id="tab-image">
               <div class="table-responsive">
                 <table id="images" class="table table-striped table-bordered table-hover">
                   <thead>

@@ -249,6 +249,16 @@ class ControllerProductProduct extends Controller {
 				$data['thumb'] = '';
 			}
 
+			//Additional images
+			$data['images'] = array();
+			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
+			foreach ($results as $result) {
+				$data['images'][] = array(
+					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
+					'thumb' => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'))
+				);
+			}
+
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 			$data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
 

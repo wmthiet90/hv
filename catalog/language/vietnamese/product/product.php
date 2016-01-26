@@ -1,7 +1,7 @@
 <?php
 // Text
 $_['text_search']       = 'Tìm kiếm';
-$_['text_brand']        = 'Thương hiệu';
+$_['text_brand']        = 'Nhà sản xuất';
 $_['text_manufacturer'] = 'NSX:';
 $_['text_model']        = 'Mã SP:';
 $_['text_reward']       = 'Điểm thưởng:'; 

@@ -13,7 +13,6 @@ class ControllerCommonSeoUrl extends Controller {
 			if (utf8_strlen(end($parts)) == 0) {
 				array_pop($parts);
 			}
-
 			foreach ($parts as $part) {
 				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE keyword = '" . $this->db->escape($part) . "'");
 				
@@ -75,6 +74,11 @@ class ControllerCommonSeoUrl extends Controller {
 					$this->request->get['route'] = 'product/manufacturer/info';
 				} elseif (isset($this->request->get['information_id'])) {
 					$this->request->get['route'] = 'information/information';
+				} else {
+				 	$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE keyword = '" . $this->db->escape($this->request->get['_route_']) . "'");
+	               	if ($query->num_rows) {
+	                    $this->request->get['route'] = $query->row['query'];
+	                }
 				}
 			}
 
@@ -92,7 +96,7 @@ class ControllerCommonSeoUrl extends Controller {
 		$data = array();
 
 		parse_str($url_info['query'], $data);
-
+		
 		foreach ($data as $key => $value) {
 			if (isset($data['route'])) {
 
@@ -134,6 +138,13 @@ class ControllerCommonSeoUrl extends Controller {
 					}
 
 					unset($data[$key]);
+				} else {
+					$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = '" . $this->db->escape($data['route']) . "'");
+                    if ($query->num_rows) {
+                        $url .= '/' . $query->row['keyword'];
+
+                        unset($data[$key]);
+                    }
 				}
 			}
 		}

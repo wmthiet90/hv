@@ -12,12 +12,22 @@
         <div class="col-md-5 col-xs-12">
           <?php if ($thumb) { ?>
           <ul class="thumbnails">
-            <?php if ($thumb) { ?>
             <li>
-              <a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+              <a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>">
+                <img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
               </a>
-            </li>
-            <?php } ?>
+            </li>                       
+          </ul>
+          <?php } ?> 
+          <?php if ($images) { ?>
+          <ul class="thumbnails additional-thumbnails">
+              <?php foreach ($images as $image) { ?>
+              <li>
+                <a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> 
+                  <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+                </a>
+              </li>
+              <?php } ?>            
           </ul>
           <?php } ?>
           <div class="social-share-buttons center">

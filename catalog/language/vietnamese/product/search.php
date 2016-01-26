@@ -3,7 +3,7 @@
 $_['heading_title']     = 'Tìm Kiếm';
  
 // Text
-$_['text_search']       = 'Sản phẩm thỏa điều kiện tìm kiếm';
+$_['text_search']       = 'Kết quả tìm kiếm';
 $_['text_keyword']      = 'Từ khóa';
 $_['text_category']     = 'Tất cả danh mục';
 $_['text_sub_category'] = 'Tìm trong danh mục con';
