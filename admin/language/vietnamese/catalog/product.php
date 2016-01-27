@@ -22,6 +22,7 @@ $_['text_amount']            = 'Số lượng Cố định';
 $_['column_name']            = 'Tên sản phẩm';
 $_['column_model']           = 'Mã Sản phẩm';
 $_['column_image']           = 'Hình ảnh';
+$_['column_manufacturer']    = 'Nhà sản xuất';
 $_['column_price']           = 'Giá';
 $_['column_quantity']        = 'Số lượng';
 $_['column_status']          = 'Trạng thái';

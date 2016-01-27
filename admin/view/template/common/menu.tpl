@@ -26,20 +26,20 @@
   </li>
   <li id="system"><a class="parent"><i class="fa fa-cog fa-fw"></i> <span><?php echo $text_system; ?></span></a>
     <ul>
-      <li><a href="<?php echo $setting; ?>"><?php echo $text_setting; ?></a></li>
+      <li class="hidden"><a href="<?php echo $setting; ?>"><?php echo $text_setting; ?></a></li>
       <li><a href="<?php echo $module; ?>"><?php echo $text_module; ?></a></li>
       <li class="hidden"><a href="<?php echo $layout; ?>"><?php echo $text_layout; ?></a></li>
       <li><a href="<?php echo $banner; ?>"><?php echo $text_banner; ?></a></li>
       <li><a class="parent"><?php echo $text_users; ?></a>
         <ul>
           <li><a href="<?php echo $user; ?>"><?php echo $text_user; ?></a></li>
-          <li><a href="<?php echo $user_group; ?>"><?php echo $text_user_group; ?></a></li>
+          <li class="hidden"><a href="<?php echo $user_group; ?>"><?php echo $text_user_group; ?></a></li>
         </ul>
       </li>
       <li><a href="<?php echo $language; ?>"><?php echo $text_language; ?></a></li>
     </ul>
   </li>
-  <li id="tools"><a class="parent"><i class="fa fa-wrench fa-fw"></i> <span><?php echo $text_tools; ?></span></a>
+  <li id="tools" class="hidden"><a class="parent"><i class="fa fa-wrench fa-fw"></i> <span><?php echo $text_tools; ?></span></a>
     <ul>
       <li class="hidden"><a href="<?php echo $upload; ?>"><?php echo $text_upload; ?></a></li>
       <li><a href="<?php echo $backup; ?>"><?php echo $text_backup; ?></a></li>

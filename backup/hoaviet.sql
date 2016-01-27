@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 26, 2016 at 05:57 PM
+-- Generation Time: Jan 27, 2016 at 07:23 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -297,8 +297,8 @@ CREATE TABLE IF NOT EXISTS `wm_banner` (
 --
 
 INSERT INTO `wm_banner` (`banner_id`, `name`, `status`) VALUES
-(7, 'Home Page Slideshow', 1),
-(8, 'Partners', 1);
+(7, 'Slide ảnh trang chủ', 1),
+(8, 'Slide đối tác', 1);
 
 -- --------------------------------------------------------
 
@@ -313,29 +313,29 @@ CREATE TABLE IF NOT EXISTS `wm_banner_image` (
   `image` varchar(255) NOT NULL,
   `sort_order` int(3) NOT NULL DEFAULT '0',
   PRIMARY KEY (`banner_image_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=140 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=156 ;
 
 --
 -- Dumping data for table `wm_banner_image`
 --
 
 INSERT INTO `wm_banner_image` (`banner_image_id`, `banner_id`, `link`, `image`, `sort_order`) VALUES
-(139, 7, '#', 'catalog/banners/banner1.jpg', 3),
-(138, 7, '#', 'catalog/banners/banner4.jpg', 5),
-(137, 7, '#', 'catalog/banners/banner5.jpg', 4),
-(124, 8, 'http://www.escoglobal.com/', 'catalog/partners/esco.png', 0),
-(123, 8, 'http://www.kimble-chase.com/', 'catalog/partners/kimble.png', 0),
-(122, 8, 'http://www.thermconcept.com/', 'catalog/partners/thermconcept.png', 0),
-(121, 8, 'http://www.hirayama-hmc.co.jp/', 'catalog/partners/hirayama.png', 0),
-(120, 8, 'http://www.binder-world.com/de', 'catalog/partners/binder.png', 0),
-(119, 8, 'http://www.atago.net/', 'catalog/partners/atago.png', 0),
-(136, 7, '#', 'catalog/banners/banner3.jpg', 2),
-(135, 7, '#', 'catalog/banners/banner2.jpg', 1),
-(125, 8, 'http://www.aptaca.com/', 'catalog/partners/aptaca.png', 0),
-(126, 8, 'http://www.allafrance.com/', 'catalog/partners/france.png', 0),
-(127, 8, 'http://www.hirschmann-inc.com/', 'catalog/partners/hirschmann.png', 0),
-(128, 8, 'http://www.interscience.fr/', 'catalog/partners/interscience.png', 0),
-(129, 8, 'http://www.ysi.com/', 'catalog/partners/ysi.png', 0);
+(144, 7, '#', 'catalog/banners/banner4.jpg', 5),
+(143, 7, '#', 'catalog/banners/banner5.jpg', 4),
+(142, 7, '#', 'catalog/banners/banner1.jpg', 3),
+(152, 8, 'http://www.allafrance.com/', 'catalog/partners/france.png', 0),
+(151, 8, 'http://www.aptaca.com/', 'catalog/partners/aptaca.png', 0),
+(150, 8, 'http://www.atago.net/', 'catalog/partners/atago.png', 0),
+(149, 8, 'http://www.binder-world.com/de', 'catalog/partners/binder.png', 0),
+(148, 8, 'http://www.hirayama-hmc.co.jp/', 'catalog/partners/hirayama.png', 0),
+(141, 7, '#', 'catalog/banners/banner3.jpg', 2),
+(140, 7, '#', 'catalog/banners/banner2.jpg', 1),
+(147, 8, 'http://www.thermconcept.com/', 'catalog/partners/thermconcept.png', 0),
+(146, 8, 'http://www.kimble-chase.com/', 'catalog/partners/kimble.png', 0),
+(145, 8, 'http://www.escoglobal.com/', 'catalog/partners/esco.png', 0),
+(153, 8, 'http://www.hirschmann-inc.com/', 'catalog/partners/hirschmann.png', 0),
+(154, 8, 'http://www.interscience.fr/', 'catalog/partners/interscience.png', 0),
+(155, 8, 'http://www.ysi.com/', 'catalog/partners/ysi.png', 0);
 
 -- --------------------------------------------------------
 
@@ -356,38 +356,38 @@ CREATE TABLE IF NOT EXISTS `wm_banner_image_description` (
 --
 
 INSERT INTO `wm_banner_image_description` (`banner_image_id`, `language_id`, `banner_id`, `title`) VALUES
-(139, 2, 7, 'Hóa Việt cung cấp các sản phẩm chính hãng từ các nhà sản xuất hàng đầu'),
-(127, 1, 8, 'HIRSCHMANN'),
-(126, 2, 8, 'FRANCE'),
-(126, 1, 8, 'FRANCE'),
-(125, 2, 8, 'APTACA'),
-(125, 1, 8, 'APTACA'),
-(124, 2, 8, 'ESCO'),
-(124, 1, 8, 'ESCO'),
-(123, 2, 8, 'KIMBLE'),
-(123, 1, 8, 'KIMBLE'),
-(122, 2, 8, 'THERM CONCEPT'),
-(122, 1, 8, 'THERM CONCEPT'),
-(121, 2, 8, 'HIRAYAMA'),
-(138, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
-(121, 1, 8, 'HIRAYAMA'),
-(120, 2, 8, 'BINDER'),
-(120, 1, 8, 'BINDER'),
-(119, 2, 8, 'ATAGO'),
-(119, 1, 8, 'ATAGO'),
-(138, 2, 7, 'Chuyên gia về dụng cụ, hóa chất và thiết bị trong phòng thí nghiệm'),
-(127, 2, 8, 'HIRSCHMANN'),
-(128, 1, 8, 'INTERSCIENCE'),
-(128, 2, 8, 'INTERSCIENCE'),
-(129, 1, 8, 'YSI'),
-(129, 2, 8, 'YSI'),
-(137, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
-(137, 2, 7, 'Hóa Việt cung cấp các sản phẩm chính hãng từ các nhà sản xuất hàng đầu'),
-(136, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
-(136, 2, 7, 'Chuyên gia về dụng cụ, hóa chất và thiết bị trong phòng thí nghiệm'),
-(135, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
-(135, 2, 7, 'Hóa Việt cung cấp các sản phẩm chính hãng từ các nhà sản xuất hàng đầu'),
-(139, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers');
+(144, 2, 7, 'Chuyên gia về dụng cụ, hóa chất và thiết bị trong phòng thí nghiệm'),
+(153, 1, 8, 'HIRSCHMANN'),
+(153, 2, 8, 'HIRSCHMANN'),
+(152, 1, 8, 'FRANCE'),
+(152, 2, 8, 'FRANCE'),
+(151, 1, 8, 'APTACA'),
+(151, 2, 8, 'APTACA'),
+(150, 1, 8, 'ATAGO'),
+(150, 2, 8, 'ATAGO'),
+(149, 1, 8, 'BINDER'),
+(149, 2, 8, 'BINDER'),
+(148, 1, 8, 'HIRAYAMA'),
+(143, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
+(148, 2, 8, 'HIRAYAMA'),
+(147, 1, 8, 'THERM CONCEPT'),
+(147, 2, 8, 'THERM CONCEPT'),
+(143, 2, 7, 'Hóa Việt cung cấp các sản phẩm chính hãng từ các nhà sản xuất hàng đầu'),
+(146, 1, 8, 'KIMBLE'),
+(146, 2, 8, 'KIMBLE'),
+(145, 1, 8, 'ESCO'),
+(145, 2, 8, 'ESCO'),
+(142, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
+(142, 2, 7, 'Hóa Việt cung cấp các sản phẩm chính hãng từ các nhà sản xuất hàng đầu'),
+(141, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
+(140, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
+(141, 2, 7, 'Chuyên gia về dụng cụ, hóa chất và thiết bị trong phòng thí nghiệm'),
+(140, 2, 7, 'Hóa Việt cung cấp các sản phẩm chính hãng từ các nhà sản xuất hàng đầu'),
+(144, 1, 7, 'Hoa Viet provide genuine products from leading manufacturers'),
+(154, 2, 8, 'INTERSCIENCE'),
+(154, 1, 8, 'INTERSCIENCE'),
+(155, 2, 8, 'YSI'),
+(155, 1, 8, 'YSI');
 
 -- --------------------------------------------------------
 
@@ -409,13 +409,6 @@ CREATE TABLE IF NOT EXISTS `wm_category` (
   KEY `parent_id` (`parent_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
---
--- Dumping data for table `wm_category`
---
-
-INSERT INTO `wm_category` (`category_id`, `image`, `parent_id`, `top`, `column`, `sort_order`, `status`, `date_added`, `date_modified`) VALUES
-(59, '', 0, 0, 1, 0, 1, '2016-01-09 00:23:52', '2016-01-09 00:23:52');
-
 -- --------------------------------------------------------
 
 --
@@ -433,14 +426,6 @@ CREATE TABLE IF NOT EXISTS `wm_category_description` (
   PRIMARY KEY (`category_id`,`language_id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `wm_category_description`
---
-
-INSERT INTO `wm_category_description` (`category_id`, `language_id`, `name`, `description`, `meta_title`, `meta_description`, `meta_keyword`) VALUES
-(59, 1, 'Livestock - Fisheries', '&lt;p&gt;Livestock - Fisheries&lt;br&gt;&lt;/p&gt;', 'Livestock - Fisheries', 'Livestock - Fisheries', 'Livestock - Fisheries'),
-(59, 2, 'Chăn nuôi - Thuỷ sản', '&lt;p&gt;Chăn nuôi - Thuỷ sản&lt;br&gt;&lt;/p&gt;', 'Chăn nuôi - Thuỷ sản', 'Chăn nuôi - Thuỷ sản', 'Chăn nuôi - Thuỷ sản');
 
 -- --------------------------------------------------------
 
@@ -467,13 +452,6 @@ CREATE TABLE IF NOT EXISTS `wm_category_path` (
   PRIMARY KEY (`category_id`,`path_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `wm_category_path`
---
-
-INSERT INTO `wm_category_path` (`category_id`, `path_id`, `level`) VALUES
-(59, 59, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -487,13 +465,6 @@ CREATE TABLE IF NOT EXISTS `wm_category_to_layout` (
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `wm_category_to_layout`
---
-
-INSERT INTO `wm_category_to_layout` (`category_id`, `store_id`, `layout_id`) VALUES
-(59, 0, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -505,13 +476,6 @@ CREATE TABLE IF NOT EXISTS `wm_category_to_store` (
   `store_id` int(11) NOT NULL,
   PRIMARY KEY (`category_id`,`store_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `wm_category_to_store`
---
-
-INSERT INTO `wm_category_to_store` (`category_id`, `store_id`) VALUES
-(59, 0);
 
 -- --------------------------------------------------------
 
@@ -3815,7 +3779,6 @@ INSERT INTO `wm_url_alias` (`url_alias_id`, `query`, `keyword`) VALUES
 (864, 'article_id=3', 'hoaviet-vui-he-2013'),
 (868, 'article_id=4', 'trien-lam-analytica-viet-nam-2015'),
 (870, 'article_id=5', 'vietnam-medi-pharm-expo-2011'),
-(846, 'category_id=59', 'channuoi-thuysan'),
 (940, 'product_id=54', 'dung-cu-do-ph'),
 (871, 'news_category_id=1', 'tin-noi-bo'),
 (872, 'news_category_id=2', 'tin-san-pham'),
@@ -3935,14 +3898,15 @@ CREATE TABLE IF NOT EXISTS `wm_user` (
   `status` tinyint(1) NOT NULL,
   `date_added` datetime NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `wm_user`
 --
 
 INSERT INTO `wm_user` (`user_id`, `user_group_id`, `username`, `password`, `salt`, `firstname`, `lastname`, `email`, `image`, `code`, `ip`, `status`, `date_added`) VALUES
-(1, 1, 'admin', 'eedc41d9814ae97a5e27f28ef87ecf5041093d16', 'cbd26782b', 'Ngo', 'Thiet', 'nvthiet.khtn08@gmail.com', 'catalog/12274240_1012760572077743_8007860035012655453_n[1].jpg', '', '127.0.0.1', 1, '2016-01-04 23:24:54');
+(1, 1, 'admin', 'eedc41d9814ae97a5e27f28ef87ecf5041093d16', 'cbd26782b', 'Ngo', 'Thiet', 'nvthiet.khtn08@gmail.com', 'catalog/12274240_1012760572077743_8007860035012655453_n[1].jpg', '', '127.0.0.1', 1, '2016-01-04 23:24:54'),
+(2, 1, 'hoaviet', '6a17ced915e3e445e5d81b00cae02030b674d1e3', '6ecd01ae7', 'HoaViet', 'WebMaster', 'hoaviet@hoaviet.vn', 'catalog/favicon.png', '', '127.0.0.1', 1, '2016-01-28 01:17:45');
 
 -- --------------------------------------------------------
 

@@ -7,7 +7,7 @@ class ControllerCatalogProduct extends Controller {
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
-		$this->load->model('catalog/product');
+		$this->load->model('catalog/product');		
 
 		$this->getList();
 	}
@@ -255,6 +255,12 @@ class ControllerCatalogProduct extends Controller {
 			$filter_status = null;
 		}
 
+		if (isset($this->request->get['filter_manufacturer'])) {
+			$filter_manufacturer = $this->request->get['filter_manufacturer'];
+		} else {
+			$filter_manufacturer = null;
+		}
+
 		if (isset($this->request->get['sort'])) {
 			$sort = $this->request->get['sort'];
 		} else {
@@ -295,6 +301,10 @@ class ControllerCatalogProduct extends Controller {
 			$url .= '&filter_status=' . $this->request->get['filter_status'];
 		}
 
+		if (isset($this->request->get['filter_manufacturer'])) {
+			$url .= '&filter_manufacturer=' . $this->request->get['filter_manufacturer'];
+		}
+
 		if (isset($this->request->get['sort'])) {
 			$url .= '&sort=' . $this->request->get['sort'];
 		}
@@ -331,6 +341,7 @@ class ControllerCatalogProduct extends Controller {
 			'filter_price'	  => $filter_price,
 			'filter_quantity' => $filter_quantity,
 			'filter_status'   => $filter_status,
+			'filter_manufacturer' => $filter_manufacturer,
 			'sort'            => $sort,
 			'order'           => $order,
 			'start'           => ($page - 1) * $this->config->get('config_limit_admin'),
@@ -340,7 +351,6 @@ class ControllerCatalogProduct extends Controller {
 		$this->load->model('tool/image');
 
 		$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
-
 		$results = $this->model_catalog_product->getProducts($filter_data);
 
 		foreach ($results as $result) {
@@ -367,6 +377,7 @@ class ControllerCatalogProduct extends Controller {
 				'image'      => $image,
 				'name'       => $result['name'],
 				'model'      => $result['model'],
+				'manufacturer' => $result['manufacturer_name'],
 				'price'      => $result['price'],
 				'special'    => $special,
 				'quantity'   => $result['quantity'],
@@ -386,6 +397,7 @@ class ControllerCatalogProduct extends Controller {
 		$data['column_image'] = $this->language->get('column_image');
 		$data['column_name'] = $this->language->get('column_name');
 		$data['column_model'] = $this->language->get('column_model');
+		$data['column_manufacturer'] = $this->language->get('column_manufacturer');
 		$data['column_price'] = $this->language->get('column_price');
 		$data['column_quantity'] = $this->language->get('column_quantity');
 		$data['column_status'] = $this->language->get('column_status');
@@ -396,6 +408,7 @@ class ControllerCatalogProduct extends Controller {
 		$data['entry_price'] = $this->language->get('entry_price');
 		$data['entry_quantity'] = $this->language->get('entry_quantity');
 		$data['entry_status'] = $this->language->get('entry_status');
+		$data['entry_manufacturer'] = $this->language->get('entry_manufacturer');
 
 		$data['button_copy'] = $this->language->get('button_copy');
 		$data['button_add'] = $this->language->get('button_add');
@@ -447,6 +460,10 @@ class ControllerCatalogProduct extends Controller {
 			$url .= '&filter_status=' . $this->request->get['filter_status'];
 		}
 
+		if (isset($this->request->get['filter_manufacturer'])) {
+			$url .= '&filter_manufacturer=' . $this->request->get['filter_manufacturer'];
+		}
+
 		if ($order == 'ASC') {
 			$url .= '&order=DESC';
 		} else {
@@ -459,6 +476,7 @@ class ControllerCatalogProduct extends Controller {
 
 		$data['sort_name'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=pd.name' . $url, 'SSL');
 		$data['sort_model'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.model' . $url, 'SSL');
+		$data['sort_manufacturer'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.manufacturer_id' . $url, 'SSL');
 		$data['sort_price'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.price' . $url, 'SSL');
 		$data['sort_quantity'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.quantity' . $url, 'SSL');
 		$data['sort_status'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'] . '&sort=p.status' . $url, 'SSL');
@@ -486,6 +504,10 @@ class ControllerCatalogProduct extends Controller {
 			$url .= '&filter_status=' . $this->request->get['filter_status'];
 		}
 
+		if (isset($this->request->get['filter_manufacturer'])) {
+			$url .= '&filter_manufacturer=' . $this->request->get['filter_manufacturer'];
+		}
+
 		if (isset($this->request->get['sort'])) {
 			$url .= '&sort=' . $this->request->get['sort'];
 		}
@@ -509,9 +531,23 @@ class ControllerCatalogProduct extends Controller {
 		$data['filter_price'] = $filter_price;
 		$data['filter_quantity'] = $filter_quantity;
 		$data['filter_status'] = $filter_status;
+		$data['filter_manufacturer'] = $filter_manufacturer;
 
 		$data['sort'] = $sort;
 		$data['order'] = $order;
+
+		//Load manufacturers
+		$this->load->model('catalog/manufacturer');		
+		$data['manufacturers'] = array();
+		$result = $this->model_catalog_manufacturer->getManufacturers();
+		if($result){
+			foreach ($result as $manufacturer) {
+				$data['manufacturers'][] = array(
+					'manufacturer_id' => $manufacturer['manufacturer_id'], 
+					'manufacturer_name' => $manufacturer['name'], 
+				);
+			}
+		}
 
 		$data['header'] = $this->load->controller('common/header');
 		$data['column_left'] = $this->load->controller('common/column_left');

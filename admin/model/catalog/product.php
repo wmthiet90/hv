@@ -346,7 +346,7 @@ class ModelCatalogProduct extends Model {
 	}
 
 	public function getProducts($data = array()) {
-		$sql = "SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
+		$sql = "SELECT p.*, pd.*, m.name as manufacturer_name FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) LEFT JOIN  " . DB_PREFIX . "manufacturer m ON (p.manufacturer_id = m.manufacturer_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "'";
 
 		if (!empty($data['filter_name'])) {
 			$sql .= " AND pd.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
@@ -367,6 +367,10 @@ class ModelCatalogProduct extends Model {
 		if (isset($data['filter_status']) && !is_null($data['filter_status'])) {
 			$sql .= " AND p.status = '" . (int)$data['filter_status'] . "'";
 		}
+
+		if (isset($data['filter_manufacturer']) && !is_null($data['filter_manufacturer'])) {
+			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer'] . "'";
+		}
 		
 		$sql .= " GROUP BY p.product_id";
 
@@ -376,7 +380,8 @@ class ModelCatalogProduct extends Model {
 			'p.price',
 			'p.quantity',
 			'p.status',
-			'p.sort_order'
+			'p.sort_order',
+			'p.manufacturer_id'
 		);
 
 		if (isset($data['sort']) && in_array($data['sort'], $sort_data)) {
