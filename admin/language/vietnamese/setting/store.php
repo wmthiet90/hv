@@ -9,18 +9,18 @@ $_['text_browse']               = 'Duyệt file';
 $_['text_clear']                = 'Xóa Ảnh';
 $_['text_shipping']             = 'Địa chỉ Shipping';
 $_['text_payment']              = 'Địa chỉ thanh toán';
-$_['text_list']                        = 'Danh mục tên Shop';
+$_['text_list']                        = 'Danh mục';
 
 // Column
-$_['column_name']               = 'Tên Shop';
-$_['column_url']	        	= 'Địa chỉ WebSite Shop';
+$_['column_name']               = 'Tên';
+$_['column_url']	        	= 'Địa chỉ';
 $_['column_action']             = 'Thao tác';
 
 // Entry
 $_['entry_url']                 = 'URL Gian hàng:<br /><span class="help">Bao gồm URL đầy đủ Shop của bạn. Hãy chắc chắn đã thêm vào \'/\' ở cuối. Ví dụ: http://www.yourdomain.com/path/<br /><br />Không sử dụng thư mục để tạo ra một Shop mới. Bạn nên luôn luôn điểm khác miền phụ tên miền để lưu trữ của bạn.</span>';
 $_['entry_ssl']                 = 'Dùng SSL:<br /><span class="help">SSL URL to your store. Make sure to add \'/\' at the end. Example: http://www.yourdomain.com/path/<br /><br />Don\'t use directories to create a new store. You should always point another domain or sub domain to your hosting.</span>';
-$_['entry_name']                = 'Tên Shop:';
-$_['entry_owner']               = 'Tên Chủ Shop:';
+$_['entry_name']                = 'Tên website:';
+$_['entry_owner']               = 'Tên chủ website:';
 $_['entry_address']             = 'Địa chỉ:';
 $_['entry_email']               = 'E-Mail:';
 $_['entry_telephone']           = 'Điện thoại:';

@@ -94,7 +94,7 @@ class ControllerCommonMenu extends Controller {
 		$data['order'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'], 'SSL');
 		$data['order_status'] = $this->url->link('localisation/order_status', 'token=' . $this->session->data['token'], 'SSL');
 		$data['product'] = $this->url->link('catalog/product', 'token=' . $this->session->data['token'], 'SSL');
-		$data['setting'] = $this->url->link('setting/store', 'token=' . $this->session->data['token'], 'SSL');
+		$data['setting'] = $this->url->link('setting/setting', 'token=' . $this->session->data['token'], 'SSL');
 		$data['total'] = $this->url->link('extension/total', 'token=' . $this->session->data['token'], 'SSL');
 		$data['upload'] = $this->url->link('tool/upload', 'token=' . $this->session->data['token'], 'SSL');
 		$data['user'] = $this->url->link('user/user', 'token=' . $this->session->data['token'], 'SSL');

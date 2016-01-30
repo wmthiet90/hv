@@ -26,7 +26,7 @@
   </li>
   <li id="system"><a class="parent"><i class="fa fa-cog fa-fw"></i> <span><?php echo $text_system; ?></span></a>
     <ul>
-      <li class="hidden"><a href="<?php echo $setting; ?>"><?php echo $text_setting; ?></a></li>
+      <li class=""><a href="<?php echo $setting; ?>"><?php echo $text_setting; ?></a></li>
       <li><a href="<?php echo $module; ?>"><?php echo $text_module; ?></a></li>
       <li class="hidden"><a href="<?php echo $layout; ?>"><?php echo $text_layout; ?></a></li>
       <li><a href="<?php echo $banner; ?>"><?php echo $text_banner; ?></a></li>

@@ -242,6 +242,12 @@ h1.heading-title {
     font-size: 24px;
 }
 
+#contact-form {    
+}
+#contact-form .form-group.error input,
+#contact-form .form-group.error textarea {    
+    border: 1px solid red;
+}
 
 /* ====================
     INTERMEDIATE: Menu

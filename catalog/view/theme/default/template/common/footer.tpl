@@ -42,21 +42,21 @@
         <div class="map-info">
             <a class="invisible" name="contact"></a>
             <h3 class="uppercase"><?php echo $text_contact; ?></h3>
-            <form role="form">
+            <form role="form" id="contact-form">
               <div class="form-group">
-                <input placeholder="<?php echo $text_contact_name; ?>" type="text" class="form-control" id="contactName">
+                <input placeholder="<?php echo $text_contact_name; ?>" name="name" type="text" class="form-control">
               </div>
               <div class="form-group">
-                <input placeholder="<?php echo $text_contact_email; ?>" type="email" class="form-control" id="contactEmail">
+                <input placeholder="<?php echo $text_contact_email; ?>" name="email" type="email" class="form-control">
               </div>
               <div class="form-group">
-                <input placeholder="<?php echo $text_contact_topic; ?>" type="text" class="form-control" id="contactTopic">
+                <input placeholder="<?php echo $text_contact_topic; ?>" name="topic" type="text" class="form-control">
               </div>
               <div class="form-group">
-                <textarea placeholder="<?php echo $text_contact_message; ?>" id="contactMessage" class="form-control no-resize-hon" style="min-height: 80px;"></textarea>
+                <textarea placeholder="<?php echo $text_contact_message; ?>" name="enquiry" class="form-control no-resize-hon" style="min-height: 80px;"></textarea>
               </div>
               <div class="text-right">
-                <button type="submit" class="btn btn-default btn-smaller"><?php echo $text_send; ?></button>
+                <button type="submit" class="btn btn-default btn-smaller btn-send" data-sending="<?php echo $text_send_sending; ?>" data-text="<?php echo $text_send; ?>"><?php echo $text_send; ?></button>
               </div>              
             </form>
           </div>

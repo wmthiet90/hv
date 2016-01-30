@@ -34,12 +34,12 @@
             <li class="active"><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
             <li><a href="#tab-store" data-toggle="tab"><?php echo $tab_store; ?></a></li>
             <li><a href="#tab-local" data-toggle="tab"><?php echo $tab_local; ?></a></li>
-            <li><a href="#tab-option" data-toggle="tab"><?php echo $tab_option; ?></a></li>
-            <li><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
-            <li><a href="#tab-ftp" data-toggle="tab"><?php echo $tab_ftp; ?></a></li>
+            <li class="hidden"><a href="#tab-option" data-toggle="tab"><?php echo $tab_option; ?></a></li>
+            <li class="hidden"><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
+            <li class="hidden"><a href="#tab-ftp" data-toggle="tab"><?php echo $tab_ftp; ?></a></li>
             <li><a href="#tab-mail" data-toggle="tab"><?php echo $tab_mail; ?></a></li>
-            <li><a href="#tab-fraud" data-toggle="tab"><?php echo $tab_fraud; ?></a></li>
-            <li><a href="#tab-server" data-toggle="tab"><?php echo $tab_server; ?></a></li>
+            <li class="hidden"><a href="#tab-fraud" data-toggle="tab"><?php echo $tab_fraud; ?></a></li>
+            <li class="hidden"><a href="#tab-server" data-toggle="tab"><?php echo $tab_server; ?></a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab-general">
@@ -106,7 +106,7 @@
                   <input type="hidden" name="config_image" value="<?php echo $config_image; ?>" id="input-image" />
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group hidden">
                 <label class="col-sm-2 control-label" for="input-open"><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_open; ?>"><?php echo $entry_open; ?></span></label>
                 <div class="col-sm-10">
                   <textarea name="config_open" rows="5" placeholder="<?php echo $entry_open; ?>" id="input-open" class="form-control"><?php echo $config_open; ?></textarea>
@@ -161,7 +161,7 @@
                   <textarea name="config_meta_keyword" rows="5" placeholder="<?php echo $entry_meta_keyword; ?>" id="input-meta-keyword" class="form-control"><?php echo $config_meta_keyword; ?></textarea>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group hidden">
                 <label class="col-sm-2 control-label" for="input-template"><?php echo $entry_template; ?></label>
                 <div class="col-sm-10">
                   <select name="config_template" id="input-template" class="form-control">
@@ -176,7 +176,7 @@
                   <br />
                   <img src="" alt="" id="template" class="img-thumbnail" /></div>
               </div>
-              <div class="form-group">
+              <div class="form-group hidden">
                 <label class="col-sm-2 control-label" for="input-layout"><?php echo $entry_layout; ?></label>
                 <div class="col-sm-10">
                   <select name="config_layout_id" id="input-layout" class="form-control">
@@ -227,7 +227,7 @@
                   </select>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group hidden">
                 <label class="col-sm-2 control-label" for="input-admin-language"><?php echo $entry_admin_language; ?></label>
                 <div class="col-sm-10">
                   <select name="config_admin_language" id="input-admin-language" class="form-control">
@@ -241,7 +241,7 @@
                   </select>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group hidden">
                 <label class="col-sm-2 control-label" for="input-currency"><span data-toggle="tooltip" title="<?php echo $help_currency; ?>"><?php echo $entry_currency; ?></span></label>
                 <div class="col-sm-10">
                   <select name="config_currency" id="input-currency" class="form-control">
@@ -255,7 +255,7 @@
                   </select>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group hidden">
                 <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="<?php echo $help_currency_auto; ?>"><?php echo $entry_currency_auto; ?></span></label>
                 <div class="col-sm-10">
                   <label class="radio-inline">
@@ -278,7 +278,7 @@
                   </label>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group hidden">
                 <label class="col-sm-2 control-label" for="input-length-class"><?php echo $entry_length_class; ?></label>
                 <div class="col-sm-10">
                   <select name="config_length_class_id" id="input-length-class" class="form-control">
@@ -292,7 +292,7 @@
                   </select>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group hidden">
                 <label class="col-sm-2 control-label" for="input-weight-class"><?php echo $entry_weight_class; ?></label>
                 <div class="col-sm-10">
                   <select name="config_weight_class_id" id="input-weight-class" class="form-control">
@@ -307,7 +307,7 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane" id="tab-option">
+            <div class="tab-pane hidden" id="tab-option">
               <fieldset>
                 <legend><?php echo $text_product; ?></legend>
                 <div class="form-group">
@@ -1013,7 +1013,7 @@
                 </div>
               </fieldset>
             </div>
-            <div class="tab-pane" id="tab-image">
+            <div class="tab-pane hidden" id="tab-image">
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-logo"><?php echo $entry_logo; ?></label>
                 <div class="col-sm-10"><a href="" id="thumb-logo" data-toggle="image" class="img-thumbnail"><img src="<?php echo $logo; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
@@ -1187,7 +1187,7 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane" id="tab-ftp">
+            <div class="tab-pane hidden" id="tab-ftp">
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-ftp-host"><?php echo $entry_ftp_hostname; ?></label>
                 <div class="col-sm-10">
@@ -1315,7 +1315,7 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane" id="tab-fraud">
+            <div class="tab-pane hidden" id="tab-fraud">
               <div class="form-group">
                 <label class="col-sm-2 control-label"><span data-toggle="tooltip" data-html="true" data-trigger="click" title="<?php echo htmlspecialchars($help_fraud_detection); ?>"><?php echo $entry_fraud_detection; ?></span></label>
                 <div class="col-sm-10">
@@ -1366,7 +1366,7 @@
                 </div>
               </div>
             </div>
-            <div class="tab-pane" id="tab-server">
+            <div class="tab-pane hidden" id="tab-server">
               <div class="form-group">
                 <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="<?php echo $help_secure; ?>"><?php echo $entry_secure; ?></span></label>
                 <div class="col-sm-10">

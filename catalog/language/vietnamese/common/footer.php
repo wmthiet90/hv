@@ -10,8 +10,8 @@ $_['text_contact_name']      = 'Tên quý khách';
 $_['text_contact_email']      = 'Email';
 $_['text_contact_topic']      = 'Chủ đề';
 $_['text_contact_message']      = 'Nội dung';
-
 $_['text_send']      = 'Gửi';
+$_['text_send_sending']      = 'Đang gửi ...';
 
 $_['text_headoffice']    = 'Trụ sở chính';
 

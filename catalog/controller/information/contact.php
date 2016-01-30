@@ -200,6 +200,53 @@ class ControllerInformationContact extends Controller {
 		}
 	}
 
+	public function submitAjax(){
+		$json = array();
+		$this->load->language('information/contact');
+
+		$successMsg = $this->language->get('contact_msg_success');
+		$failMsg = $this->language->get('contact_msg_fail');
+
+		if ($this->validateJson()) {
+			try
+			{
+				$mail = new Mail($this->config->get('config_mail'));
+				$mail->setTo($this->config->get('config_email'));
+				$mail->setFrom($this->request->post['email']);
+				$mail->setSender($this->request->post['name']);
+				$mail->setSubject(sprintf('Gửi từ Hoaviet.vn - %s', $this->request->post['topic']));
+
+				$body = sprintf('<p>%s</p>', 'Có một yêu cầu được gửi từ khách hàng trên website <a href="http://hoaviet.vn">hoaviet.vn</a> với nội dung như sau:');
+				$body .= sprintf('<p> - <b>Họ tên người gửi:</b> %s </p>', $this->request->post['name']);
+				$body .= sprintf('<p> - <b>Nội dung: </b> %s </p>', $this->request->post['enquiry']);
+
+				$message  = '<html dir="ltr" lang="vi">' . "\n";
+				$message .= '  <head>' . "\n";
+				$message .= '    <title>' . $this->request->post['topic'] . '</title>' . "\n";
+				$message .= '    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">' . "\n";
+				$message .= '  </head>' . "\n";
+				$message .= '  <body>' . html_entity_decode($body, ENT_QUOTES, 'UTF-8') . '</body>' . "\n";
+				$message .= '</html>' . "\n";
+
+				$mail->setHtml($message);
+				$mail->send();
+
+				$json['success'] = true;
+				$json['message'] = $successMsg;
+			} 
+			catch(Exception $e){
+				$json['success'] = false;
+				$json['message'] = $failMsg;
+			}			
+		} else {
+			$json['success'] = false;
+			$json['message'] = $failMsg;
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
 	protected function validate() {
 		if ((utf8_strlen($this->request->post['name']) < 3) || (utf8_strlen($this->request->post['name']) > 32)) {
 			$this->error['name'] = $this->language->get('error_name');
@@ -215,6 +262,26 @@ class ControllerInformationContact extends Controller {
 
 		if (empty($this->session->data['captcha']) || ($this->session->data['captcha'] != $this->request->post['captcha'])) {
 			$this->error['captcha'] = $this->language->get('error_captcha');
+		}
+
+		return !$this->error;
+	}
+
+	protected function validateJson() {
+		if ((utf8_strlen($this->request->post['name']) < 1) || (utf8_strlen($this->request->post['name']) > 50)) {
+			$this->error['name'] = $this->language->get('error_name');
+		}
+
+		if (!preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $this->request->post['email'])) {
+			$this->error['email'] = $this->language->get('error_email');
+		}
+
+		if ((utf8_strlen($this->request->post['topic']) < 1) || (utf8_strlen($this->request->post['topic']) > 200)) {
+			$this->error['topic'] = 'Invalid topic';
+		}
+
+		if ((utf8_strlen($this->request->post['enquiry']) < 1) || (utf8_strlen($this->request->post['enquiry']) > 3000)) {
+			$this->error['enquiry'] = $this->language->get('error_enquiry');
 		}
 
 		return !$this->error;

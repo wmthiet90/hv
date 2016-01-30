@@ -13,13 +13,16 @@ $_['text_fax']           = 'Fax:';
 $_['text_message']       = '<p>Cảm ơn bạn. Thư liên hệ của bạn đã được gửi đến chúng tôi!</p>';
 
 // Entry Fields
-$_['entry_name']         = 'Họ & Tên:';
-$_['entry_email']        = 'Địa chỉ E-Mail :';
-$_['entry_enquiry']      = 'Nội dung:';
+$_['entry_name']         = 'Họ & Tên';
+$_['entry_email']        = 'Email';
+$_['entry_enquiry']      = 'Nội dung';
+$_['entry_topic']        = 'Chủ đề';
 $_['entry_captcha']	     = 'Nhập các ký tự bên dưới:';
 
 // Email
-$_['email_subject']      = 'Tiêu đề %s';
+$_['email_subject']      = 'Tin nhắn gửi từ Hoaviet.vn - %s';
+$_['contact_msg_success']   = 'Tin nhắn của bạn đã được gửi đi thành công. Xin cám ơn!';
+$_['contact_msg_fail']   = 'Xin lỗi! Tin nhắn của bạn không được gửi đi thành công. Xin vui lòng thử lại sau!';
 
 // Errors
 $_['error_name']         = 'Tên của bạn phải nhiều hơn 3 và nhỏ hơn 32 ký tự!';

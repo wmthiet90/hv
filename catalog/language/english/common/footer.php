@@ -11,5 +11,6 @@ $_['text_contact_email']      = 'Email';
 $_['text_contact_topic']      = 'Topic';
 $_['text_contact_message']      = 'Message';
 $_['text_send']      = 'Send';
+$_['text_send_sending']      = 'Sending ...';
 
 $_['text_headoffice']    = 'Head Office';

@@ -14,6 +14,7 @@ class ControllerCommonFooter extends Controller {
 		$data['text_contact_topic'] = $this->language->get('text_contact_topic');
 		$data['text_contact_message'] = $this->language->get('text_contact_message');
 		$data['text_send'] = $this->language->get('text_send');
+		$data['text_send_sending'] = $this->language->get('text_send_sending');
 
 		$data['text_home']  = $this->language->get('text_home');
 		$data['text_introduction']  = $this->language->get('text_introduction');

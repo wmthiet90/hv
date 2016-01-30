@@ -22,6 +22,129 @@ function getURLVar(key) {
 	}
 }
 
+var utils = {
+	isEmpty: function(value){
+		return !value || value.toString().trim().length == 0;
+	},
+	isEmail: function(value) {
+		var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    	return re.test(value);
+	}
+};
+
+function contactForm($formEle) {
+	var self = this;
+
+	self.containerEle = $formEle.length > 0 ? $formEle : $("#contact-form");
+	self.form = {
+		name : self.containerEle.find("input[name='name']"),
+		email : self.containerEle.find("input[name='email']"),
+		topic : self.containerEle.find("input[name='topic']"),
+		enquiry : self.containerEle.find("textarea[name='enquiry']")
+	};
+	self.sendButton = self.containerEle.find('.btn-send');
+
+	function validate(){
+		var formData = getFormData();
+		var errors = [];
+		if(utils.isEmpty(formData.name)){
+			errors.push('name');
+			self.form.name.parent().addClass('error');
+		} else {
+			self.form.name.parent().removeClass('error');
+		}
+
+		if(utils.isEmpty(formData.email) || !utils.isEmail(formData.email)){
+			errors.push('email');
+			self.form.email.parent().addClass('error');
+		} else {
+			self.form.email.parent().removeClass('error');
+		}
+
+		if(utils.isEmpty(formData.topic)) {
+			errors.push('topic');
+			self.form.topic.parent().addClass('error');
+		} else {
+			self.form.topic.parent().removeClass('error');
+		}
+
+		if(utils.isEmpty(formData.enquiry)) {
+			errors.push('enquiry');
+			self.form.enquiry.parent().addClass('error');
+		} else {
+			self.form.enquiry.parent().removeClass('error');
+		}
+
+		if(errors.length > 0) {
+			self.form[errors[0]].focus();
+			return false;
+		}
+
+		return true;
+	}
+
+	function getFormData(){
+		return {
+			name : self.form.name.val().trim(),
+			email : self.form.email.val().trim(),
+			topic : self.form.topic.val().trim(),
+			enquiry : self.form.enquiry.val().trim()
+		};
+	}
+
+	function sendRequest (data, customCallback) {
+		$.ajax({
+			url: 'index.php?route=information/contact/submitAjax',
+			type: 'post',			
+			data: data,
+			dataType: 'json',
+			success: function(json) {
+				//$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+				if(customCallback){
+					customCallback(json);
+				}
+			}
+		});
+	}
+
+	function lockForm(isSending){
+		if(isSending) {
+			self.containerEle.find(':input').attr('disabled', 'disabled');
+			self.sendButton.text(self.sendButton.data('sending')).attr('disabled', 'disabled');
+		} else {
+			self.containerEle.find(':input').removeAttr('disabled');
+			self.sendButton.text(self.sendButton.data('text')).removeAttr('disabled');
+		}
+	}
+
+	function resetForm(){
+		self.containerEle.find(":input").val('');
+	}
+
+	function sendButtonOnClick(){
+		if(!validate()) return;
+
+		lockForm(true);		
+		sendRequest(getFormData(), function(json){
+			lockForm(false);
+			if(json.success) {
+				resetForm();
+			}
+			if(json.message) {
+				alert(json.message);
+			}
+		});
+	}
+
+	function init(){
+		self.sendButton.on('click', function(e){
+			e.preventDefault();
+			sendButtonOnClick();
+		});
+	}
+	init();
+};
+
 $(document).ready(function() {
 	// Adding the clear Fix
 	cols1 = $('#column-right, #column-left').length;
@@ -149,7 +272,10 @@ $(document).ready(function() {
 	$("#gotocontact").on("click", function(e){
 		e.preventDefault();
 		$("html, body").animate({ scrollTop: $(document).height() }, 1200);
-	})
+	});
+
+	var contactFormEle = $("#contact-form");
+	contactFormEle.data('contactForm', new contactForm(contactFormEle));
 });
 
 /* Agree to Terms */

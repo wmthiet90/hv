@@ -17,10 +17,13 @@ $_['text_success']   = '<p>Your enquiry has been successfully sent to the store 
 $_['entry_name']     = 'Your Name';
 $_['entry_email']    = 'E-Mail Address';
 $_['entry_enquiry']  = 'Enquiry';
+$_['entry_topic']    = 'Topic';
 $_['entry_captcha']  = 'Enter the code in the box below';
 
 // Email
-$_['email_subject']  = 'Enquiry %s';
+$_['email_subject']  = 'Enquiry sent from Hoaviet.vn - %s';
+$_['contact_msg_success']   = 'Your message has been sent successfully! Thank you.';
+$_['contact_msg_fail']   = 'We are sorry for this inconvenience. Your message has not been sent successfully. Please try again later.';
 
 // Errors
 $_['error_name']     = 'Name must be between 3 and 32 characters!';
