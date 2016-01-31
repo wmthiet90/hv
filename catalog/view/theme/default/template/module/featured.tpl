@@ -13,7 +13,7 @@
             </a>
           </div>
         <div class="caption">
-          <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>   
+          <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['manufacturer']; ?></a></h4>   
           <div class="separator">
             <i class="fa fa-circle pull-left"></i>
             <div class="line pull-right"></div>
