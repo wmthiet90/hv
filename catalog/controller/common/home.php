@@ -22,7 +22,8 @@ class ControllerCommonHome extends Controller {
 		$this->load->language('common/common');
 		$data['text_partners'] = $this->language->get('text_partners');
 		$data['text_featured_products'] = $this->language->get('text_featured_products');
-		$data['text_see_all'] = $this->language->get('text_see_all');		
+		$data['text_see_all'] = $this->language->get('text_see_all');
+		$data['see_all_url'] = $this->url->link('product/manufacturer');
 
 		//Load home slideshow
 		$data['home_slideshow_banners'] = array();
