@@ -21,6 +21,8 @@ class ControllerCommonHome extends Controller {
 
 		$this->load->language('common/common');
 		$data['text_partners'] = $this->language->get('text_partners');
+		$data['text_featured_products'] = $this->language->get('text_featured_products');
+		$data['text_see_all'] = $this->language->get('text_see_all');		
 
 		//Load home slideshow
 		$data['home_slideshow_banners'] = array();
@@ -46,6 +48,27 @@ class ControllerCommonHome extends Controller {
 					'image' => $this->model_tool_image->resize($result['image'], 278, 77)
 				);
 			}
+		}
+
+		//Load featured manufacturers
+		$this->load->model('catalog/manufacturer');
+		$data['featured_manufacturers'] = array();
+		$results = $this->model_catalog_manufacturer->getManufacturers();
+
+		$limit = 9;
+		$manufacturers = array_slice($results, 0, $limit);
+		foreach ($manufacturers as $result) {
+			if ($result['image']) {
+				$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
+			} else {
+				$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
+			}
+			$data['featured_manufacturers'][] = array(
+				'manufacturer_id' => $result['manufacturer_id'],
+				'thumb' => $image,
+				'name' => $result['name'],
+				'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
+			);
 		}
 
 		$data['column_left'] = $this->load->controller('common/column_left');

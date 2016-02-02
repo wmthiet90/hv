@@ -77,6 +77,32 @@
     <div class="row">
         <div id="content" class="col-sm-12">
             <?php echo $content_top; ?>
+            <div class="block-box featured-box">
+              <div class="block-heading">
+                <h3 class="block-title"><?php echo $text_featured_products; ?></h3>
+              </div>  
+              <div class="row product-grid">
+                <?php foreach ($featured_manufacturers as $featured_manufacturer) { ?>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 product-item">
+                  <div class="product-thumb transition">
+                    <div class="image">
+                      <a href="<?php echo $featured_manufacturer['href']; ?>">
+                        <img src="<?php echo $featured_manufacturer['thumb']; ?>" alt="<?php echo $featured_manufacturer['name']; ?>" title="<?php echo $featured_manufacturer['name']; ?>" class="responsive-img" />
+                        </a>
+                      </div>
+                    <div class="caption">
+                      <h4>
+                        <a href="<?php echo $featured_manufacturer['href']; ?>"><?php echo $featured_manufacturer['name']; ?></a>
+                        </h4>
+                    </div>
+                  </div>
+                </div>
+                <?php } ?>
+              </div>
+              <div class="center padding-bottom-30">
+                <a href="<?php echo $see_all_url; ?>" class="btn btn-main"><?php echo $text_see_all; ?></a>
+              </div>
+            </div>
             <hr>
             <?php echo $content_bottom; ?>
         </div>

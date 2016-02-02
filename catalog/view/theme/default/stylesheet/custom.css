@@ -131,6 +131,16 @@ h1.heading-title {
     margin-top: 4px
 }
 
+.featured-box .product-grid .product-thumb {
+    border: none;
+    background: transparent;
+}
+
+.featured-box .product-grid .product-thumb .caption {
+    padding: 15px 0px 15px 0px;
+    min-height: inherit;
+}
+
 .news-grid {
 }
 .news-grid .news-item {       
@@ -1076,6 +1086,9 @@ ul.none-style {
 }
 .padding-top-30 {
     padding-top: 30px;
+}
+.padding-bottom-30 {
+    padding-bottom: 30px;
 }
 .padding-left-0 {
     padding-left: 0;

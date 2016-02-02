@@ -38,8 +38,7 @@ class ControllerModuleFeatured extends Controller {
 					'name'        => $product_info['name'],
 					'manufacturer' => $product_info['manufacturer'],
 					'description' => utf8_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
-					'href'        => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id'])
-					//'href'        => $this->url->link('product/product', 'product_id=' . $product_info['product_id'])
+					'href'        => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $product_info['manufacturer_id'])					
 				);
 			}
 		}

@@ -13,18 +13,13 @@
             </a>
           </div>
         <div class="caption">
-          <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['manufacturer']; ?></a></h4>   
-          <div class="separator">
-            <i class="fa fa-circle pull-left"></i>
-            <div class="line pull-right"></div>
-          </div>     
-          <p class="desciption"><?php echo $product['description']; ?></p>
+          <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['manufacturer']; ?></a></h4>          
         </div>
       </div>
     </div>
     <?php } ?>
   </div>
-  <div class="p-30 center">
+  <div class="center padding-bottom-30">
     <a href="<?php echo $see_all_url; ?>" class="btn btn-main"><?php echo $text_see_all; ?></a>
   </div>
 </div>
