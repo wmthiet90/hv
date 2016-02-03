@@ -91,15 +91,19 @@
                         </a>
                       </div>
                     <div class="caption">
-                      <h4>
-                        <a href="<?php echo $featured_manufacturer['href']; ?>"><?php echo $featured_manufacturer['name']; ?></a>
+                        <h4><a href="<?php echo $featured_manufacturer['href']; ?>"><?php echo $featured_manufacturer['name']; ?></a>
                         </h4>
+                        <div class="separator">
+                            <i class="fa fa-circle pull-left"></i>
+                            <div class="line pull-right"></div>
+                        </div>     
+                        <p class="desciption"><?php echo $featured_manufacturer['description']; ?></p>
                     </div>
                   </div>
                 </div>
                 <?php } ?>
               </div>
-              <div class="center padding-bottom-30">
+              <div class="center p-30">
                 <a href="<?php echo $see_all_url; ?>" class="btn btn-main"><?php echo $text_see_all; ?></a>
               </div>
             </div>

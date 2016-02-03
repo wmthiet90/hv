@@ -54,10 +54,11 @@ class ControllerCommonHome extends Controller {
 		//Load featured manufacturers
 		$this->load->model('catalog/manufacturer');
 		$data['featured_manufacturers'] = array();
-		$results = $this->model_catalog_manufacturer->getManufacturers();
+		$manufacturers = $this->model_catalog_manufacturer->getManufacturers(array(
+			'start' => 0,
+			'limit' => 9
+		));
 
-		$limit = 9;
-		$manufacturers = array_slice($results, 0, $limit);
 		foreach ($manufacturers as $result) {
 			if ($result['image']) {
 				$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
@@ -68,6 +69,7 @@ class ControllerCommonHome extends Controller {
 				'manufacturer_id' => $result['manufacturer_id'],
 				'thumb' => $image,
 				'name' => $result['name'],
+				'description' => $result['description'],
 				'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
 			);
 		}

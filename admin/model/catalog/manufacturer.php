@@ -17,6 +17,10 @@ class ModelCatalogManufacturer extends Model {
 			}
 		}
 
+		if(isset($data['description'])) {
+			$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET description = '" . $this->db->escape($data['description']) . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");	
+		}
+
 		if (isset($data['keyword'])) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "url_alias SET query = 'manufacturer_id=" . (int)$manufacturer_id . "', keyword = '" . $this->db->escape($data['keyword']) . "'");
 		}
@@ -31,7 +35,7 @@ class ModelCatalogManufacturer extends Model {
 	public function editManufacturer($manufacturer_id, $data) {
 		$this->event->trigger('pre.admin.manufacturer.edit', $data);
 
-		$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "', sort_order = '" . (int)$data['sort_order'] . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
+		$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET name = '" . $this->db->escape($data['name']) . "', description = '". $this->db->escape($data['description']) ."', sort_order = '" . (int)$data['sort_order'] . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");
 
 		if (isset($data['image'])) {
 			$this->db->query("UPDATE " . DB_PREFIX . "manufacturer SET image = '" . $this->db->escape($data['image']) . "' WHERE manufacturer_id = '" . (int)$manufacturer_id . "'");

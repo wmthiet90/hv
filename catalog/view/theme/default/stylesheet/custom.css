@@ -117,7 +117,7 @@ h1.heading-title {
     clear: both;
 }
 .product-grid .separator {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .product-grid .separator i.fa {    
     color: #3bbdfb;
@@ -129,16 +129,6 @@ h1.heading-title {
     height: 1px;
     width: 95%;
     margin-top: 4px
-}
-
-.featured-box .product-grid .product-thumb {
-    border: none;
-    background: transparent;
-}
-
-.featured-box .product-grid .product-thumb .caption {
-    padding: 15px 0px 15px 0px;
-    min-height: inherit;
 }
 
 .news-grid {

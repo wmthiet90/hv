@@ -26,6 +26,7 @@ $_['entry_keyword']      = 'Từ khóa SEO';
 $_['entry_image']        = 'Hình ảnh';
 $_['entry_sort_order']   = 'Thứ tự';
 $_['entry_type']         = 'Loại';
+$_['entry_description']  = 'Thông tin thêm';
 
 // Help
 $_['help_keyword']       = 'Không sử dụng khoảng trống, nếu cần hãy sử dụng dấu - , Ví dụ: Apple.';

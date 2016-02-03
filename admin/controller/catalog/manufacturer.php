@@ -175,6 +175,7 @@ class ControllerCatalogManufacturer extends Controller {
 			$data['manufacturers'][] = array(
 				'manufacturer_id' => $result['manufacturer_id'],
 				'name'            => $result['name'],
+				'description'     => $result['description'],
 				'sort_order'      => $result['sort_order'],
 				'edit'            => $this->url->link('catalog/manufacturer/edit', 'token=' . $this->session->data['token'] . '&manufacturer_id=' . $result['manufacturer_id'] . $url, 'SSL')
 			);
@@ -272,6 +273,7 @@ class ControllerCatalogManufacturer extends Controller {
 		$data['entry_name'] = $this->language->get('entry_name');
 		$data['entry_store'] = $this->language->get('entry_store');
 		$data['entry_keyword'] = $this->language->get('entry_keyword');
+		$data['entry_description'] = $this->language->get('entry_description');
 		$data['entry_image'] = $this->language->get('entry_image');
 		$data['entry_sort_order'] = $this->language->get('entry_sort_order');
 		$data['entry_customer_group'] = $this->language->get('entry_customer_group');
@@ -365,6 +367,14 @@ class ControllerCatalogManufacturer extends Controller {
 			$data['keyword'] = $manufacturer_info['keyword'];
 		} else {
 			$data['keyword'] = '';
+		}
+
+		if (isset($this->request->post['description'])) {
+			$data['description'] = $this->request->post['description'];
+		} elseif (!empty($manufacturer_info)) {
+			$data['description'] = $manufacturer_info['description'];
+		} else {
+			$data['description'] = '';
 		}
 
 		if (isset($this->request->post['image'])) {

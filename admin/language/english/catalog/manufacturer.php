@@ -23,6 +23,7 @@ $_['entry_keyword']      = 'SEO Keyword';
 $_['entry_image']        = 'Image';
 $_['entry_sort_order']   = 'Sort Order';
 $_['entry_type']         = 'Type';
+$_['entry_description']  = 'Description';
 
 // Help
 $_['help_keyword']       = 'Do not use spaces, instead replace spaces with - and make sure the keyword is globally unique.';
