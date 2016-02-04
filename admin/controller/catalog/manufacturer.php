@@ -175,7 +175,7 @@ class ControllerCatalogManufacturer extends Controller {
 			$data['manufacturers'][] = array(
 				'manufacturer_id' => $result['manufacturer_id'],
 				'name'            => $result['name'],
-				'description'     => $result['description'],
+				'description'     => $result['addtional_info'],
 				'sort_order'      => $result['sort_order'],
 				'edit'            => $this->url->link('catalog/manufacturer/edit', 'token=' . $this->session->data['token'] . '&manufacturer_id=' . $result['manufacturer_id'] . $url, 'SSL')
 			);
@@ -372,7 +372,7 @@ class ControllerCatalogManufacturer extends Controller {
 		if (isset($this->request->post['description'])) {
 			$data['description'] = $this->request->post['description'];
 		} elseif (!empty($manufacturer_info)) {
-			$data['description'] = $manufacturer_info['description'];
+			$data['description'] = $manufacturer_info['addtional_info'];
 		} else {
 			$data['description'] = '';
 		}

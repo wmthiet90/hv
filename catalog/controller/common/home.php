@@ -69,7 +69,7 @@ class ControllerCommonHome extends Controller {
 				'manufacturer_id' => $result['manufacturer_id'],
 				'thumb' => $image,
 				'name' => $result['name'],
-				'description' => $result['description'],
+				'description' => $result['addtional_info'],
 				'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
 			);
 		}
