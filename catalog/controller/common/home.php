@@ -56,7 +56,8 @@ class ControllerCommonHome extends Controller {
 		$data['featured_manufacturers'] = array();
 		$manufacturers = $this->model_catalog_manufacturer->getManufacturers(array(
 			'start' => 0,
-			'limit' => 9
+			'limit' => 9,
+			'sort'  => 'sort_order'
 		));
 
 		foreach ($manufacturers as $result) {
