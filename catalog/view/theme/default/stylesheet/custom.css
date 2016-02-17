@@ -3,6 +3,7 @@
     Gray: #989898; #616161
    ========================================================================== */
 html {    
+    overflow-x: hidden;
 }
 
 body {
@@ -767,10 +768,7 @@ footer .social-links .social-icon:hover > i {
     #menu-container .nav-controls {
         position: relative;
         margin: 0 auto;
-        width: 460px;
-    }
-    #search {
-        width: 400px;
+        overflow: hidden;
     }
 }
 
@@ -828,8 +826,7 @@ footer .social-links .social-icon:hover > i {
 
     /* ==============
         MOBILE: Main
-       ============== */
-    
+       ============== */    
 }
 
 @media only screen and (min-width: 768px) {

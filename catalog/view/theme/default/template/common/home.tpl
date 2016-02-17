@@ -1,4 +1,31 @@
 <?php echo $header; ?>
+<?php if(!empty($event_banners)) { ?>
+    <div id="event-banner-slides" class="hidden">
+        <?php foreach ($event_banners as $banner) { ?>
+            <a href="<?php echo $banner['image']; ?>" data-link="<?php echo ($banner['link'] ? $banner['link']: '#') ?>" class="banner-img">
+            </a>
+        <?php } ?>         
+    </div>
+    <script>
+        $("#event-banner-slides").magnificPopup({
+          type: 'image',
+          delegate: 'a',
+          //modal: true,    
+          preloader: true,      
+          gallery:{
+            enabled:true,
+            navigateByImgClick: false
+          },
+          callbacks: {
+            elementParse: function(item){
+                item.img.on('click', function(){
+                    alert('clicked');
+                })
+            }
+          }
+        }).magnificPopup('open');
+    </script>
+<?php } ?> 
 <div class="container-fluid">
     <div class="row full-block">
         <div class="col-sm-12">

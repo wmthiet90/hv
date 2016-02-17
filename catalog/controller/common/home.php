@@ -2,6 +2,7 @@
 class ControllerCommonHome extends Controller {
 	private $SlideShow_Home_Banner = 7;
 	private $Manufactor_Home_Banner = 8;
+	private $Event_Banner = 9;
 
 	public function index() {
 
@@ -49,6 +50,23 @@ class ControllerCommonHome extends Controller {
 					'image' => $this->model_tool_image->resize($result['image'], 278, 77)
 				);
 			}
+		}
+
+		//Load event banner if any
+		$data['event_banners'] = array();
+		$results = $this->model_design_banner->getBanner($this->Event_Banner);
+		foreach ($results as $result) {
+			if (is_file(DIR_IMAGE . $result['image'])) {
+				$data['event_banners'][] = array(
+					'title' => $result['title'],
+					'link'  => $result['link'],
+					'image' => $this->config->get('config_url') . 'image/'. $result['image']
+				);
+			}
+		}
+		if($data['event_banners']){
+			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
+			$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
 		}
 
 		//Load featured manufacturers

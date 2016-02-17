@@ -51,10 +51,10 @@
           <table id="images" class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <td class="text-left"><?php echo $entry_title; ?></td>
-                <td class="text-left"><?php echo $entry_link; ?></td>
-                <td class="text-left"><?php echo $entry_image; ?></td>
-                <td class="text-right"><?php echo $entry_sort_order; ?></td>
+                <td class="text-left" width="45%"><?php echo $entry_title; ?></td>
+                <td class="text-left" width="25%"><?php echo $entry_link; ?></td>
+                <td class="text-left text-center"><?php echo $entry_image; ?></td>
+                <td class="text-right" width="10%"><?php echo $entry_sort_order; ?></td>
                 <td></td>
               </tr>
             </thead>
