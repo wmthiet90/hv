@@ -24,7 +24,7 @@ class ControllerCommonFooter extends Controller {
 		$data['text_job'] = $this->language->get('text_job');
 		$data['text_contact'] = $this->language->get('text_contact');
 		$data['text_headoffice'] = $this->language->get('text_headoffice');
-
+		$data['text_companyname'] = $this->language->get('text_companyname');		
 		$data['home_url'] = $this->url->link('common/home');
 		$data['introduction_url'] = $this->url->link('common/about');
 		$data['contact_url'] = $this->url->link('common/home');

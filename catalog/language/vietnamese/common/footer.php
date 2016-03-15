@@ -12,7 +12,5 @@ $_['text_contact_topic']      = 'Chủ đề';
 $_['text_contact_message']      = 'Nội dung';
 $_['text_send']      = 'Gửi';
 $_['text_send_sending']      = 'Đang gửi ...';
-
-$_['text_headoffice']    = 'Trụ sở chính';
-
+$_['text_headoffice']    = 'Trụ sở chính: 229 - 231 Lê Cao Lãng, P. Phú Thạnh, Q. Tân Phú, TP.HCM';$_['text_companyname']    = 'Công ty TNHH Hóa Việt';
 ?>

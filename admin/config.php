@@ -8,18 +8,18 @@ define('HTTPS_SERVER', 'http://www.hoaviet.local/admin/');
 define('HTTPS_CATALOG', 'http://www.hoaviet.local/');
 
 // DIR
-define('DIR_APPLICATION', 'D:\Thiet_web\xamp\htdocs\hoaviet/admin/');
-define('DIR_SYSTEM', 'D:\Thiet_web\xamp\htdocs\hoaviet/system/');
-define('DIR_LANGUAGE', 'D:\Thiet_web\xamp\htdocs\hoaviet/admin/language/');
-define('DIR_TEMPLATE', 'D:\Thiet_web\xamp\htdocs\hoaviet/admin/view/template/');
-define('DIR_CONFIG', 'D:\Thiet_web\xamp\htdocs\hoaviet/system/config/');
-define('DIR_IMAGE', 'D:\Thiet_web\xamp\htdocs\hoaviet/image/');
-define('DIR_CACHE', 'D:\Thiet_web\xamp\htdocs\hoaviet/system/cache/');
-define('DIR_DOWNLOAD', 'D:\Thiet_web\xamp\htdocs\hoaviet/system/download/');
-define('DIR_UPLOAD', 'D:\Thiet_web\xamp\htdocs\hoaviet/system/upload/');
-define('DIR_LOGS', 'D:\Thiet_web\xamp\htdocs\hoaviet/system/logs/');
-define('DIR_MODIFICATION', 'D:\Thiet_web\xamp\htdocs\hoaviet/system/modification/');
-define('DIR_CATALOG', 'D:\Thiet_web\xamp\htdocs\hoaviet/catalog/');
+define('DIR_APPLICATION', 'C:\xampp\htdocs\hv/admin/');
+define('DIR_SYSTEM', 'C:\xampp\htdocs\hv/system/');
+define('DIR_LANGUAGE', 'C:\xampp\htdocs\hv/admin/language/');
+define('DIR_TEMPLATE', 'C:\xampp\htdocs\hv/admin/view/template/');
+define('DIR_CONFIG', 'C:\xampp\htdocs\hv/system/config/');
+define('DIR_IMAGE', 'C:\xampp\htdocs\hv/image/');
+define('DIR_CACHE', 'C:\xampp\htdocs\hv/system/cache/');
+define('DIR_DOWNLOAD', 'C:\xampp\htdocs\hv/system/download/');
+define('DIR_UPLOAD', 'C:\xampp\htdocs\hv/system/upload/');
+define('DIR_LOGS', 'C:\xampp\htdocs\hv/system/logs/');
+define('DIR_MODIFICATION', 'C:\xampp\htdocs\hv/system/modification/');
+define('DIR_CATALOG', 'C:\xampp\htdocs\hv/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysqli');

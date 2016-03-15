@@ -13,4 +13,4 @@ $_['text_contact_message']      = 'Message';
 $_['text_send']      = 'Send';
 $_['text_send_sending']      = 'Sending ...';
 
-$_['text_headoffice']    = 'Head Office';
+$_['text_headoffice']    = 'Head Office: 229 - 231 Le Cao Lang, Phu Thanh Ward, Tan Phu District, HCMC';$_['text_companyname']    = 'HOA VIET LTD. COMPANY';

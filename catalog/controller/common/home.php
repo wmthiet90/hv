@@ -2,7 +2,6 @@
 class ControllerCommonHome extends Controller {
 	private $SlideShow_Home_Banner = 7;
 	private $Manufactor_Home_Banner = 8;
-	private $Event_Banner = 9;
 
 	public function index() {
 
@@ -52,23 +51,6 @@ class ControllerCommonHome extends Controller {
 			}
 		}
 
-		//Load event banner if any
-		$data['event_banners'] = array();
-		$results = $this->model_design_banner->getBanner($this->Event_Banner);
-		foreach ($results as $result) {
-			if (is_file(DIR_IMAGE . $result['image'])) {
-				$data['event_banners'][] = array(
-					'title' => $result['title'],
-					'link'  => $result['link'],
-					'image' => $this->config->get('config_url') . 'image/'. $result['image']
-				);
-			}
-		}
-		if($data['event_banners']){
-			$this->document->addScript('catalog/view/javascript/jquery/magnific/jquery.magnific-popup.min.js');
-			$this->document->addStyle('catalog/view/javascript/jquery/magnific/magnific-popup.css');
-		}
-
 		//Load featured manufacturers
 		$this->load->model('catalog/manufacturer');
 		$data['featured_manufacturers'] = array();
@@ -88,7 +70,7 @@ class ControllerCommonHome extends Controller {
 				'manufacturer_id' => $result['manufacturer_id'],
 				'thumb' => $image,
 				'name' => $result['name'],
-				'description' => $result['addtional_info'],
+				'description' => $result['description'],
 				'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $result['manufacturer_id'])
 			);
 		}

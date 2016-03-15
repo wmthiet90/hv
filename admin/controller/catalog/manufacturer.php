@@ -175,7 +175,7 @@ class ControllerCatalogManufacturer extends Controller {
 			$data['manufacturers'][] = array(
 				'manufacturer_id' => $result['manufacturer_id'],
 				'name'            => $result['name'],
-				'description'     => $result['addtional_info'],
+				'description'     => $result['description'],
 				'sort_order'      => $result['sort_order'],
 				'edit'            => $this->url->link('catalog/manufacturer/edit', 'token=' . $this->session->data['token'] . '&manufacturer_id=' . $result['manufacturer_id'] . $url, 'SSL')
 			);
@@ -283,6 +283,9 @@ class ControllerCatalogManufacturer extends Controller {
 		$data['button_save'] = $this->language->get('button_save');
 		$data['button_cancel'] = $this->language->get('button_cancel');
 
+		$data['tab_general'] = $this->language->get('tab_general');
+		$data['tab_data'] = $this->language->get('tab_data');
+
 		if (isset($this->error['warning'])) {
 			$data['error_warning'] = $this->error['warning'];
 		} else {
@@ -341,12 +344,23 @@ class ControllerCatalogManufacturer extends Controller {
 
 		$data['token'] = $this->session->data['token'];
 
+		$this->load->model('localisation/language');
+		$data['languages'] = $this->model_localisation_language->getLanguages();
+
 		if (isset($this->request->post['name'])) {
 			$data['name'] = $this->request->post['name'];
 		} elseif (!empty($manufacturer_info)) {
 			$data['name'] = $manufacturer_info['name'];
 		} else {
 			$data['name'] = '';
+		}
+
+		if (isset($this->request->post['manufacturer_description'])) {
+			$data['manufacturer_description'] = $this->request->post['manufacturer_description'];
+		} elseif (isset($this->request->get['manufacturer_id'])) {
+			$data['manufacturer_description'] = $this->model_catalog_manufacturer->getManufacturerDescription($this->request->get['manufacturer_id']);
+		} else {
+			$data['manufacturer_description'] = array();
 		}
 
 		$this->load->model('setting/store');
@@ -367,14 +381,6 @@ class ControllerCatalogManufacturer extends Controller {
 			$data['keyword'] = $manufacturer_info['keyword'];
 		} else {
 			$data['keyword'] = '';
-		}
-
-		if (isset($this->request->post['description'])) {
-			$data['description'] = $this->request->post['description'];
-		} elseif (!empty($manufacturer_info)) {
-			$data['description'] = $manufacturer_info['addtional_info'];
-		} else {
-			$data['description'] = '';
 		}
 
 		if (isset($this->request->post['image'])) {
@@ -417,8 +423,10 @@ class ControllerCatalogManufacturer extends Controller {
 			$this->error['warning'] = $this->language->get('error_permission');
 		}
 
-		if ((utf8_strlen($this->request->post['name']) < 2) || (utf8_strlen($this->request->post['name']) > 64)) {
-			$this->error['name'] = $this->language->get('error_name');
+		foreach ($this->request->post['manufacturer_description'] as $language_id => $value) {
+			if ((utf8_strlen($value['name']) < 2) || (utf8_strlen($value['name']) > 255)) {
+				$this->error['name'][$language_id] = $this->language->get('error_name');
+			}
 		}
 
 		if (utf8_strlen($this->request->post['keyword']) > 0) {
