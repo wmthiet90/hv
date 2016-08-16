@@ -86,5 +86,4 @@
     </div>      
   </div>
 </div>
-<?php //<script lang="javascript">(function() {var pname = document.title;var ga = document.createElement('script'); ga.type = 'text/javascript';ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=e7c305ca7a32ea7a468a29128cec750c&data=eyJzc29faWQiOjM2MDE2ODgsImhhc2giOiJkYWI3OWI5M2JkMzgxMTJhMGY4ZTg1NWNiNTczNWRiYiJ9&pname='+pname;var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script><noscript><a href="http://www.vatgia.com" title="vatgia.com" target="_blank">Tài trợ bởi vatgia.com</a></noscript><noscript><a href="http://vchat.vn" title="vchat.vn" target="_blank">Phát triển bởi vchat.vn</a></noscript><noscript><a href="http://123doc.org" title="123doc.org" target="_blank">Partner vchat.vn</a></noscript>	?>
 </body></html>
